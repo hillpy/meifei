@@ -1,3 +1,3 @@
 ### meifei
 
-> A vue components library. 一个vue组件库。
+> A vue components library. 一个vue组件库。
