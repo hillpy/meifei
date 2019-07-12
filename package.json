@@ -1,0 +1,29 @@
+{
+  "name": "meifei",
+  "version": "0.0.0",
+  "description": "A vue components library. 一个vue组件库。",
+  "main": "dist/meifei.cjs.js",
+  "module": "dist/meifei.esm.js",
+  "browser": "dist/meifei.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run watch",
+    "watch": "rollup -c build/rollup.config.js -w",
+    "build": "rollup -c build/rollup.config.js"
+  },
+  "keywords": [
+    "meifei"
+  ],
+  "readme": "README.md",
+  "author": "shinn_lancelot",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^1.16.7",
+    "rollup-plugin-commonjs": "^10.0.1",
+    "rollup-plugin-css-only": "^1.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-vue": "^5.0.1",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
