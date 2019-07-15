@@ -14,7 +14,7 @@ export default {
 </script>
 
 <style>
-  .demo {
-    color: #f00;
-  }
+.demo {
+  color: #f00;
+}
 </style>

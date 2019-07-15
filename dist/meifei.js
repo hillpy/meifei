@@ -179,7 +179,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-5c13f626_0", { source: "\n.demo {\n  color: #f00;\n}\n", map: {"version":3,"sources":["/Users/lancelotshinn/project/frontend/meifei/src/components/demo/demo.vue"],"names":[],"mappings":";AAgBA;EACA,WAAA;AACA","file":"demo.vue","sourcesContent":["<template>\n  <div class=\"demo\">{{ message }}</div>\n</template>\n\n<script>\nexport default {\n  name: 'Demo',\n  data () {\n    return {\n      message: 'This is a demo component.'\n    }\n  }\n}\n</script>\n\n<style>\n  .demo {\n    color: #f00;\n  }\n</style>"]}, media: undefined });
+      inject("data-v-8b776a34_0", { source: "\n.demo {\n  color: #f00;\n}\n", map: {"version":3,"sources":["/Users/lancelotshinn/project/frontend/meifei/src/components/demo/demo.vue"],"names":[],"mappings":";AAgBA;EACA,WAAA;AACA","file":"demo.vue","sourcesContent":["<template>\n  <div class=\"demo\">{{ message }}</div>\n</template>\n\n<script>\nexport default {\n  name: 'Demo',\n  data () {\n    return {\n      message: 'This is a demo component.'\n    }\n  }\n}\n</script>\n\n<style>\n.demo {\n  color: #f00;\n}\n</style>"]}, media: undefined });
 
     };
     /* scoped */
@@ -192,7 +192,7 @@
     
 
     
-    normalizeComponent_1(
+    var Demo = normalizeComponent_1(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
@@ -203,13 +203,14 @@
       undefined
     );
 
-  const components = [
-    demo
-  ];
+  const components = {
+    Demo
+  };
 
   const install = function (Vue, ops = {}) {
-    components.map(component => {
-      Vue.component(component.name, component);
+    if (install.installed) return
+    Object.keys(components).forEach(key => {
+      Vue.components(key, components[key]);
     });
   };
 
@@ -219,7 +220,7 @@
 
   var index = {
     install,
-    Demo: demo
+    ...components
   };
 
   return index;

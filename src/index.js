@@ -1,13 +1,14 @@
 import Demo from './components/demo'
 
-const components = [
+const components = {
   Demo
-]
+};
 
 const install = function (Vue, ops = {}) {
-  components.map(component => {
-    Vue.component(component.name, component);
-  });
+  if (install.installed) return
+  Object.keys(components).forEach(key => {
+    Vue.components(key, components[key])
+  })
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -16,5 +17,5 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
   install,
-  Demo
+  ...components
 }

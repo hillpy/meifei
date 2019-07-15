@@ -1,3 +1,3 @@
 import Demo from './demo.vue'
 
-export default demo
+export default Demo

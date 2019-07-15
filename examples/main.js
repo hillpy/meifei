@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './app.vue'
-import meifei from '../src/index'
+import meifei from '../dist/meifei'
 
 Vue.use(meifei)
 
