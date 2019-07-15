@@ -1,5 +1,8 @@
 import Vue from 'vue'
-import App from './App.vue'
+import App from './app.vue'
+import meifei from '../src/index'
+
+Vue.use(meifei)
 
 Vue.config.productionTip = false
 

@@ -1,3 +1,3 @@
-import Demo from './Demo.vue'
+import Demo from './demo.vue'
 
-export default Demo
+export default demo

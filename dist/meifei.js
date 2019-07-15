@@ -4,10 +4,10 @@
  * Released under the MIT License.
  */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-  typeof define === 'function' && define.amd ? define(['exports'], factory) :
-  (global = global || self, factory(global.meifei = {}));
-}(this, function (exports) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+  typeof define === 'function' && define.amd ? define(factory) :
+  (global = global || self, global.meifei = factory());
+}(this, function () { 'use strict';
 
   //
   //
@@ -179,7 +179,7 @@
     /* style */
     const __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-4fcb8a26_0", { source: "\n.demo {\n  color: #f00;\n}\n", map: {"version":3,"sources":["/Users/lancelotshinn/project/frontend/meifei/src/components/Demo/Demo.vue"],"names":[],"mappings":";AAgBA;EACA,WAAA;AACA","file":"Demo.vue","sourcesContent":["<template>\n  <div class=\"demo\">{{ message }}</div>\n</template>\n\n<script>\nexport default {\n  name: 'Demo',\n  data () {\n    return {\n      message: 'This is a demo component.'\n    }\n  }\n}\n</script>\n\n<style>\n  .demo {\n    color: #f00;\n  }\n</style>"]}, media: undefined });
+      inject("data-v-5c13f626_0", { source: "\n.demo {\n  color: #f00;\n}\n", map: {"version":3,"sources":["/Users/lancelotshinn/project/frontend/meifei/src/components/demo/demo.vue"],"names":[],"mappings":";AAgBA;EACA,WAAA;AACA","file":"demo.vue","sourcesContent":["<template>\n  <div class=\"demo\">{{ message }}</div>\n</template>\n\n<script>\nexport default {\n  name: 'Demo',\n  data () {\n    return {\n      message: 'This is a demo component.'\n    }\n  }\n}\n</script>\n\n<style>\n  .demo {\n    color: #f00;\n  }\n</style>"]}, media: undefined });
 
     };
     /* scoped */
@@ -192,7 +192,7 @@
     
 
     
-    var Demo = normalizeComponent_1(
+    normalizeComponent_1(
       { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
       __vue_inject_styles__,
       __vue_script__,
@@ -203,8 +203,25 @@
       undefined
     );
 
-  exports.Demo = Demo;
+  const components = [
+    demo
+  ];
 
-  Object.defineProperty(exports, '__esModule', { value: true });
+  const install = function (Vue, ops = {}) {
+    components.map(component => {
+      Vue.component(component.name, component);
+    });
+  };
+
+  if (typeof window !== 'undefined' && window.Vue) {
+    install(window.Vue);
+  }
+
+  var index = {
+    install,
+    Demo: demo
+  };
+
+  return index;
 
 }));
