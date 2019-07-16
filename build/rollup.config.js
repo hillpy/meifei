@@ -1,7 +1,8 @@
+import vue from 'rollup-plugin-vue'
+import resolve from 'rollup-plugin-node-resolve'
+import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import cssOnly from 'rollup-plugin-css-only'
-import resolve from 'rollup-plugin-node-resolve'
-import vue from 'rollup-plugin-vue'
 import pkg from '../package.json'
 
 const production = !process.env.ROLLUP_WATCH
@@ -39,25 +40,39 @@ export default {
       file: production ? outFileInfo.prod.cjs : outFileInfo.dev.cjs,
       format: 'cjs',
       banner: banner,
-      name: libName
+      name: libName,
+      globals: {
+        vue: 'Vue'
+      }
     },
     {
       file: production ? outFileInfo.prod.esm : outFileInfo.dev.esm,
-      format: 'esm',
+      format: 'es',
       banner: banner,
-      name: libName
+      name: libName,
+      globals: {
+        vue: 'Vue'
+      }
     },
     {
       file: production ? outFileInfo.prod.umd : outFileInfo.dev.umd,
       format: 'umd',
       banner: banner,
-      name: libName
+      name: libName,
+      globals: {
+        vue: 'Vue'
+      }
     }
   ],
   plugins: [
-    commonjs(),
-    cssOnly(),
+    vue(),
     resolve(),
-    vue()
+    babel({
+        exclude: ['node_modules/**']
+    }),
+    commonjs(),
+  ],
+  external: [
+    'vue'
   ]
 }

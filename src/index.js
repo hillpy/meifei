@@ -7,7 +7,7 @@ const components = {
 const install = function (Vue, ops = {}) {
   if (install.installed) return
   Object.keys(components).forEach(key => {
-    Vue.components(key, components[key])
+    Vue.component(components[key].name, components[key]);
   })
 }
 
