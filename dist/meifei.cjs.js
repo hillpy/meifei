@@ -145,7 +145,8 @@ __vue_render__._withStripped = true;
 let name = {
   libShortName: 'mf',
   componentsName: {
-    navBar: 'NavBar'
+    navBar: 'NavBar',
+    loading: 'Loading'
   }
 };
 
@@ -218,9 +219,88 @@ __vue_render__$1._withStripped = true;
     undefined
   );
 
+//
+const prefixCls$1 = name.libShortName + '-' + name.componentsName.loading.toLowerCase();
+var script$2 = {
+  name: name.componentsName.loading,
+  props: {
+    show: {
+      type: Boolean,
+      default: true
+    }
+  },
+  data: function () {
+    return {
+      isShow: this.show
+    };
+  },
+  computed: {
+    wrapperClasses() {
+      return `${prefixCls$1}` + '-wrapper';
+    },
+
+    loadingClasses() {
+      return `${prefixCls$1}`;
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$2 = script$2;
+/* template */
+var __vue_render__$2 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "div",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.isShow,
+          expression: "isShow"
+        }
+      ],
+      class: _vm.wrapperClasses
+    },
+    [_c("div", { class: _vm.loadingClasses })]
+  )
+};
+var __vue_staticRenderFns__$2 = [];
+__vue_render__$2._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$2 = undefined;
+  /* scoped */
+  const __vue_scope_id__$2 = "data-v-a81f1d38";
+  /* module identifier */
+  const __vue_module_identifier__$2 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$2 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var Loading = normalizeComponent_1(
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$2,
+    __vue_script__$2,
+    __vue_scope_id__$2,
+    __vue_is_functional_template__$2,
+    __vue_module_identifier__$2,
+    undefined,
+    undefined
+  );
+
 const components = {
   Demo,
-  NavBar
+  NavBar,
+  Loading
 };
 
 const install = function (Vue, ops = {}) {

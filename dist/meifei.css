@@ -1,8 +1,4 @@
-.title[data-v-222bbdc1] {
-  color: #f00;
-}
-
-/*# sourceMappingURL=demo.vue.map */.mf-navbar-wrapper[data-v-1bb73632] {
+.mf-navbar-wrapper[data-v-1bb73632] {
   position: fixed;
   top: 0;
   left: 0;
@@ -32,4 +28,22 @@
   white-space: nowrap;
 }
 
-/*# sourceMappingURL=nav-bar.vue.map */
+/*# sourceMappingURL=nav-bar.vue.map */.title[data-v-222bbdc1] {
+  color: #f00;
+}
+
+/*# sourceMappingURL=demo.vue.map */.mf-loading-wrapper[data-v-a81f1d38] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/*# sourceMappingURL=loading.vue.map */

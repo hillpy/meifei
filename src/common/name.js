@@ -1,7 +1,8 @@
 let name = {
   libShortName: 'mf',
   componentsName: {
-    navBar: 'NavBar'
+    navBar: 'NavBar',
+    loading: 'Loading'
   }
 }
 
