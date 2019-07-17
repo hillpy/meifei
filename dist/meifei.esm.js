@@ -143,20 +143,24 @@ __vue_render__._withStripped = true;
 let name = {
   libShortName: 'mf',
   componentsName: {
-    topBar: 'TopBar'
+    navBar: 'NavBar'
   }
 };
 
 //
-const prefixCls = name.libShortName + '-' + name.componentsName.topBar.toLowerCase();
+const prefixCls = name.libShortName + '-' + name.componentsName.navBar.toLowerCase();
 var script$1 = {
-  name: name.componentsName.topBar,
+  name: name.componentsName.navBar,
   props: {},
   data: function () {
     return {};
   },
   computed: {
-    wrapClasses() {
+    wrapperClasses() {
+      return `${prefixCls}` + '-wrapper';
+    },
+
+    barClasses() {
       return `${prefixCls}`;
     },
 
@@ -178,8 +182,10 @@ var __vue_render__$1 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _c("div", { class: _vm.wrapClasses }, [
-    _c("span", { class: _vm.titleClasses }, [_vm._t("title")], 2)
+  return _c("div", { class: _vm.wrapperClasses }, [
+    _c("div", { class: _vm.barClasses }, [
+      _c("div", { class: _vm.titleClasses }, [_vm._t("title")], 2)
+    ])
   ])
 };
 var __vue_staticRenderFns__$1 = [];
@@ -188,7 +194,7 @@ __vue_render__$1._withStripped = true;
   /* style */
   const __vue_inject_styles__$1 = undefined;
   /* scoped */
-  const __vue_scope_id__$1 = "data-v-b93a01ea";
+  const __vue_scope_id__$1 = "data-v-1bb73632";
   /* module identifier */
   const __vue_module_identifier__$1 = undefined;
   /* functional template */
@@ -199,7 +205,7 @@ __vue_render__$1._withStripped = true;
   
 
   
-  var TopBar = normalizeComponent_1(
+  var NavBar = normalizeComponent_1(
     { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
     __vue_inject_styles__$1,
     __vue_script__$1,
@@ -212,7 +218,7 @@ __vue_render__$1._withStripped = true;
 
 const components = {
   Demo,
-  TopBar
+  NavBar
 };
 
 const install = function (Vue, ops = {}) {

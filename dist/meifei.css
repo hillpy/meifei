@@ -2,17 +2,34 @@
   color: #f00;
 }
 
-/*# sourceMappingURL=demo.vue.map */.mf-topbar[data-v-b93a01ea] {
+/*# sourceMappingURL=demo.vue.map */.mf-navbar-wrapper[data-v-1bb73632] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.mf-navbar-wrapper .mf-navbar[data-v-1bb73632] {
   width: 100%;
-  height: auto;
-  text-align: center;
+  max-width: 100%;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 45px;
   box-sizing: border-box;
   background: #f00;
   color: #fff;
   font-size: 10px;
+  text-align: center;
+  overflow: hidden;
 }
-.mf-topbar .mf-topbar-title[data-v-b93a01ea] {
+.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-1bb73632] {
   font-size: 1.6em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-/*# sourceMappingURL=top-bar.vue.map */
+/*# sourceMappingURL=nav-bar.vue.map */

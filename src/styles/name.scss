@@ -2,7 +2,7 @@
 
 $libShortName: 'mf';
 $classNameMap: (
-  topBar: 'topbar'
+  navBar: 'navbar'
 );
 
-$topBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'topBar');
+$navBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'navBar');

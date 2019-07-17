@@ -1,10 +1,10 @@
 <template>
   <div>
-    <top-bar>
+    <nav-bar>
       <template slot="title">
-        标题
+        这是一个导航组件，目前固定于顶部。
       </template>
-    </top-bar>
+    </nav-bar>
   </div>
 </template>
 

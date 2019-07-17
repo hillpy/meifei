@@ -1,7 +1,7 @@
 let name = {
   libShortName: 'mf',
   componentsName: {
-    topBar: 'TopBar'
+    navBar: 'NavBar'
   }
 }
 

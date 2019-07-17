@@ -10,7 +10,7 @@
     "dev": "npm run watch & npm run examples",
     "watch": "rollup -c build/rollup.config.js -w",
     "build": "rollup -c build/rollup.config.js",
-    "examples": "parcel examples/index.html -d examples_dist"
+    "examples": "parcel examples/index.html -d examples_dist -p 1180"
   },
   "keywords": [
     "meifei"

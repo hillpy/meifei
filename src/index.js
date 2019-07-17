@@ -1,9 +1,9 @@
 import Demo from './components/demo'
-import TopBar from './components/top-bar'
+import NavBar from './components/nav-bar'
 
 const components = {
   Demo,
-  TopBar
+  NavBar
 }
 
 const install = function (Vue, ops = {}) {
