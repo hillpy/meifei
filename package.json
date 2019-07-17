@@ -7,7 +7,7 @@
   "browser": "dist/meifei.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run watch",
+    "dev": "npm run watch & npm run examples",
     "watch": "rollup -c build/rollup.config.js -w",
     "build": "rollup -c build/rollup.config.js",
     "examples": "parcel examples/index.html -d examples_dist"
@@ -20,6 +20,7 @@
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.5.4",
+    "clean-css": "^4.2.1",
     "parcel-bundler": "^1.12.3",
     "rollup": "^1.16.7",
     "rollup-plugin-babel": "^4.3.3",
@@ -27,6 +28,7 @@
     "rollup-plugin-css-only": "^1.0.0",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-vue": "^5.0.1",
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3",

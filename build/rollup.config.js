@@ -3,6 +3,9 @@ import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
 import cssOnly from 'rollup-plugin-css-only'
+import cleanCss from 'clean-css'
+import { writeFileSync } from 'fs'
+import { terser } from 'rollup-plugin-terser'
 import pkg from '../package.json'
 
 const production = !process.env.ROLLUP_WATCH
@@ -65,12 +68,30 @@ export default {
     }
   ],
   plugins: [
-    vue(),
+    vue({
+      css: false
+    }),
     resolve(),
     babel({
-        exclude: ['node_modules/**']
+      exclude: ['node_modules/**']
     }),
     commonjs(),
+    cssOnly({
+      output(style) {
+        production
+        ?
+        writeFileSync(
+          outPutCss.prod,
+          new cleanCss().minify(style).styles
+        )
+        :
+        writeFileSync(
+          outPutCss.dev,
+          style
+        )
+      }
+    }),
+    production && terser()
   ],
   external: [
     'vue'

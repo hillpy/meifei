@@ -107,13 +107,12 @@ var normalizeComponent_1 = normalizeComponent;
 
 /* script */
 const __vue_script__ = script;
-
 /* template */
 var __vue_render__ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _c("div", { staticClass: "demo" }, [_vm._v(_vm._s(_vm.message))])
+  return _c("div", { staticClass: "title" }, [_vm._v(_vm._s(_vm.message))])
 };
 var __vue_staticRenderFns__ = [];
 __vue_render__._withStripped = true;
@@ -121,7 +120,7 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = undefined;
+  const __vue_scope_id__ = "data-v-222bbdc1";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
