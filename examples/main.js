@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './app.vue'
 import meifei from '../dist/meifei'
 import '../dist/meifei.css'
+import './scss/reset.scss'
 
 Vue.use(meifei)
 

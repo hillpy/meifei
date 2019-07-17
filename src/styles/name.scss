@@ -1,0 +1,8 @@
+// 名称
+
+$libShortName: 'mf';
+$classNameMap: (
+  topBar: 'topbar'
+);
+
+$topBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'topBar');

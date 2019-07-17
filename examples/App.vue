@@ -1,6 +1,10 @@
 <template>
   <div>
-    <Demo></Demo>
+    <top-bar>
+      <template slot="title">
+        标题
+      </template>
+    </top-bar>
   </div>
 </template>
 

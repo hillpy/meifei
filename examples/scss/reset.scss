@@ -1,0 +1,58 @@
+/* 重置样式 */
+
+// 字体
+* {
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+// 边距
+ul,
+li,
+p,
+div,
+body,
+html,
+section,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+// 表单
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="text"],
+// input[type="radio"],
+// input[type="checkbox"],
+textarea,
+select {
+  appearance: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] button {
+  cursor: pointer;
+}
+
+input,
+textarea,
+button {
+  outline: none;
+}
+
+// 其它
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}

@@ -1,8 +1,10 @@
 import Demo from './components/demo'
+import TopBar from './components/top-bar'
 
 const components = {
-  Demo
-};
+  Demo,
+  TopBar
+}
 
 const install = function (Vue, ops = {}) {
   if (install.installed) return
