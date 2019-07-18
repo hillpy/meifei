@@ -120,6 +120,18 @@ to {
 }
 }
 
-/*# sourceMappingURL=loading.vue.map */
+/*# sourceMappingURL=loading.vue.map */.mf-progressbar-wrapper[data-v-74f34e78] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: #fff;
+}
+.mf-progressbar-wrapper .mf-progressbar[data-v-74f34e78] {
+  width: 0;
+  height: 2px;
+  background-color: #f00;
+}
 
 /*# sourceMappingURL=progress-bar.vue.map */

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './app.vue'
-import meifei from '../dist/meifei'
+// import meifei from '../src/index'  // 从源码导入
+import meifei from '../dist/meifei' // 从dist（打包后的目录）导入
 import '../dist/meifei.css'
 import './scss/reset.scss'
 

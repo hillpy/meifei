@@ -312,22 +312,36 @@
     );
 
   //
+  const prefixCls$2 = name.libShortName.toLowerCase() + '-' + name.componentsName.progressBar.toLowerCase();
   var script$2 = {
     name: name.componentsName.progressBar,
-    props: {},
+    props: {
+      decimal: {
+        type: Number,
+        default: 0
+      }
+    },
 
     data() {
       return {};
     },
 
-    watch: {},
-    computed: {},
-    methods: {},
+    computed: {
+      wrapperClasses() {
+        return `${prefixCls$2}` + '-wrapper';
+      },
 
-    created() {},
+      barClasses() {
+        return `${prefixCls$2}`;
+      },
 
-    mounted() {}
+      barStyles() {
+        let decimal = 0;
+        decimal = this.decimal > 1 ? 1 : this.decimal;
+        return 'width: ' + decimal * 100 + '%';
+      }
 
+    }
   };
 
   /* script */
@@ -337,7 +351,9 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div")
+    return _c("div", { class: _vm.wrapperClasses }, [
+      _c("div", { class: _vm.barClasses, style: _vm.barStyles })
+    ])
   };
   var __vue_staticRenderFns__$2 = [];
   __vue_render__$2._withStripped = true;
@@ -345,7 +361,7 @@
     /* style */
     const __vue_inject_styles__$2 = undefined;
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-1b42869e";
+    const __vue_scope_id__$2 = "data-v-74f34e78";
     /* module identifier */
     const __vue_module_identifier__$2 = undefined;
     /* functional template */

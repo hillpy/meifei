@@ -6,7 +6,7 @@
       </template>
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
-    <mf-progress-bar></mf-progress-bar>
+    <mf-progress-bar :decimal="progress.decimal"></mf-progress-bar>
   </div>
 </template>
 
@@ -18,6 +18,9 @@
         loading: {
           show: true,
           type: 1
+        },
+        progress: {
+          decimal: 0
         }
       }
     },
@@ -26,6 +29,9 @@
       setTimeout(() => {
         _this.loading.show = false
       }, 3000)
+      setInterval(() => {
+        _this.progress.decimal += 0.01
+      }, 10)
     }
   }
 </script>
