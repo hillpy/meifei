@@ -159,9 +159,11 @@
   var script$1 = {
     name: name.componentsName.navBar,
     props: {},
-    data: function () {
+
+    data() {
       return {};
     },
+
     computed: {
       wrapperClasses() {
         return `${prefixCls}` + '-wrapper';
@@ -201,7 +203,7 @@
     /* style */
     const __vue_inject_styles__$1 = undefined;
     /* scoped */
-    const __vue_scope_id__$1 = "data-v-1bb73632";
+    const __vue_scope_id__$1 = "data-v-6105f4a9";
     /* module identifier */
     const __vue_module_identifier__$1 = undefined;
     /* functional template */
@@ -223,6 +225,33 @@
       undefined
     );
 
+  /**
+   * 工具函数类
+   */
+  class utils {
+    /**
+     * 深度拷贝
+     *
+     * @param {*} obj
+     */
+    static deepCopy(obj) {
+      let newObj = obj instanceof Array ? [] : {};
+
+      for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] === "object") {
+            newObj[key] = this.deepCopy(obj[key]);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+
+      return newObj;
+    }
+
+  }
+
   //
   const prefixCls$1 = name.libShortName + '-' + name.componentsName.loading.toLowerCase();
   var script$2 = {
@@ -231,20 +260,45 @@
       show: {
         type: Boolean,
         default: true
+      },
+      type: {
+        type: Number,
+        default: 1
       }
     },
-    data: function () {
+
+    data() {
       return {
-        isShow: this.show
+        loadingData: this.createLoadingData(1, 5)
       };
     },
+
     computed: {
       wrapperClasses() {
         return `${prefixCls$1}` + '-wrapper';
-      },
+      }
 
-      loadingClasses() {
-        return `${prefixCls$1}`;
+    },
+    methods: {
+      createLoadingData(maxType, maxLoadingBar) {
+        let loadingDataArr = [];
+        let dataObj = {};
+
+        for (let i = 1; i <= maxType; i++) {
+          dataObj.type = i;
+          dataObj.class = `${prefixCls$1}` + '-' + i;
+          dataObj.items = [];
+          let item = {};
+
+          for (let j = 1; j <= maxLoadingBar; j++) {
+            item.class = [`${prefixCls$1}` + '-bar-' + i, `${prefixCls$1}` + '-bar-' + i + '-' + j];
+            dataObj.items.push(utils.deepCopy(item));
+          }
+
+          loadingDataArr.push(utils.deepCopy(dataObj));
+        }
+
+        return loadingDataArr;
       }
 
     }
@@ -261,16 +315,23 @@
       "div",
       {
         directives: [
-          {
-            name: "show",
-            rawName: "v-show",
-            value: _vm.isShow,
-            expression: "isShow"
-          }
+          { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
         ],
         class: _vm.wrapperClasses
       },
-      [_c("div", { class: _vm.loadingClasses })]
+      _vm._l(_vm.loadingData, function(data, index) {
+        return data.type == _vm.type
+          ? _c(
+              "div",
+              { key: index, class: data.class },
+              _vm._l(data.items, function(item, key) {
+                return _c("div", { key: key, class: item.class })
+              }),
+              0
+            )
+          : _vm._e()
+      }),
+      0
     )
   };
   var __vue_staticRenderFns__$2 = [];
@@ -279,7 +340,7 @@
     /* style */
     const __vue_inject_styles__$2 = undefined;
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-a81f1d38";
+    const __vue_scope_id__$2 = "data-v-191b5de8";
     /* module identifier */
     const __vue_module_identifier__$2 = undefined;
     /* functional template */

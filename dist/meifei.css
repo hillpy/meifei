@@ -1,11 +1,68 @@
-.mf-navbar-wrapper[data-v-1bb73632] {
+.mf-loading-wrapper[data-v-191b5de8] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.mf-loading-wrapper .mf-loading-1[data-v-191b5de8] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1[data-v-191b5de8] {
+  width: 5px;
+  height: 8px;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0.5);
+  margin: 0 1px;
+  animation: mf-loading-bar-1-animation-data-v-191b5de8 0.4s ease-in infinite alternate;
+}
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-1[data-v-191b5de8] {
+  animation-delay: 0s;
+}
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-2[data-v-191b5de8] {
+  animation-delay: 0.1s;
+}
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-3[data-v-191b5de8] {
+  animation-delay: 0.2s;
+}
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-4[data-v-191b5de8] {
+  animation-delay: 0.3s;
+}
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-5[data-v-191b5de8] {
+  animation-delay: 0.4s;
+}
+@keyframes mf-loading-bar-1-animation-data-v-191b5de8 {
+from {
+    height: 8px;
+    background-color: rgba(255, 0, 0, 0.5);
+}
+to {
+    height: 30px;
+    background-color: rgba(255, 0, 0, 0.8);
+}
+}
+
+/*# sourceMappingURL=loading.vue.map */.title[data-v-222bbdc1] {
+  color: #f00;
+}
+
+/*# sourceMappingURL=demo.vue.map */.mf-navbar-wrapper[data-v-6105f4a9] {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 }
-.mf-navbar-wrapper .mf-navbar[data-v-1bb73632] {
+.mf-navbar-wrapper .mf-navbar[data-v-6105f4a9] {
   width: 100%;
   max-width: 100%;
   height: 45px;
@@ -20,7 +77,7 @@
   text-align: center;
   overflow: hidden;
 }
-.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-1bb73632] {
+.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-6105f4a9] {
   font-size: 1.6em;
   text-align: center;
   overflow: hidden;
@@ -28,22 +85,4 @@
   white-space: nowrap;
 }
 
-/*# sourceMappingURL=nav-bar.vue.map */.title[data-v-222bbdc1] {
-  color: #f00;
-}
-
-/*# sourceMappingURL=demo.vue.map */.mf-loading-wrapper[data-v-a81f1d38] {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2000;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-/*# sourceMappingURL=loading.vue.map */
+/*# sourceMappingURL=nav-bar.vue.map */
