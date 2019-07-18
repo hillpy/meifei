@@ -26,7 +26,7 @@
     },
     data () {
       return {
-        loadingData: this.createLoadingData(1, 5)
+        loadingData: this.createLoadingData(2, 5)
       }
     },
     computed: {
@@ -98,12 +98,41 @@
         }
       }
     }
+    & .#{$prefixCls}-2 {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-items: flex-end;
+      height: 30px;
+      & .#{$prefixCls}-bar-2 {
+        width: 5px;
+        height: 0;
+        background-color: rgba($color-theme, 0);
+        margin: 0 1px;
+        animation: #{$prefixCls}-bar-2-animation 0.5s ease-in-out infinite alternate;
+      }
+      @for $i from 1 through 5 {
+        & .#{$prefixCls}-bar-2-#{$i} {
+          animation-delay: #{($i - 1) * 0.1} + 's';
+        }
+      }
+    }
   }
 
   @keyframes #{$prefixCls}-bar-1-animation {
     from {
       height: 8px;
       background-color: rgba($color-theme, .5);
+    }
+    to {
+      height: 30px;
+      background-color: rgba($color-theme, .8);
+    }
+  }
+  @keyframes #{$prefixCls}-bar-2-animation {
+    from {
+      height: 0;
+      background-color: rgba($color-theme, 0);
     }
     to {
       height: 30px;

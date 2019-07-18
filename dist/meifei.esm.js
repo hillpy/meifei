@@ -263,7 +263,7 @@ var script$2 = {
 
   data() {
     return {
-      loadingData: this.createLoadingData(1, 5)
+      loadingData: this.createLoadingData(2, 5)
     };
   },
 
@@ -334,7 +334,7 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$2 = undefined;
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-191b5de8";
+  const __vue_scope_id__$2 = "data-v-526f4aa9";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */

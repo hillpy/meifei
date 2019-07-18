@@ -24,7 +24,7 @@
       let _this = this
       setTimeout(() => {
         _this.loading.show = false
-      }, 1500)
+      }, 3000)
     }
   }
 </script>
