@@ -31,3 +31,5 @@
 6. 使用vuepress编写文档（待定）
 
 7. 使用angular的git commit规范
+
+8. 使用netlify部署example，doc
