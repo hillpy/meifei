@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!-- <mf-nav-bar>
+    <mf-nav-bar>
       <template slot="title">
         这是一个导航组件，目前固定于顶部。
       </template>
-    </mf-nav-bar> -->
+    </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal"></mf-progress-bar>
   </div>
