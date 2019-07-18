@@ -10,7 +10,7 @@
   import utils from '../../utils/utils'
   import name from '../../common/name'
 
-  const prefixCls = name.libShortName + '-' + name.componentsName.loading.toLowerCase()
+  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase()
 
   export default {
     name: name.componentsName.loading,

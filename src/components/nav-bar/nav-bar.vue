@@ -9,7 +9,7 @@
 <script>
   import name from '../../common/name'
 
-  const prefixCls = name.libShortName + '-' + name.componentsName.navBar.toLowerCase()
+  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase()
 
   export default {
     name: name.componentsName.navBar,

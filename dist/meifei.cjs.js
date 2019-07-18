@@ -6,15 +6,16 @@
 'use strict';
 
 let name = {
-  libShortName: 'mf',
+  libShortName: 'Mf',
   componentsName: {
     navBar: 'NavBar',
-    loading: 'Loading'
+    loading: 'Loading',
+    progressBar: 'ProgressBar'
   }
 };
 
 //
-const prefixCls = name.libShortName + '-' + name.componentsName.navBar.toLowerCase();
+const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase();
 var script = {
   name: name.componentsName.navBar,
   props: {},
@@ -147,7 +148,7 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = "data-v-6105f4a9";
+  const __vue_scope_id__ = "data-v-d28749c0";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -197,7 +198,7 @@ class utils {
 }
 
 //
-const prefixCls$1 = name.libShortName + '-' + name.componentsName.loading.toLowerCase();
+const prefixCls$1 = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase();
 var script$1 = {
   name: name.componentsName.loading,
   props: {
@@ -284,7 +285,7 @@ __vue_render__$1._withStripped = true;
   /* style */
   const __vue_inject_styles__$1 = undefined;
   /* scoped */
-  const __vue_scope_id__$1 = "data-v-526f4aa9";
+  const __vue_scope_id__$1 = "data-v-e79b21c0";
   /* module identifier */
   const __vue_module_identifier__$1 = undefined;
   /* functional template */
@@ -306,15 +307,74 @@ __vue_render__$1._withStripped = true;
     undefined
   );
 
+//
+var script$2 = {
+  name: name.componentsName.progressBar,
+  props: {},
+
+  data() {
+    return {};
+  },
+
+  watch: {},
+  computed: {},
+  methods: {},
+
+  created() {},
+
+  mounted() {}
+
+};
+
+/* script */
+const __vue_script__$2 = script$2;
+/* template */
+var __vue_render__$2 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("div")
+};
+var __vue_staticRenderFns__$2 = [];
+__vue_render__$2._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$2 = undefined;
+  /* scoped */
+  const __vue_scope_id__$2 = "data-v-1b42869e";
+  /* module identifier */
+  const __vue_module_identifier__$2 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$2 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var ProgressBar = normalizeComponent_1(
+    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
+    __vue_inject_styles__$2,
+    __vue_script__$2,
+    __vue_scope_id__$2,
+    __vue_is_functional_template__$2,
+    __vue_module_identifier__$2,
+    undefined,
+    undefined
+  );
+
 const components = {
   NavBar,
-  Loading
+  Loading,
+  ProgressBar
 };
+const prefixComponent = '';
+prefixComponent = name.libShortName;
 
 const install = function (Vue, ops = {}) {
   if (install.installed) return;
   Object.keys(components).forEach(key => {
-    Vue.component(components[key].name, components[key]);
+    Vue.component(prefixComponent + components[key].name, components[key]);
   });
 };
 

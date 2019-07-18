@@ -3,8 +3,10 @@
 $libShortName: 'mf';
 $classNameMap: (
   navBar: 'navbar',
-  loading: 'loading'
+  loading: 'loading',
+  progressBar: 'progressbar'
 );
 
 $navBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'navBar');
 $loadingPrefixCls: $libShortName + '-' + map-get($classNameMap, 'loading');
+$progressBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'progressBar');
