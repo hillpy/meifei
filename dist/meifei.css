@@ -1,25 +1,11 @@
-.mf-progressbar-wrapper[data-v-374a742e] {
+.mf-navbar-wrapper[data-v-5389fbbc] {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 }
-.mf-progressbar-wrapper .mf-progressbar[data-v-374a742e] {
-  width: 0;
-  height: 2px;
-  background-color: #f00;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
-}
-
-/*# sourceMappingURL=progress-bar.vue.map */.mf-navbar-wrapper[data-v-d28749c0] {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-.mf-navbar-wrapper .mf-navbar[data-v-d28749c0] {
+.mf-navbar-wrapper .mf-navbar[data-v-5389fbbc] {
   width: 100%;
   max-width: 100%;
   height: 45px;
@@ -34,7 +20,7 @@
   text-align: center;
   overflow: hidden;
 }
-.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-d28749c0] {
+.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-5389fbbc] {
   font-size: 1.6em;
   text-align: center;
   overflow: hidden;
@@ -42,7 +28,7 @@
   white-space: nowrap;
 }
 
-/*# sourceMappingURL=nav-bar.vue.map */.mf-loading-wrapper[data-v-e79b21c0] {
+/*# sourceMappingURL=nav-bar.vue.map */.mf-loading-wrapper[data-v-c35b8cbc] {
   position: fixed;
   top: 0;
   right: 0;
@@ -55,65 +41,65 @@
   align-items: center;
   background-color: rgba(255, 255, 255, 0.5);
 }
-.mf-loading-wrapper .mf-loading-1[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1[data-v-c35b8cbc] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
 }
-.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1[data-v-c35b8cbc] {
   width: 5px;
   height: 8px;
   border-radius: 5px;
   background-color: rgba(255, 0, 0, 0.5);
   margin: 0 1px;
-  animation: mf-loading-bar-1-animation-data-v-e79b21c0 0.4s ease-in infinite alternate;
+  animation: mf-loading-bar-1-animation-data-v-c35b8cbc 0.4s ease-in infinite alternate;
 }
-.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-1[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-1[data-v-c35b8cbc] {
   animation-delay: 0s;
 }
-.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-2[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-2[data-v-c35b8cbc] {
   animation-delay: 0.1s;
 }
-.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-3[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-3[data-v-c35b8cbc] {
   animation-delay: 0.2s;
 }
-.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-4[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-4[data-v-c35b8cbc] {
   animation-delay: 0.3s;
 }
-.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-5[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-1 .mf-loading-bar-1-5[data-v-c35b8cbc] {
   animation-delay: 0.4s;
 }
-.mf-loading-wrapper .mf-loading-2[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2[data-v-c35b8cbc] {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: flex-end;
   height: 30px;
 }
-.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2[data-v-c35b8cbc] {
   width: 5px;
   height: 0;
   background-color: rgba(255, 0, 0, 0);
   margin: 0 1px;
-  animation: mf-loading-bar-2-animation-data-v-e79b21c0 0.5s ease-in-out infinite alternate;
+  animation: mf-loading-bar-2-animation-data-v-c35b8cbc 0.5s ease-in-out infinite alternate;
 }
-.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-1[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-1[data-v-c35b8cbc] {
   animation-delay: 0s;
 }
-.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-2[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-2[data-v-c35b8cbc] {
   animation-delay: 0.1s;
 }
-.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-3[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-3[data-v-c35b8cbc] {
   animation-delay: 0.2s;
 }
-.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-4[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-4[data-v-c35b8cbc] {
   animation-delay: 0.3s;
 }
-.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-5[data-v-e79b21c0] {
+.mf-loading-wrapper .mf-loading-2 .mf-loading-bar-2-5[data-v-c35b8cbc] {
   animation-delay: 0.4s;
 }
-@keyframes mf-loading-bar-1-animation-data-v-e79b21c0 {
+@keyframes mf-loading-bar-1-animation-data-v-c35b8cbc {
 from {
     height: 8px;
     background-color: rgba(255, 0, 0, 0.5);
@@ -123,7 +109,7 @@ to {
     background-color: rgba(255, 0, 0, 0.8);
 }
 }
-@keyframes mf-loading-bar-2-animation-data-v-e79b21c0 {
+@keyframes mf-loading-bar-2-animation-data-v-c35b8cbc {
 from {
     height: 0;
     background-color: rgba(255, 0, 0, 0);
@@ -134,4 +120,18 @@ to {
 }
 }
 
-/*# sourceMappingURL=loading.vue.map */
+/*# sourceMappingURL=loading.vue.map */.mf-progressbar-wrapper[data-v-9daaa660] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.mf-progressbar-wrapper .mf-progressbar[data-v-9daaa660] {
+  width: 0;
+  height: 2px;
+  background-color: #f00;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+/*# sourceMappingURL=progress-bar.vue.map */

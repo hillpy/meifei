@@ -152,7 +152,7 @@
     /* style */
     const __vue_inject_styles__ = undefined;
     /* scoped */
-    const __vue_scope_id__ = "data-v-d28749c0";
+    const __vue_scope_id__ = "data-v-5389fbbc";
     /* module identifier */
     const __vue_module_identifier__ = undefined;
     /* functional template */
@@ -289,7 +289,7 @@
     /* style */
     const __vue_inject_styles__$1 = undefined;
     /* scoped */
-    const __vue_scope_id__$1 = "data-v-e79b21c0";
+    const __vue_scope_id__$1 = "data-v-c35b8cbc";
     /* module identifier */
     const __vue_module_identifier__$1 = undefined;
     /* functional template */
@@ -319,13 +319,31 @@
       decimal: {
         type: Number,
         default: 0
+      },
+      position: {
+        type: String,
+        default: 'top'
+      },
+      loadedHide: {
+        type: Boolean,
+        default: true
       }
     },
 
     data() {
-      return {};
+      return {
+        hide: false
+      };
     },
 
+    watch: {
+      decimal(val) {
+        if (val >= 1 && this.loadedHide === true) {
+          this.hide = true;
+        }
+      }
+
+    },
     computed: {
       wrapperClasses() {
         return `${prefixCls$2}` + '-wrapper';
@@ -335,10 +353,21 @@
         return `${prefixCls$2}`;
       },
 
+      wrapperStyles() {
+        let position = '';
+        let positionArr = ['top', 'bottom'];
+        let positionStyle = {
+          top: 'top: 0; bottom: auto;',
+          bottom: 'top: auto; bottom: 0;'
+        };
+        position = positionArr.indexOf(this.position) === -1 ? 'top' : this.position;
+        return positionStyle[position];
+      },
+
       barStyles() {
         let decimal = 0;
         decimal = this.decimal > 1 ? 1 : this.decimal;
-        return 'width: ' + decimal * 100 + '%';
+        return 'width: ' + decimal * 100 + '%;';
       }
 
     }
@@ -351,9 +380,22 @@
     var _vm = this;
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
-    return _c("div", { class: _vm.wrapperClasses }, [
-      _c("div", { class: _vm.barClasses, style: _vm.barStyles })
-    ])
+    return _c(
+      "div",
+      {
+        directives: [
+          {
+            name: "show",
+            rawName: "v-show",
+            value: !_vm.hide,
+            expression: "!hide"
+          }
+        ],
+        class: _vm.wrapperClasses,
+        style: _vm.wrapperStyles
+      },
+      [_c("div", { class: _vm.barClasses, style: _vm.barStyles })]
+    )
   };
   var __vue_staticRenderFns__$2 = [];
   __vue_render__$2._withStripped = true;
@@ -361,7 +403,7 @@
     /* style */
     const __vue_inject_styles__$2 = undefined;
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-374a742e";
+    const __vue_scope_id__$2 = "data-v-9daaa660";
     /* module identifier */
     const __vue_module_identifier__$2 = undefined;
     /* functional template */

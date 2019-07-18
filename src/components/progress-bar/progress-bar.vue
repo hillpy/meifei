@@ -1,5 +1,5 @@
 <template>
-  <div :class="wrapperClasses">
+  <div :class="wrapperClasses" :style="wrapperStyles" v-show="!hide">
     <div :class="barClasses" :style="barStyles"></div>
   </div>
 </template>
@@ -15,10 +15,26 @@
       decimal: {
         type: Number,
         default: 0
+      },
+      position: {
+        type: String,
+        default: 'top'
+      },
+      loadedHide: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
       return {
+        hide: false
+      }
+    },
+    watch: {
+      decimal (val) {
+        if (val >= 1 && this.loadedHide === true) {
+          this.hide = true
+        }
       }
     },
     computed: {
@@ -28,10 +44,20 @@
       barClasses () {
         return `${prefixCls}`
       },
+      wrapperStyles () {
+        let position = ''
+        let positionArr = ['top', 'bottom']
+        let positionStyle = {
+          top: 'top: 0; bottom: auto;',
+          bottom: 'top: auto; bottom: 0;'
+        }
+        position = positionArr.indexOf(this.position) === -1 ? 'top' : this.position
+        return positionStyle[position]
+      },
       barStyles () {
         let decimal = 0
         decimal = this.decimal > 1 ? 1 : this.decimal
-        return 'width: ' + (decimal * 100) + '%'
+        return 'width: ' + (decimal * 100) + '%;'
       }
     }
   }
