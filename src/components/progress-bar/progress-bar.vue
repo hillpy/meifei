@@ -47,11 +47,11 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: $color-light;
     & .#{$prefixCls} {
       width: 0;
       height: 2px;
       background-color: $color-theme;
+      box-shadow: 0 0 5px rgba($color-theme, .7);
     }
   }
 </style>

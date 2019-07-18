@@ -1,18 +1,48 @@
-.mf-progressbar-wrapper[data-v-74f34e78] {
+.mf-progressbar-wrapper[data-v-374a742e] {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #fff;
 }
-.mf-progressbar-wrapper .mf-progressbar[data-v-74f34e78] {
+.mf-progressbar-wrapper .mf-progressbar[data-v-374a742e] {
   width: 0;
   height: 2px;
   background-color: #f00;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
 }
 
-/*# sourceMappingURL=progress-bar.vue.map */.mf-loading-wrapper[data-v-e79b21c0] {
+/*# sourceMappingURL=progress-bar.vue.map */.mf-navbar-wrapper[data-v-d28749c0] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+.mf-navbar-wrapper .mf-navbar[data-v-d28749c0] {
+  width: 100%;
+  max-width: 100%;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 45px;
+  box-sizing: border-box;
+  background: #f00;
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  overflow: hidden;
+}
+.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-d28749c0] {
+  font-size: 1.6em;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*# sourceMappingURL=nav-bar.vue.map */.mf-loading-wrapper[data-v-e79b21c0] {
   position: fixed;
   top: 0;
   right: 0;
@@ -104,34 +134,4 @@ to {
 }
 }
 
-/*# sourceMappingURL=loading.vue.map */.mf-navbar-wrapper[data-v-d28749c0] {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-}
-.mf-navbar-wrapper .mf-navbar[data-v-d28749c0] {
-  width: 100%;
-  max-width: 100%;
-  height: 45px;
-  line-height: 45px;
-  position: relative;
-  margin: 0 auto;
-  padding: 0 45px;
-  box-sizing: border-box;
-  background: #f00;
-  color: #fff;
-  font-size: 10px;
-  text-align: center;
-  overflow: hidden;
-}
-.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-d28749c0] {
-  font-size: 1.6em;
-  text-align: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/*# sourceMappingURL=nav-bar.vue.map */
+/*# sourceMappingURL=loading.vue.map */
