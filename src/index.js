@@ -1,9 +1,7 @@
-import Demo from './components/demo'
 import NavBar from './components/nav-bar'
 import Loading from './components/loading'
 
 const components = {
-  Demo,
   NavBar,
   Loading
 }

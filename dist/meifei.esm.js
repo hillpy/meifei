@@ -3,18 +3,41 @@
  * (c) 2019-2019 shinn_lancelot
  * Released under the MIT License.
  */
+let name = {
+  libShortName: 'mf',
+  componentsName: {
+    navBar: 'NavBar',
+    loading: 'Loading'
+  }
+};
+
 //
-//
-//
-//
+const prefixCls = name.libShortName + '-' + name.componentsName.navBar.toLowerCase();
 var script = {
-  name: 'Demo',
+  name: name.componentsName.navBar,
+  props: {},
 
   data() {
-    return {
-      message: 'This is a demo component.'
-    };
-  }
+    return {};
+  },
+
+  computed: {
+    wrapperClasses() {
+      return `${prefixCls}` + '-wrapper';
+    },
+
+    barClasses() {
+      return `${prefixCls}`;
+    },
+
+    titleClasses() {
+      return `${prefixCls}` + '-title';
+    }
+
+  },
+  methods: {},
+
+  mounted() {}
 
 };
 
@@ -110,7 +133,11 @@ var __vue_render__ = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
-  return _c("div", { staticClass: "title" }, [_vm._v(_vm._s(_vm.message))])
+  return _c("div", { class: _vm.wrapperClasses }, [
+    _c("div", { class: _vm.barClasses }, [
+      _c("div", { class: _vm.titleClasses }, [_vm._t("title")], 2)
+    ])
+  ])
 };
 var __vue_staticRenderFns__ = [];
 __vue_render__._withStripped = true;
@@ -118,7 +145,7 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = "data-v-222bbdc1";
+  const __vue_scope_id__ = "data-v-6105f4a9";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -129,92 +156,13 @@ __vue_render__._withStripped = true;
   
 
   
-  var Demo = normalizeComponent_1(
+  var NavBar = normalizeComponent_1(
     { render: __vue_render__, staticRenderFns: __vue_staticRenderFns__ },
     __vue_inject_styles__,
     __vue_script__,
     __vue_scope_id__,
     __vue_is_functional_template__,
     __vue_module_identifier__,
-    undefined,
-    undefined
-  );
-
-let name = {
-  libShortName: 'mf',
-  componentsName: {
-    navBar: 'NavBar',
-    loading: 'Loading'
-  }
-};
-
-//
-const prefixCls = name.libShortName + '-' + name.componentsName.navBar.toLowerCase();
-var script$1 = {
-  name: name.componentsName.navBar,
-  props: {},
-
-  data() {
-    return {};
-  },
-
-  computed: {
-    wrapperClasses() {
-      return `${prefixCls}` + '-wrapper';
-    },
-
-    barClasses() {
-      return `${prefixCls}`;
-    },
-
-    titleClasses() {
-      return `${prefixCls}` + '-title';
-    }
-
-  },
-  methods: {},
-
-  mounted() {}
-
-};
-
-/* script */
-const __vue_script__$1 = script$1;
-/* template */
-var __vue_render__$1 = function() {
-  var _vm = this;
-  var _h = _vm.$createElement;
-  var _c = _vm._self._c || _h;
-  return _c("div", { class: _vm.wrapperClasses }, [
-    _c("div", { class: _vm.barClasses }, [
-      _c("div", { class: _vm.titleClasses }, [_vm._t("title")], 2)
-    ])
-  ])
-};
-var __vue_staticRenderFns__$1 = [];
-__vue_render__$1._withStripped = true;
-
-  /* style */
-  const __vue_inject_styles__$1 = undefined;
-  /* scoped */
-  const __vue_scope_id__$1 = "data-v-6105f4a9";
-  /* module identifier */
-  const __vue_module_identifier__$1 = undefined;
-  /* functional template */
-  const __vue_is_functional_template__$1 = false;
-  /* style inject */
-  
-  /* style inject SSR */
-  
-
-  
-  var NavBar = normalizeComponent_1(
-    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
-    __vue_inject_styles__$1,
-    __vue_script__$1,
-    __vue_scope_id__$1,
-    __vue_is_functional_template__$1,
-    __vue_module_identifier__$1,
     undefined,
     undefined
   );
@@ -248,7 +196,7 @@ class utils {
 
 //
 const prefixCls$1 = name.libShortName + '-' + name.componentsName.loading.toLowerCase();
-var script$2 = {
+var script$1 = {
   name: name.componentsName.loading,
   props: {
     show: {
@@ -299,9 +247,9 @@ var script$2 = {
 };
 
 /* script */
-const __vue_script__$2 = script$2;
+const __vue_script__$1 = script$1;
 /* template */
-var __vue_render__$2 = function() {
+var __vue_render__$1 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -328,17 +276,17 @@ var __vue_render__$2 = function() {
     0
   )
 };
-var __vue_staticRenderFns__$2 = [];
-__vue_render__$2._withStripped = true;
+var __vue_staticRenderFns__$1 = [];
+__vue_render__$1._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$2 = undefined;
+  const __vue_inject_styles__$1 = undefined;
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-526f4aa9";
+  const __vue_scope_id__$1 = "data-v-526f4aa9";
   /* module identifier */
-  const __vue_module_identifier__$2 = undefined;
+  const __vue_module_identifier__$1 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$2 = false;
+  const __vue_is_functional_template__$1 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -346,18 +294,17 @@ __vue_render__$2._withStripped = true;
 
   
   var Loading = normalizeComponent_1(
-    { render: __vue_render__$2, staticRenderFns: __vue_staticRenderFns__$2 },
-    __vue_inject_styles__$2,
-    __vue_script__$2,
-    __vue_scope_id__$2,
-    __vue_is_functional_template__$2,
-    __vue_module_identifier__$2,
+    { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+    __vue_inject_styles__$1,
+    __vue_script__$1,
+    __vue_scope_id__$1,
+    __vue_is_functional_template__$1,
+    __vue_module_identifier__$1,
     undefined,
     undefined
   );
 
 const components = {
-  Demo,
   NavBar,
   Loading
 };
