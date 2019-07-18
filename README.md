@@ -33,3 +33,5 @@
 7. 使用angular的git commit规范
 
 8. 使用netlify部署example，doc
+
+9. 添加.npmignore，用户发布npm时，忽略部分文件目录
