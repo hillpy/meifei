@@ -6,12 +6,11 @@
       </template>
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
-    <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
+    <mf-progress-bar :decimal="progress.decimal" :position="progress.position" :showTip="progress.showTip"></mf-progress-bar>
   </div>
 </template>
 
 <script>
-import { clearInterval } from 'timers';
   export default {
     name: 'App',
     data () {
@@ -22,7 +21,8 @@ import { clearInterval } from 'timers';
         },
         progress: {
           decimal: 0,
-          position: 'bottom'
+          position: 'bottom',
+          showTip: true
         }
       }
     },
@@ -36,7 +36,7 @@ import { clearInterval } from 'timers';
         _this.progress.decimal += 0.01
         if (_this.progress.decimal >= 1) {
           _this.progress.decimal = 1
-          window.clearInterval(decimalIntervalIndex)
+          clearInterval(decimalIntervalIndex)
         }
       }, 10)
     }

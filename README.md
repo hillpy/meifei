@@ -12,9 +12,13 @@
 
 ~~2. loading~~
 
-3. progress-bar
+~~3. progress-bar~~
 
 4. tab-bar
+
+5. icon
+
+6. alert
 
 #### TODO
 

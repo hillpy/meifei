@@ -120,18 +120,23 @@ to {
 }
 }
 
-/*# sourceMappingURL=loading.vue.map */.mf-progressbar-wrapper[data-v-9daaa660] {
+/*# sourceMappingURL=loading.vue.map */.mf-progressbar-wrapper[data-v-51f196ea] {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 }
-.mf-progressbar-wrapper .mf-progressbar[data-v-9daaa660] {
+.mf-progressbar-wrapper .mf-progressbar[data-v-51f196ea] {
   width: 0;
   height: 2px;
   background-color: #f00;
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+.mf-progressbar-wrapper .mf-progressbar-tip[data-v-51f196ea] {
+  background: #000;
+  color: #fff;
+  padding: 6px;
 }
 
 /*# sourceMappingURL=progress-bar.vue.map */

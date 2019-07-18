@@ -320,21 +320,26 @@ var script$2 = {
       type: String,
       default: 'top'
     },
-    loadedHide: {
+    endedHide: {
       type: Boolean,
       default: true
+    },
+    showTip: {
+      type: Boolean,
+      default: false
     }
   },
 
   data() {
     return {
-      hide: false
+      hide: false,
+      percentDecimal: '0%'
     };
   },
 
   watch: {
     decimal(val) {
-      if (val >= 1 && this.loadedHide === true) {
+      if (val >= 1 && this.endedHide === true) {
         this.hide = true;
       }
     }
@@ -347,6 +352,10 @@ var script$2 = {
 
     barClasses() {
       return `${prefixCls$2}`;
+    },
+
+    tipClasses() {
+      return `${prefixCls$2}` + '-tip';
     },
 
     wrapperStyles() {
@@ -363,7 +372,8 @@ var script$2 = {
     barStyles() {
       let decimal = 0;
       decimal = this.decimal > 1 ? 1 : this.decimal;
-      return 'width: ' + decimal * 100 + '%;';
+      this.percentDecimal = decimal * 100 + '%';
+      return 'width: ' + this.percentDecimal + ';';
     }
 
   }
@@ -390,7 +400,15 @@ var __vue_render__$2 = function() {
       class: _vm.wrapperClasses,
       style: _vm.wrapperStyles
     },
-    [_c("div", { class: _vm.barClasses, style: _vm.barStyles })]
+    [
+      _c("div", { class: _vm.barClasses, style: _vm.barStyles }),
+      _vm._v(" "),
+      _vm.showTip
+        ? _c("span", { class: _vm.tipClasses }, [
+            _vm._v(_vm._s(_vm.percentDecimal))
+          ])
+        : _vm._e()
+    ]
   )
 };
 var __vue_staticRenderFns__$2 = [];
@@ -399,7 +417,7 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$2 = undefined;
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-9daaa660";
+  const __vue_scope_id__$2 = "data-v-51f196ea";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */
