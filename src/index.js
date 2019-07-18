@@ -10,7 +10,7 @@ const components = {
   ProgressBar
 }
 
-const prefixComponent = ''
+let prefixComponent = ''
 
 prefixComponent = name.libShortName
 

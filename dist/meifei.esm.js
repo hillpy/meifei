@@ -366,7 +366,7 @@ const components = {
   Loading,
   ProgressBar
 };
-const prefixComponent = '';
+let prefixComponent = '';
 prefixComponent = name.libShortName;
 
 const install = function (Vue, ops = {}) {
