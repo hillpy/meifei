@@ -1,7 +1,6 @@
 <template>
   <div :class="wrapperClasses" :style="wrapperStyles" v-show="!hide">
     <div :class="barClasses" :style="barStyles"></div>
-    <span :class="tipClasses" v-if="showTip">{{ percentDecimal }}</span>
   </div>
 </template>
 
@@ -24,16 +23,11 @@
       endedHide: {
         type: Boolean,
         default: true
-      },
-      showTip: {
-        type: Boolean,
-        default: false
       }
     },
     data () {
       return {
-        hide: false,
-        percentDecimal: '0%'
+        hide: false
       }
     },
     watch: {
@@ -50,9 +44,6 @@
       barClasses () {
         return `${prefixCls}`
       },
-      tipClasses () {
-        return `${prefixCls}` + '-tip'
-      },
       wrapperStyles () {
         let position = ''
         let positionArr = ['top', 'bottom']
@@ -66,7 +57,11 @@
       barStyles () {
         let decimal = 0
         decimal = this.decimal > 1 ? 1 : this.decimal
-        this.percentDecimal = (decimal * 100) + '%'
+        decimal = (decimal * 100).toFixed(2)
+        if (decimal.indexOf('.00') != -1) {
+          decimal = decimal.replace(/\.00/g, '')
+        }
+        this.percentDecimal = decimal + '%'
         return 'width: ' + this.percentDecimal + ';'
       }
     }
@@ -83,16 +78,12 @@
     left: 0;
     right: 0;
     z-index: 1000;
+    font-size: $font-size-root;
     & .#{$prefixCls} {
       width: 0;
       height: 2px;
       background-color: $color-theme;
       box-shadow: 0 0 5px rgba($color-theme, .7);
-    }
-    & .#{$prefixCls}-tip {
-      background: $color-default;
-      color: $color-light;
-      padding: $distance-x-small;
     }
   }
 </style>

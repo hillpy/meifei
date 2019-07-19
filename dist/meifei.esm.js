@@ -146,7 +146,7 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = "data-v-5389fbbc";
+  const __vue_scope_id__ = "data-v-d28749c0";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -283,7 +283,7 @@ __vue_render__$1._withStripped = true;
   /* style */
   const __vue_inject_styles__$1 = undefined;
   /* scoped */
-  const __vue_scope_id__$1 = "data-v-c35b8cbc";
+  const __vue_scope_id__$1 = "data-v-e79b21c0";
   /* module identifier */
   const __vue_module_identifier__$1 = undefined;
   /* functional template */
@@ -321,17 +321,12 @@ var script$2 = {
     endedHide: {
       type: Boolean,
       default: true
-    },
-    showTip: {
-      type: Boolean,
-      default: false
     }
   },
 
   data() {
     return {
-      hide: false,
-      percentDecimal: '0%'
+      hide: false
     };
   },
 
@@ -352,10 +347,6 @@ var script$2 = {
       return `${prefixCls$2}`;
     },
 
-    tipClasses() {
-      return `${prefixCls$2}` + '-tip';
-    },
-
     wrapperStyles() {
       let position = '';
       let positionArr = ['top', 'bottom'];
@@ -370,7 +361,13 @@ var script$2 = {
     barStyles() {
       let decimal = 0;
       decimal = this.decimal > 1 ? 1 : this.decimal;
-      this.percentDecimal = decimal * 100 + '%';
+      decimal = (decimal * 100).toFixed(2);
+
+      if (decimal.indexOf('.00') != -1) {
+        decimal = decimal.replace(/\.00/g, '');
+      }
+
+      this.percentDecimal = decimal + '%';
       return 'width: ' + this.percentDecimal + ';';
     }
 
@@ -398,15 +395,7 @@ var __vue_render__$2 = function() {
       class: _vm.wrapperClasses,
       style: _vm.wrapperStyles
     },
-    [
-      _c("div", { class: _vm.barClasses, style: _vm.barStyles }),
-      _vm._v(" "),
-      _vm.showTip
-        ? _c("span", { class: _vm.tipClasses }, [
-            _vm._v(_vm._s(_vm.percentDecimal))
-          ])
-        : _vm._e()
-    ]
+    [_c("div", { class: _vm.barClasses, style: _vm.barStyles })]
   )
 };
 var __vue_staticRenderFns__$2 = [];
@@ -415,7 +404,7 @@ __vue_render__$2._withStripped = true;
   /* style */
   const __vue_inject_styles__$2 = undefined;
   /* scoped */
-  const __vue_scope_id__$2 = "data-v-51f196ea";
+  const __vue_scope_id__$2 = "data-v-09003122";
   /* module identifier */
   const __vue_module_identifier__$2 = undefined;
   /* functional template */
