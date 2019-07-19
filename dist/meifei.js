@@ -14,7 +14,8 @@
     componentsName: {
       navBar: 'NavBar',
       loading: 'Loading',
-      progressBar: 'ProgressBar'
+      progressBar: 'ProgressBar',
+      icon: 'Icon'
     }
   };
 
@@ -432,10 +433,95 @@
       undefined
     );
 
+  //
+  const prefixCls$3 = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase();
+  var script$3 = {
+    name: name.componentsName.icon,
+    props: {
+      name: {
+        type: String,
+        default: ''
+      },
+      size: {
+        type: String,
+        default: 'medium'
+      }
+    },
+
+    data() {
+      return {};
+    },
+
+    watch: {},
+    computed: {
+      classes() {
+        return [`${prefixCls$3}`, `${prefixCls$3}` + '-' + this.name];
+      },
+
+      styles() {
+        return '';
+      }
+
+    },
+    methods: {
+      handleClick(e) {
+        this.$emit('click', e);
+      }
+
+    },
+
+    created() {},
+
+    mounted() {}
+
+  };
+
+  /* script */
+  const __vue_script__$3 = script$3;
+  /* template */
+  var __vue_render__$3 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("i", {
+      class: _vm.classes,
+      style: _vm.styles,
+      on: { click: _vm.handleClick }
+    })
+  };
+  var __vue_staticRenderFns__$3 = [];
+  __vue_render__$3._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$3 = undefined;
+    /* scoped */
+    const __vue_scope_id__$3 = "data-v-107fe965";
+    /* module identifier */
+    const __vue_module_identifier__$3 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$3 = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+
+    
+    var Icon = normalizeComponent_1(
+      { render: __vue_render__$3, staticRenderFns: __vue_staticRenderFns__$3 },
+      __vue_inject_styles__$3,
+      __vue_script__$3,
+      __vue_scope_id__$3,
+      __vue_is_functional_template__$3,
+      __vue_module_identifier__$3,
+      undefined,
+      undefined
+    );
+
   const components = {
     NavBar,
     Loading,
-    ProgressBar
+    ProgressBar,
+    Icon
   };
   let prefixComponent = '';
   prefixComponent = name.libShortName;

@@ -3,7 +3,8 @@ let name = {
   componentsName: {
     navBar: 'NavBar',
     loading: 'Loading',
-    progressBar: 'ProgressBar'
+    progressBar: 'ProgressBar',
+    icon: 'Icon'
   }
 }
 

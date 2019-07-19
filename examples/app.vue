@@ -6,7 +6,8 @@
       </template>
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
-    <mf-progress-bar :decimal="progress.decimal" :position="progress.position" :showTip="progress.showTip"></mf-progress-bar>
+    <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
+    <mf-icon :name="icon.name"></mf-icon>
   </div>
 </template>
 
@@ -23,6 +24,9 @@
           decimal: 0,
           position: 'bottom',
           showTip: true
+        },
+        icon: {
+          name: 'back'
         }
       }
     },

@@ -2,12 +2,14 @@ import name from './common/name'
 import NavBar from './components/nav-bar'
 import Loading from './components/loading'
 import ProgressBar from './components/progress-bar'
+import Icon from './components/icon'
 
 
 const components = {
   NavBar,
   Loading,
-  ProgressBar
+  ProgressBar,
+  Icon
 }
 
 let prefixComponent = ''
