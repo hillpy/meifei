@@ -15,7 +15,8 @@
       navBar: 'NavBar',
       loading: 'Loading',
       progressBar: 'ProgressBar',
-      icon: 'Icon'
+      icon: 'Icon',
+      button: 'Button'
     }
   };
 
@@ -650,11 +651,95 @@
       undefined
     );
 
+  //
+  const prefixCls$4 = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase();
+  var script$4 = {
+    name: name.componentsName.button,
+    components: {
+      Icon
+    },
+    props: {
+      title: {
+        type: String,
+        default: ''
+      }
+    },
+
+    data() {
+      return {};
+    },
+
+    watch: {},
+    computed: {
+      wrapperClasses() {
+        return `${prefixCls$4}` + '-wrapper';
+      },
+
+      titleClasses() {
+        return `${prefixCls$4}` + '-title';
+      }
+
+    },
+    methods: {
+      handleClick(e) {
+        this.$emit('buttonClick', e);
+      }
+
+    },
+
+    created() {},
+
+    mounted() {}
+
+  };
+
+  /* script */
+  const __vue_script__$4 = script$4;
+  /* template */
+  var __vue_render__$4 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      { class: _vm.wrapperClasses, on: { click: _vm.handleClick } },
+      [_c("div", { class: _vm.titleClasses }, [_vm._v(_vm._s(_vm.title))])]
+    )
+  };
+  var __vue_staticRenderFns__$4 = [];
+  __vue_render__$4._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$4 = undefined;
+    /* scoped */
+    const __vue_scope_id__$4 = "data-v-fb6b98e0";
+    /* module identifier */
+    const __vue_module_identifier__$4 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$4 = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+
+    
+    var Button = normalizeComponent_1(
+      { render: __vue_render__$4, staticRenderFns: __vue_staticRenderFns__$4 },
+      __vue_inject_styles__$4,
+      __vue_script__$4,
+      __vue_scope_id__$4,
+      __vue_is_functional_template__$4,
+      __vue_module_identifier__$4,
+      undefined,
+      undefined
+    );
+
   const components = {
     NavBar,
     Loading,
     ProgressBar,
-    Icon
+    Icon,
+    Button
   };
   let prefixComponent = '';
   prefixComponent = name.libShortName;

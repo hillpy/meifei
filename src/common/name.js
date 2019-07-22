@@ -4,7 +4,8 @@ let name = {
     navBar: 'NavBar',
     loading: 'Loading',
     progressBar: 'ProgressBar',
-    icon: 'Icon'
+    icon: 'Icon',
+    button: 'Button'
   }
 }
 

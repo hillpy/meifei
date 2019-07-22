@@ -7,6 +7,7 @@
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
+    <mf-button></mf-button>
   </div>
 </template>
 

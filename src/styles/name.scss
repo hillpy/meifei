@@ -5,7 +5,8 @@ $classNameMap: (
   navBar: 'navbar',
   loading: 'loading',
   progressBar: 'progressbar',
-  icon: 'icon'
+  icon: 'icon',
+  button: 'button'
 );
 
 $navBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'navBar');
