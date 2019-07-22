@@ -4,8 +4,35 @@
 
 <script>
   import name from '../../common/name'
+  import back from '../../assets/images/icons/back.png'
+  import menu from '../../assets/images/icons/menu.png'
 
   const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase()
+  const iconObj = {
+    back: back,
+    menu: menu
+  }
+  const positionObj = {
+    top: 'top',
+    right: 'right',
+    bottom: 'bottom',
+    left: 'left',
+    leftTop: ['left', 'top'],
+    rightTop: ['right', 'top'],
+    leftBottom: ['left', 'bottom'],
+    rightBottom: ['right', 'bottom']
+  }
+  const sizeObj = {
+    XXXSmall: '5px',
+    XXSmall: '10px',
+    XSmall: '15px',
+    small: '20px',
+    medium: '25px',
+    large: '30px',
+    XLarge: '35px',
+    XXLarge: '40px',
+    XXXLarge: '45px'
+  }
 
   export default {
     name: name.componentsName.icon,
@@ -14,34 +41,45 @@
         type: String,
         default: ''
       },
+      position: {
+        type: String,
+        default: ''
+      },
       size: {
         type: String,
-        default: 'medium'
+        default: 'XSmall'
       }
     },
-    data () {
-      return {
-      }
-    },
-    watch: {},
     computed: {
       classes () {
-        return [
-          `${prefixCls}`,
-          `${prefixCls}` + '-' + this.name
-        ]
+        return `${prefixCls}`
       },
       styles () {
-        return ''
+        let styles = ''
+        if (this.name && iconObj.hasOwnProperty(this.name)) {
+          styles += 'background-image: url(' + iconObj[this.name] + '); '
+        }
+        if (this.position && positionObj.hasOwnProperty(this.position)) {
+          styles += 'position: absolute; '
+          if (positionObj[this.position] instanceof Array) {
+            positionObj[this.position].map((item, key) => {
+              styles += item + ': 0; '
+            })
+          } else {
+            styles += positionObj[this.position] + ': 0; '
+          }
+        }
+        if (this.size && sizeObj.hasOwnProperty(this.size)) {
+          styles += 'width: ' + sizeObj[this.size] + '; height: ' + sizeObj[this.size] + '; '
+        }
+        return styles
       }
     },
     methods: {
       handleClick (e) {
-        this.$emit('click', e)
+        this.$emit('iconClick', e)
       }
-    },
-    created () {},
-    mounted () {}
+    }
   }
 </script>
 <style lang="scss" scoped>
@@ -49,18 +87,11 @@
 
   $prefixCls: $iconPrefixCls;
 
-  // $iconMap: (
-  //   back: '../../assets/images/icons/back.png',
-  //   menu: '../../assets/images/icons/menu.png'
-  // );
-
-  // .#{$prefixCls} {
-  //   background: url('../src/assets/images/icons/back.png');
-  // }
-
-  // @each $key, $value in $iconMap {
-  //   .#{$prefixCls}-#{$key} {
-  //     background: url('~/src/assets/images/icons/back.png');
-  //   }
-  // }
+  .#{$prefixCls} {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1000;
+  }
 </style>

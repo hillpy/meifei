@@ -1,21 +1,4 @@
-
-
-/*# sourceMappingURL=icon.vue.map */.mf-progressbar-wrapper[data-v-09003122] {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  font-size: 10px;
-}
-.mf-progressbar-wrapper .mf-progressbar[data-v-09003122] {
-  width: 0;
-  height: 2px;
-  background-color: #f00;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
-}
-
-/*# sourceMappingURL=progress-bar.vue.map */.mf-loading-wrapper[data-v-e79b21c0] {
+.mf-loading-wrapper[data-v-e79b21c0] {
   position: fixed;
   top: 0;
   right: 0;
@@ -107,21 +90,39 @@ to {
 }
 }
 
-/*# sourceMappingURL=loading.vue.map */.mf-navbar-wrapper[data-v-d28749c0] {
+/*# sourceMappingURL=loading.vue.map */.mf-progressbar-wrapper[data-v-09003122] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  font-size: 10px;
+}
+.mf-progressbar-wrapper .mf-progressbar[data-v-09003122] {
+  width: 0;
+  height: 2px;
+  background-color: #f00;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+/*# sourceMappingURL=progress-bar.vue.map */.mf-navbar-wrapper[data-v-77804046] {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
 }
-.mf-navbar-wrapper .mf-navbar[data-v-d28749c0] {
+.mf-navbar-wrapper .mf-navbar[data-v-77804046] {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 100%;
   height: 45px;
   line-height: 45px;
   position: relative;
   margin: 0 auto;
-  padding: 0 45px;
   box-sizing: border-box;
   background: #f00;
   color: #fff;
@@ -129,12 +130,29 @@ to {
   text-align: center;
   overflow: hidden;
 }
-.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-d28749c0] {
+.mf-navbar-wrapper .mf-navbar .mf-navbar-title[data-v-77804046] {
   font-size: 1.6em;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.mf-navbar-wrapper .mf-navbar .mf-navbar-icon-box[data-v-77804046] {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+}
 
-/*# sourceMappingURL=nav-bar.vue.map */
+/*# sourceMappingURL=nav-bar.vue.map */.mf-icon[data-v-093c3787] {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1000;
+}
+
+/*# sourceMappingURL=icon.vue.map */

@@ -6,6 +6,8 @@ import cssOnly from 'rollup-plugin-css-only'
 import cleanCss from 'clean-css'
 import { writeFileSync } from 'fs'
 import { terser } from 'rollup-plugin-terser'
+// import image from 'rollup-plugin-image'
+import img from 'rollup-plugin-img'
 import pkg from '../package.json'
 
 const production = !process.env.ROLLUP_WATCH
@@ -91,7 +93,9 @@ export default {
         )
       }
     }),
-    production && terser()
+    production && terser(),
+    // image(),
+    img()
   ],
   external: [
     'vue'

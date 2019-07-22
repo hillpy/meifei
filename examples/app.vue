@@ -1,13 +1,12 @@
 <template>
   <div>
-    <mf-nav-bar>
+    <mf-nav-bar :leftIcon="navBar.leftIcon" :rightIcon="navBar.rightIcon">
       <template slot="title">
         这是一个导航组件，目前固定于顶部。
       </template>
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
-    <mf-icon :name="icon.name"></mf-icon>
   </div>
 </template>
 
@@ -16,6 +15,20 @@
     name: 'App',
     data () {
       return {
+        navBar: {
+          leftIcon: {
+            name: 'back',
+            click: (e) => {
+              this.leftIconClick(e)
+            }
+          },
+          rightIcon: {
+            name: 'menu',
+            click: (e) => {
+              this.rightIconClick(e)
+            }
+          }
+        },
         loading: {
           show: true,
           type: 1
@@ -24,10 +37,15 @@
           decimal: 0,
           position: 'bottom',
           showTip: true
-        },
-        icon: {
-          name: 'back'
         }
+      }
+    },
+    methods: {
+      leftIconClick (e) {
+        console.log('leftIcon clicked')
+      },
+      rightIconClick (e) {
+        console.log('rightIcon clicked')
       }
     },
     mounted () {
