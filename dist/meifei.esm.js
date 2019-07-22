@@ -85,7 +85,7 @@ var script = {
       }
 
       if (this.size && sizeObj.hasOwnProperty(this.size)) {
-        styles += 'width: ' + sizeObj[this.size] + '; height: ' + sizeObj[this.size] + '; ';
+        styles += 'width: ' + sizeObj[this.size] + '; height: ' + sizeObj[this.size] + ';';
       }
 
       return styles;
@@ -204,7 +204,7 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = "data-v-093c3787";
+  const __vue_scope_id__ = "data-v-5d1ae7b2";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */

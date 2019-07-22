@@ -70,7 +70,7 @@
           }
         }
         if (this.size && sizeObj.hasOwnProperty(this.size)) {
-          styles += 'width: ' + sizeObj[this.size] + '; height: ' + sizeObj[this.size] + '; '
+          styles += 'width: ' + sizeObj[this.size] + '; height: ' + sizeObj[this.size] + ';'
         }
         return styles
       }
