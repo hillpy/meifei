@@ -42,10 +42,10 @@
     },
     methods: {
       leftIconClick (e) {
-        console.log('leftIcon clicked')
+        alert('leftIcon clicked')
       },
       rightIconClick (e) {
-        console.log('rightIcon clicked')
+        alert('rightIcon clicked')
       }
     },
     mounted () {
