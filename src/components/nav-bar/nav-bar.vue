@@ -1,6 +1,6 @@
 <template>
   <div :class="wrapperClasses">
-    <div :class="barClasses">
+    <div :class="barClasses" :style="barStyles">
       <div :class="iconBoxClasses">
         <icon :name="leftIcon.name" :position="leftIcon.position" :size="leftIcon.size" @iconClick="leftIcon.click"></icon>
       </div>
@@ -24,6 +24,10 @@
       Icon
     },
     props: {
+      maxWidth: {
+        type: String,
+        default: '750px'
+      },
       leftIcon: {
         type: Object,
         default: () => {
@@ -63,6 +67,13 @@
       },
       iconBoxClasses () {
         return `${prefixCls}` + '-icon-box'
+      },
+      barStyles () {
+        let styles = ''
+        if (this.maxWidth) {
+          styles += 'maxWidth: ' + this.maxWidth + ';'
+        }
+        return styles
       }
     }
   }
@@ -85,7 +96,6 @@
       justify-content: space-between;
       align-items: center;
       width: $width-default;
-      max-width: $width-default;
       height: $height-nav-bar;
       line-height: $height-nav-bar;
       position: relative;

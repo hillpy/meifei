@@ -240,6 +240,10 @@
       Icon
     },
     props: {
+      maxWidth: {
+        type: String,
+        default: '750px'
+      },
       leftIcon: {
         type: Object,
         default: () => {
@@ -278,6 +282,16 @@
 
       iconBoxClasses() {
         return `${prefixCls$1}` + '-icon-box';
+      },
+
+      barStyles() {
+        let styles = '';
+
+        if (this.maxWidth) {
+          styles += 'maxWidth: ' + this.maxWidth + ';';
+        }
+
+        return styles;
       }
 
     }
@@ -291,7 +305,7 @@
     var _h = _vm.$createElement;
     var _c = _vm._self._c || _h;
     return _c("div", { class: _vm.wrapperClasses }, [
-      _c("div", { class: _vm.barClasses }, [
+      _c("div", { class: _vm.barClasses, style: _vm.barStyles }, [
         _c(
           "div",
           { class: _vm.iconBoxClasses },
@@ -334,7 +348,7 @@
     /* style */
     const __vue_inject_styles__$1 = undefined;
     /* scoped */
-    const __vue_scope_id__$1 = "data-v-77804046";
+    const __vue_scope_id__$1 = "data-v-27b5ac97";
     /* module identifier */
     const __vue_module_identifier__$1 = undefined;
     /* functional template */

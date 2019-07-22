@@ -1,6 +1,6 @@
 <template>
   <div>
-    <mf-nav-bar :leftIcon="navBar.leftIcon" :rightIcon="navBar.rightIcon">
+    <mf-nav-bar :maxWidth="navBar.maxWidth" :leftIcon="navBar.leftIcon" :rightIcon="navBar.rightIcon">
       <template slot="title">
         这是一个导航组件，目前固定于顶部。
       </template>
@@ -16,6 +16,7 @@
     data () {
       return {
         navBar: {
+          maxWidth: '750px',
           leftIcon: {
             name: 'back',
             click: (e) => {
