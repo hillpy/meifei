@@ -523,6 +523,10 @@
       endedHide: {
         type: Boolean,
         default: true
+      },
+      maxWidth: {
+        type: String,
+        default: '750px'
       }
     },
 
@@ -545,6 +549,10 @@
         return `${prefixCls$3}` + '-wrapper';
       },
 
+      barBoxClasses() {
+        return `${prefixCls$3}` + '-box';
+      },
+
       barClasses() {
         return `${prefixCls$3}`;
       },
@@ -558,6 +566,16 @@
         };
         position = positionArr.indexOf(this.position) === -1 ? 'top' : this.position;
         return positionStyle[position];
+      },
+
+      barBoxStyles() {
+        let styles = '';
+
+        if (this.maxWidth) {
+          styles += 'maxWidth: ' + this.maxWidth + ';';
+        }
+
+        return styles;
       },
 
       barStyles() {
@@ -597,7 +615,11 @@
         class: _vm.wrapperClasses,
         style: _vm.wrapperStyles
       },
-      [_c("div", { class: _vm.barClasses, style: _vm.barStyles })]
+      [
+        _c("div", { class: _vm.barBoxClasses, style: _vm.barBoxStyles }, [
+          _c("div", { class: _vm.barClasses, style: _vm.barStyles })
+        ])
+      ]
     )
   };
   var __vue_staticRenderFns__$3 = [];
@@ -606,7 +628,7 @@
     /* style */
     const __vue_inject_styles__$3 = undefined;
     /* scoped */
-    const __vue_scope_id__$3 = "data-v-09003122";
+    const __vue_scope_id__$3 = "data-v-0c4e1241";
     /* module identifier */
     const __vue_module_identifier__$3 = undefined;
     /* functional template */

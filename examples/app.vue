@@ -37,7 +37,8 @@
         progress: {
           decimal: 0,
           position: 'bottom',
-          showTip: true
+          showTip: true,
+          maxWidth: '750px'
         }
       }
     },

@@ -1,6 +1,8 @@
 <template>
   <div :class="wrapperClasses" :style="wrapperStyles" v-show="!hide">
-    <div :class="barClasses" :style="barStyles"></div>
+    <div :class="barBoxClasses" :style="barBoxStyles">
+      <div :class="barClasses" :style="barStyles"></div>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,10 @@
       endedHide: {
         type: Boolean,
         default: true
+      },
+      maxWidth: {
+        type: String,
+        default: '750px'
       }
     },
     data () {
@@ -41,6 +47,9 @@
       wrapperClasses () {
         return `${prefixCls}` + '-wrapper'
       },
+      barBoxClasses () {
+        return `${prefixCls}` + '-box'
+      },
       barClasses () {
         return `${prefixCls}`
       },
@@ -53,6 +62,13 @@
         }
         position = positionArr.indexOf(this.position) === -1 ? 'top' : this.position
         return positionStyle[position]
+      },
+      barBoxStyles () {
+        let styles = ''
+        if (this.maxWidth) {
+          styles += 'maxWidth: ' + this.maxWidth + ';'
+        }
+        return styles
       },
       barStyles () {
         let decimal = 0
@@ -79,11 +95,15 @@
     right: 0;
     z-index: 1000;
     font-size: $font-size-root;
-    & .#{$prefixCls} {
-      width: 0;
-      height: 2px;
-      background-color: $color-theme;
-      box-shadow: 0 0 5px rgba($color-theme, .7);
+    & .#{$prefixCls}-box {
+      width: $width-default;
+      margin: 0 auto;
+      & .#{$prefixCls} {
+        width: 0;
+        height: 2px;
+        background-color: $color-theme;
+        box-shadow: 0 0 5px rgba($color-theme, .7);
+      }
     }
   }
 </style>
