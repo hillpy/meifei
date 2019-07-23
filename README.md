@@ -2,11 +2,11 @@
 
 > A vue components library. 一个vue组件库。
 
-#### Status
+### Status
 
 项目正在开发中~
 
-#### TODO Component
+### TODO Component
 
 ~~1. nav-bar~~
 
@@ -22,7 +22,7 @@
 
 7. button
 
-#### TODO
+### TODO
 
 1. 添加eslint校验代码
 
