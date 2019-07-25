@@ -1,0 +1,42 @@
+@import "../../styles/variables/common";
+
+$prefixCls: $navBarPrefixCls;
+
+.#{$prefixCls}-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    .#{$prefixCls} {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        width: $width-default;
+        height: $height-nav-bar;
+        line-height: $height-nav-bar;
+        position: relative;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: $color-theme;
+        color: $color-light;
+        font-size: $font-size-root;
+        text-align: center;
+        overflow: hidden;
+        & .#{$prefixCls}-title {
+            font-size: $font-size-medium;
+            text-align: center;
+            @include overflow-dot;
+        }
+        & .#{$prefixCls}-icon-box {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            width: $height-nav-bar;
+            height: $height-nav-bar;
+        }
+    }
+}

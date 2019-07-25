@@ -82,16 +82,3 @@
     }
   }
 </script>
-<style lang="scss" scoped>
-  @import "../../styles/common";
-
-  $prefixCls: $iconPrefixCls;
-
-  .#{$prefixCls} {
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    z-index: 1000;
-  }
-</style>

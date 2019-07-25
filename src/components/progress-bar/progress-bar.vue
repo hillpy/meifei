@@ -83,27 +83,3 @@
     }
   }
 </script>
-<style lang="scss" scoped>
-  @import "../../styles/common";
-
-  $prefixCls: $progressBarPrefixCls;
-
-  .#{$prefixCls}-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    font-size: $font-size-root;
-    & .#{$prefixCls}-box {
-      width: $width-default;
-      margin: 0 auto;
-      & .#{$prefixCls} {
-        width: 0;
-        height: 2px;
-        background-color: $color-theme;
-        box-shadow: 0 0 5px rgba($color-theme, .7);
-      }
-    }
-  }
-</style>

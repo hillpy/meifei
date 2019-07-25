@@ -43,16 +43,3 @@
     mounted () {}
   }
 </script>
-
-<style lang="scss" scoped>
-  @import "../../styles/common";
-
-  $prefixCls: $iconPrefixCls;
-
-  .#{$prefixCls}-wrapper {
-    
-    .#{$prefixCls}-title {
-      
-    }
-  }
-</style>

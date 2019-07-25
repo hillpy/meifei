@@ -2,9 +2,9 @@ import vue from 'rollup-plugin-vue'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
-import cssOnly from 'rollup-plugin-css-only'
-import cleanCss from 'clean-css'
-import { writeFileSync } from 'fs'
+// import cssOnly from 'rollup-plugin-css-only'
+// import cleanCss from 'clean-css'
+// import { writeFileSync } from 'fs'
 import { terser } from 'rollup-plugin-terser'
 // import image from 'rollup-plugin-image'
 import img from 'rollup-plugin-img'
@@ -19,7 +19,7 @@ const banner =
     ` * ${libName} v${version}\n` +
     ` * (c) ${birthYear}-${new Date().getFullYear()} ${pkg.author}\n` +
     ` * Released under the ${pkg.license} License.\n` +
-    ' */'
+    ' */\n'
 const outPath = './dist/'
 const outFileInfo = {
   'dev': {
@@ -39,33 +39,33 @@ const outPutCss = {
 }
 
 export default {
-  input: 'src/index.js',
+  input: "src/index.js",
   output: [
     {
       file: production ? outFileInfo.prod.cjs : outFileInfo.dev.cjs,
-      format: 'cjs',
+      format: "cjs",
       banner: banner,
       name: libName,
       globals: {
-        vue: 'Vue'
+        vue: "Vue"
       }
     },
     {
       file: production ? outFileInfo.prod.esm : outFileInfo.dev.esm,
-      format: 'es',
+      format: "es",
       banner: banner,
       name: libName,
       globals: {
-        vue: 'Vue'
+        vue: "Vue"
       }
     },
     {
       file: production ? outFileInfo.prod.umd : outFileInfo.dev.umd,
-      format: 'umd',
+      format: "umd",
       banner: banner,
       name: libName,
       globals: {
-        vue: 'Vue'
+        vue: "Vue"
       }
     }
   ],
@@ -75,29 +75,32 @@ export default {
     }),
     resolve(),
     babel({
-      exclude: ['node_modules/**']
+      exclude: ["node_modules/**"]
     }),
     commonjs(),
-    cssOnly({
-      output(style) {
-        production
-        ?
-        writeFileSync(
-          outPutCss.prod,
-          new cleanCss().minify(style).styles
-        )
-        :
-        writeFileSync(
-          outPutCss.dev,
-          style
-        )
+    // 不打包css，交由gulp处理
+    // cssOnly({
+    //   output(style) {
+    //     production
+    //     ?
+    //     writeFileSync(
+    //       outPutCss.prod,
+    //       new cleanCss().minify(style).styles
+    //     )
+    //     :
+    //     writeFileSync(
+    //       outPutCss.dev,
+    //       style
+    //     )
+    //   }
+    // }),
+    production && terser({
+      output: {
+        comments: 'all'
       }
     }),
-    production && terser(),
     // image(),
     img()
   ],
-  external: [
-    'vue'
-  ]
-}
+  external: ["vue"]
+};
