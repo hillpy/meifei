@@ -50,14 +50,14 @@ gulp.task('font', () => {
 
 gulp.task('scss', () => {
   if (production) {
-    return gulp.src('../src/styles/scsses/*.scss')
+    return gulp.src('../src/styles/*.scss')
     .pipe(sass({ outputStyle: 'compressed' }))
     .pipe(concat(styleFileName))
     .pipe(autoPrefixer())
     .pipe(cleanCss())
     .pipe(gulp.dest('../dist/styles'))
   } else {
-    return gulp.src('../src/styles/scsses/*.scss')
+    return gulp.src('../src/styles/*.scss')
     .pipe(sass({ outputStyle: 'expanded' }))
     .pipe(concat(styleFileName))
     .pipe(autoPrefixer())
@@ -67,7 +67,7 @@ gulp.task('scss', () => {
 
 gulp.task('watch', () => {
   gulp.watch('../src/styles/fonts/*.*', gulp.series('font'))
-  gulp.watch('../src/styles/scsses/*.scss', gulp.series('scss', 'banner'))
+  gulp.watch('../src/styles/*.scss', gulp.series('scss', 'banner'))
 })
 
 if (production) {

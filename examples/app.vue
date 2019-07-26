@@ -19,13 +19,13 @@
         navBar: {
           maxWidth: '750px',
           leftIcon: {
-            name: 'back',
+            name: 'ios-arrow-back',
             click: (e) => {
               this.leftIconClick(e)
             }
           },
           rightIcon: {
-            name: 'menu',
+            name: 'ios-menu',
             click: (e) => {
               this.rightIconClick(e)
             }
@@ -40,6 +40,9 @@
           position: 'bottom',
           showTip: true,
           maxWidth: '750px'
+        },
+        icon: {
+          name: 'md-arrow-back'
         }
       }
     },

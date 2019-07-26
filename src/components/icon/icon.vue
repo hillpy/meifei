@@ -4,14 +4,19 @@
 
 <script>
   import name from '../../common/name'
-  import back from '../../assets/images/icons/back.png'
-  import menu from '../../assets/images/icons/menu.png'
 
   const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase()
-  const iconObj = {
-    back: back,
-    menu: menu
-  }
+  const sizeArr = [
+    'xxx-small',
+    'xx-small',
+    'x-small',
+    'small',
+    'medium',
+    'large',
+    'x-large',
+    'xx-large',
+    'xxx-large'
+  ]
   const positionObj = {
     top: 'top',
     right: 'right',
@@ -21,17 +26,6 @@
     rightTop: ['right', 'top'],
     leftBottom: ['left', 'bottom'],
     rightBottom: ['right', 'bottom']
-  }
-  const sizeObj = {
-    XXXSmall: '5px',
-    XXSmall: '10px',
-    XSmall: '15px',
-    small: '20px',
-    medium: '25px',
-    large: '30px',
-    XLarge: '35px',
-    XXLarge: '40px',
-    XXXLarge: '45px'
   }
 
   export default {
@@ -47,17 +41,39 @@
       },
       size: {
         type: String,
-        default: 'XSmall'
+        default: ''
+      },
+      custom: {
+        type: String,
+        default: ''
       }
     },
     computed: {
       classes () {
-        return `${prefixCls}`
+        let classes = [
+          `${prefixCls}`
+        ]
+        if (this.name) {
+          classes.push(`${prefixCls}` + '-' + this.name)
+        } else if (this.custom) {
+          this.size || (this.size = 'small')
+          if (sizeArr.indexOf(this.size) !== -1) {
+            classes.push(`${prefixCls}` + '-size-' + this.size)
+          }
+        }
+        return classes
       },
       styles () {
         let styles = ''
-        if (this.name && iconObj.hasOwnProperty(this.name)) {
-          styles += 'background-image: url(' + iconObj[this.name] + '); '
+        if (this.name) {
+          if (this.size && sizeArr.indexOf(this.size) === -1) {
+            styles += 'font-size: ' + this.size + '; '
+          }
+        } else if (this.custom) {
+          if (this.size && sizeArr.indexOf(this.size) === -1) {
+            styles += 'width: ' + this.size + '; height: ' + this.size + '; '
+          }
+          styles += 'background-image: url(' + this.custom + '); '
         }
         if (this.position && positionObj.hasOwnProperty(this.position)) {
           styles += 'position: absolute; '
@@ -68,9 +84,6 @@
           } else {
             styles += positionObj[this.position] + ': 0; '
           }
-        }
-        if (this.size && sizeObj.hasOwnProperty(this.size)) {
-          styles += 'width: ' + sizeObj[this.size] + '; height: ' + sizeObj[this.size] + ';'
         }
         return styles
       }

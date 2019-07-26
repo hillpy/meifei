@@ -1,0 +1,89 @@
+@import "./variables/common";
+
+$prefixCls: $iconPrefixCls;
+$font-path: './fonts';
+
+@font-face {
+    font-family: $font-family;
+    src: url("#{$font-path}/ionicons.woff2?v=#{font-version}") format("woff2"),
+    url("#{$font-path}/ionicons.woff?v=#{font-version}") format("woff"),
+    url("#{$font-path}/ionicons.ttf?v=#{font-version}") format("truetype"),
+    url("#{$font-path}/ionicons.svg?v=#{font-version}") format("svg"),
+    url("#{$font-path}/ionicons.eot?v=#{font-version}") format("eot");
+    font-style: normal;
+}
+
+.#{$prefixCls} {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    z-index: 1000;
+    font-family: $font-family;
+    font-size: 20px;
+    font-style: normal;
+    display: inline-block;
+}
+
+.#{$prefixCls}-size-xxx-small {
+    width: 5px;
+    height: 5px;
+}
+
+.#{$prefixCls}-size-xx-small {
+    width: 10px;
+    height: 10px;
+}
+
+.#{$prefixCls}-size-x-small {
+    width: 15px;
+    height: 15px;
+}
+
+.#{$prefixCls}-size-small {
+    width: 20px;
+    height: 20px;
+}
+
+.#{$prefixCls}-size-medium {
+    width: 25px;
+    height: 25px;
+}
+
+.#{$prefixCls}-size-large {
+    width: 30px;
+    height: 30px;
+}
+
+.#{$prefixCls}-size-x-large {
+    width: 35px;
+    height: 35px;
+}
+
+.#{$prefixCls}-size-xx-large {
+    width: 40px;
+    height: 40px;
+}
+
+.#{$prefixCls}-size-xxx-large {
+    width: 45px;
+    height: 45px;
+}
+
+
+.#{$prefixCls}-ios-arrow-back::before {
+    content: "\f3cf";
+}
+
+.#{$prefixCls}-md-arrow-back::before {
+    content: "\f27d";
+
+}
+
+.#{$prefixCls}-ios-menu::before {
+    content: "\f1c3";
+}
+
+.#{$prefixCls}-md-menu::before {
+    content: "\f32a";
+}

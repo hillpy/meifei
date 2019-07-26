@@ -34,7 +34,7 @@
           return {
             name: '',
             position: '',
-            size: 'small',
+            size: '',
             click: () => {
 
             }
@@ -47,7 +47,7 @@
           return {
             name: '',
             position: '',
-            size: 'small',
+            size: '',
             click: () => {
 
             }
