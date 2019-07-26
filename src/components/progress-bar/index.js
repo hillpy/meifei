@@ -1,3 +1,3 @@
-import ProgressBar from './progress-bar.vue'
+import ProgressBar from './progress-bar'
 
 export default ProgressBar

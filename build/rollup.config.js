@@ -8,7 +8,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 // import image from 'rollup-plugin-image'
 import img from 'rollup-plugin-img'
-import alias from 'rollup-plugin-alias'
+// import alias from 'rollup-plugin-alias'
 import pkg from '../package.json'
 
 const production = !process.env.ROLLUP_WATCH
@@ -74,7 +74,9 @@ export default {
     vue({
       css: false
     }),
-    resolve(),
+    resolve({
+      extensions: ['.js', '.vue', '.json']
+    }),
     babel({
       exclude: ['node_modules/**']
     }),
@@ -101,10 +103,7 @@ export default {
       }
     }),
     // image(),
-    img(),
-    alias({
-      resolve: ['.js', '.vue']
-    })
+    img()
   ],
   external: ['vue']
 };

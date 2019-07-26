@@ -7,7 +7,7 @@
 
 <script>
   import name from '../../common/name'
-  import Icon from '../icon/icon.vue'
+  import Icon from '../icon/icon'
 
   const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
 

@@ -1,10 +1,10 @@
 import Vue from 'vue'
-import App from './app.vue'
-import './scss/reset.scss'
+import App from './app'
+import './scss/reset'
 
 // import meifei from '../src/index'  // 从源码导入
 import meifei from '../dist/meifei' // 从dist（打包后的目录）导入
-import '../dist/styles/meifei.css'  // 导入样式
+import '../dist/styles/meifei'  // 导入样式
 
 
 Vue.use(meifei)
