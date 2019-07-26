@@ -1,0 +1,21 @@
+@import "./variables/common";
+
+$prefixCls: $buttonPrefixCls;
+
+
+
+.#{$prefixCls}-wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #aaaaaa;
+    border-radius: 2px;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    margin: 5px;
+    & .#{$prefixCls}-title {
+        font-size: 16px;
+    }
+}

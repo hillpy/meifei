@@ -1,7 +1,8 @@
 <template>
-  <div :class="wrapperClasses" @click="handleClick">
-    <div :class="titleClasses">{{ title }}</div>
-  </div>
+  <button :class="wrapperClasses" @click="handleClick">
+    <icon :name="icon.name" size="icon.size"></icon>
+    <span :class="titleClasses">{{ title }}</span>
+  </button>
 </template>
 
 <script>
@@ -16,6 +17,15 @@
       Icon
     },
     props: {
+      icon: {
+        type: Object,
+        default: () => {
+          return {
+            name: '',
+            size: ''
+          }
+        }
+      },
       title: {
         type: String,
         default: ''

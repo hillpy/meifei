@@ -3,6 +3,36 @@
  * (c) 2019-2019 shinn_lancelot
  * Released under the MIT License.
  */
+.mf-button-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #aaaaaa;
+  border-radius: 2px;
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.mf-button-wrapper .mf-button-title {
+  font-size: 16px;
+}
+
 @font-face {
   font-family: "Ionicons";
   src: url("./fonts/ionicons.woff2?v=font-version") format("woff2"), url("./fonts/ionicons.woff?v=font-version") format("woff"), url("./fonts/ionicons.ttf?v=font-version") format("truetype"), url("./fonts/ionicons.svg?v=font-version") format("svg"), url("./fonts/ionicons.eot?v=font-version") format("eot");
@@ -64,6 +94,14 @@
 .mf-icon-size-xxx-large {
   width: 45px;
   height: 45px;
+}
+
+.mf-icon-ios-home::before {
+  content: "\f448";
+}
+
+.mf-icon-md-home::before {
+  content: "\f30c";
 }
 
 .mf-icon-ios-arrow-back::before {

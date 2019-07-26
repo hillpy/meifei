@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <mf-nav-bar :maxWidth="navBar.maxWidth" :leftIcon="navBar.leftIcon" :rightIcon="navBar.rightIcon">
       <template slot="title">
         这是一个导航组件，目前固定于顶部。
@@ -7,7 +7,7 @@
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
-    <mf-button></mf-button>
+    <mf-button :icon="button.icon" :title="button.title" @buttonClick="button.click"></mf-button>
   </div>
 </template>
 
@@ -41,8 +41,14 @@
           showTip: true,
           maxWidth: '750px'
         },
-        icon: {
-          name: 'md-arrow-back'
+        button: {
+          icon: {
+            name: 'ios-home'
+          },
+          title: '点我',
+          click: () => {
+            alert('button clicked')
+          }
         }
       }
     },
@@ -70,3 +76,14 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  .wrapper {
+    width: 100vw;
+    max-width: 750px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 45px 0;
+    box-sizing: border-box;
+  }
+</style>

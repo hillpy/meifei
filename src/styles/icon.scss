@@ -71,6 +71,14 @@ $font-path: './fonts';
 }
 
 
+.#{$prefixCls}-ios-home::before {
+    content: "\f448";
+}
+
+.#{$prefixCls}-md-home::before {
+    content: "\f30c";
+}
+
 .#{$prefixCls}-ios-arrow-back::before {
     content: "\f3cf";
 }

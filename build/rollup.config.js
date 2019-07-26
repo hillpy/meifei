@@ -8,6 +8,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import { terser } from 'rollup-plugin-terser'
 // import image from 'rollup-plugin-image'
 import img from 'rollup-plugin-img'
+import alias from 'rollup-plugin-alias'
 import pkg from '../package.json'
 
 const production = !process.env.ROLLUP_WATCH
@@ -34,38 +35,38 @@ const outFileInfo = {
   }
 }
 const outPutCss = {
-  'dev': outPath + libName.toLowerCase() + '.css',
-  'prod': outPath + libName.toLowerCase() + '.min.css'
+  'dev': outPath + libName.toLowerCase() + '.scoped.css',
+  'prod': outPath + libName.toLowerCase() + '.scoped.min.css'
 }
 
 export default {
-  input: "src/index.js",
+  input: 'src/index.js',
   output: [
     {
       file: production ? outFileInfo.prod.cjs : outFileInfo.dev.cjs,
-      format: "cjs",
+      format: 'cjs',
       banner: banner,
       name: libName,
       globals: {
-        vue: "Vue"
+        vue: 'Vue'
       }
     },
     {
       file: production ? outFileInfo.prod.esm : outFileInfo.dev.esm,
-      format: "es",
+      format: 'es',
       banner: banner,
       name: libName,
       globals: {
-        vue: "Vue"
+        vue: 'Vue'
       }
     },
     {
       file: production ? outFileInfo.prod.umd : outFileInfo.dev.umd,
-      format: "umd",
+      format: 'umd',
       banner: banner,
       name: libName,
       globals: {
-        vue: "Vue"
+        vue: 'Vue'
       }
     }
   ],
@@ -75,7 +76,7 @@ export default {
     }),
     resolve(),
     babel({
-      exclude: ["node_modules/**"]
+      exclude: ['node_modules/**']
     }),
     commonjs(),
     // 不打包css，交由gulp处理
@@ -100,7 +101,10 @@ export default {
       }
     }),
     // image(),
-    img()
+    img(),
+    alias({
+      resolve: ['.js', '.vue']
+    })
   ],
-  external: ["vue"]
+  external: ['vue']
 };

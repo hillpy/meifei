@@ -660,6 +660,15 @@ var script$4 = {
     Icon
   },
   props: {
+    icon: {
+      type: Object,
+      default: () => {
+        return {
+          name: '',
+          size: ''
+        };
+      }
+    },
     title: {
       type: String,
       default: ''
@@ -703,9 +712,14 @@ var __vue_render__$4 = function() {
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
   return _c(
-    "div",
+    "button",
     { class: _vm.wrapperClasses, on: { click: _vm.handleClick } },
-    [_c("div", { class: _vm.titleClasses }, [_vm._v(_vm._s(_vm.title))])]
+    [
+      _c("icon", { attrs: { name: _vm.icon.name, size: "icon.size" } }),
+      _vm._v(" "),
+      _c("span", { class: _vm.titleClasses }, [_vm._v(_vm._s(_vm.title))])
+    ],
+    1
   )
 };
 var __vue_staticRenderFns__$4 = [];
