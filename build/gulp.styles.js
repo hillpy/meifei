@@ -1,7 +1,6 @@
 const gulp = require('gulp')
 const sass = require('gulp-sass')
 const cleanCss = require('gulp-clean-css')
-const connect = require('gulp-connect')
 const autoPrefixer = require('gulp-autoprefixer')
 const concat = require('gulp-concat')
 const rename = require('gulp-rename')
