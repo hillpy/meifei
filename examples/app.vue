@@ -7,7 +7,10 @@
     </mf-nav-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
-    <mf-button :icon="button.icon" :title="button.title" @buttonClick="button.click"></mf-button>
+    <div class="container">
+      <mf-button :type="button.default.type" :icon="button.default.icon" :title="button.default.title" @buttonClick="button.default.click"></mf-button>
+      <mf-button :type="button.primary.type" :icon="button.primary.icon" :title="button.primary.title" @buttonClick="button.primary.click"></mf-button>
+    </div>
   </div>
 </template>
 
@@ -42,12 +45,19 @@
           maxWidth: '750px'
         },
         button: {
-          icon: {
-            name: 'ios-home'
+          'default': {
+            type: 'default',
+            title: 'Default',
+            click: () => {
+              console.log('default button clicked')
+            }
           },
-          title: '点我',
-          click: () => {
-            alert('button clicked')
+          'primary': {
+            type: 'primary',
+            title: 'Primary',
+            click: () => {
+              console.log('primary button clicked')
+            }
           }
         }
       }
@@ -85,5 +95,9 @@
     margin: 0 auto;
     padding: 45px 0;
     box-sizing: border-box;
+    .container {
+      box-sizing: border-box;
+      padding: 5px;
+    }
   }
 </style>

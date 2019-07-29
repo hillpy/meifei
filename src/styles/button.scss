@@ -1,21 +1,52 @@
 @import "./variables/common";
 
-$prefixCls: $buttonPrefixCls;
+$prefix-cls: $button-prefix-cls;
 
-
-
-.#{$prefixCls}-wrapper {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background: #aaaaaa;
-    border-radius: 2px;
-    width: 60px;
-    height: 30px;
+// 基础按钮样式
+.#{$prefix-cls} {
+    display: inline-block;
+    margin: 0;
+    padding: $distance-small $distance-large;
+    border-radius: $radius-default;
+    font-size: $font-size-xxx-small;
+    text-align: center;
+    user-select: none;
+    transition: opacity $transition-time linear, box-shadow $transition-time linear, color $transition-time linear, background-color $transition-time linear, border $transition-time linear;
+    border: 1px solid $color-border;
     cursor: pointer;
-    margin: 5px;
-    & .#{$prefixCls}-title {
-        font-size: 16px;
+    opacity: .9;
+    & > i + span {
+        margin-left: $distance-x-small;
     }
 }
+.#{$prefix-cls}:hover {
+    opacity: .8;
+}
+.#{$prefix-cls}:active {
+    opacity: 1;
+}
+
+// default按钮
+.#{$prefix-cls}-default {
+    background-color: $color-light;
+    border: 1px solid $color-border;
+    color: $color-text;
+}
+.#{$prefix-cls}-default:hover {
+    border: 1px solid $color-theme;
+    color: $color-theme;
+}
+.#{$prefix-cls}-default:focus {
+    box-shadow: 0 0 0 2px rgba($color-theme, .2);
+}
+
+// primary按钮
+.#{$prefix-cls}-primary {
+    background-color: $color-btn-primary;
+    border: 1px solid $color-btn-primary;
+    color: $color-light;
+}
+.#{$prefix-cls}-primary:focus {
+    box-shadow: 0 0 0 2px rgba($color-btn-primary, .2);
+}
+

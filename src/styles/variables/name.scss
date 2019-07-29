@@ -1,7 +1,7 @@
 // 名称
 
-$libShortName: 'mf';
-$classNameMap: (
+$lib-short-name: 'mf';
+$class-name-map: (
   navBar: 'navbar',
   loading: 'loading',
   progressBar: 'progressbar',
@@ -9,8 +9,8 @@ $classNameMap: (
   button: 'button'
 );
 
-$navBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'navBar');
-$loadingPrefixCls: $libShortName + '-' + map-get($classNameMap, 'loading');
-$progressBarPrefixCls: $libShortName + '-' + map-get($classNameMap, 'progressBar');
-$iconPrefixCls: $libShortName + '-' + map-get($classNameMap, 'icon');
-$buttonPrefixCls: $libShortName + '-' + map-get($classNameMap, 'button');
+$nav-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'navBar');
+$loading-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'loading');
+$progress-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'progressBar');
+$icon-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'icon');
+$button-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'button');

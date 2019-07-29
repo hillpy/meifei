@@ -3,34 +3,59 @@
  * (c) 2019-2019 shinn_lancelot
  * Released under the MIT License.
  */
-.mf-button-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-flow: row nowrap;
-      -ms-flex-flow: row nowrap;
-          flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: #aaaaaa;
+.mf-button {
+  display: inline-block;
+  margin: 0;
+  padding: 8px 12px;
   border-radius: 2px;
-  width: 60px;
-  height: 30px;
+  font-size: 12px;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: opacity 0.2s linear, box-shadow 0.2s linear, color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
+  transition: opacity 0.2s linear, box-shadow 0.2s linear, color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
+  border: 1px solid #d6d6d6;
   cursor: pointer;
-  margin: 5px;
+  opacity: .9;
 }
 
-.mf-button-wrapper .mf-button-title {
-  font-size: 16px;
+.mf-button > i + span {
+  margin-left: 6px;
+}
+
+.mf-button:hover {
+  opacity: .8;
+}
+
+.mf-button:active {
+  opacity: 1;
+}
+
+.mf-button-default {
+  background-color: #fff;
+  border: 1px solid #d6d6d6;
+  color: #424242;
+}
+
+.mf-button-default:hover {
+  border: 1px solid #f00;
+  color: #f00;
+}
+
+.mf-button-default:focus {
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
+}
+
+.mf-button-primary {
+  background-color: #0474eb;
+  border: 1px solid #0474eb;
+  color: #fff;
+}
+
+.mf-button-primary:focus {
+  box-shadow: 0 0 0 2px rgba(4, 116, 235, 0.2);
 }
 
 @font-face {
@@ -46,7 +71,6 @@
   background-size: contain;
   z-index: 1000;
   font-family: "Ionicons";
-  font-size: 20px;
   font-style: normal;
   display: inline-block;
 }
@@ -335,13 +359,12 @@
   box-sizing: border-box;
   background: #f00;
   color: #fff;
-  font-size: 10px;
   text-align: center;
   overflow: hidden;
 }
 
 .mf-navbar-wrapper .mf-navbar .mf-navbar-title {
-  font-size: 1.6em;
+  font-size: 16px;
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -379,7 +402,6 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  font-size: 10px;
 }
 
 .mf-progressbar-wrapper .mf-progressbar-box {

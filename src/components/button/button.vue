@@ -1,7 +1,7 @@
 <template>
   <button :class="wrapperClasses" @click="handleClick">
-    <icon :name="icon.name" size="icon.size"></icon>
-    <span :class="titleClasses">{{ title }}</span>
+    <icon :name="icon.name" size="icon.size" v-if="icon.name"></icon>
+    <span v-if="title">{{ title }}</span>
   </button>
 </template>
 
@@ -17,6 +17,10 @@
       Icon
     },
     props: {
+      type: {
+        type: String,
+        default: 'default'
+      },
       icon: {
         type: Object,
         default: () => {
@@ -38,14 +42,15 @@
     watch: {},
     computed: {
       wrapperClasses () {
-        return `${prefixCls}` + '-wrapper'
-      },
-      titleClasses () {
-        return `${prefixCls}` + '-title'
+        return [
+          `${prefixCls}`,
+          `${prefixCls}` + '-' + this.type
+        ]
       }
     },
     methods: {
       handleClick (e) {
+        e.preventDefault()
         this.$emit('buttonClick', e)
       }
     },

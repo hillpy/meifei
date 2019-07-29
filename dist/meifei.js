@@ -666,6 +666,10 @@
       Icon
     },
     props: {
+      type: {
+        type: String,
+        default: 'default'
+      },
       icon: {
         type: Object,
         default: () => {
@@ -688,16 +692,13 @@
     watch: {},
     computed: {
       wrapperClasses() {
-        return `${prefixCls$4}` + '-wrapper';
-      },
-
-      titleClasses() {
-        return `${prefixCls$4}` + '-title';
+        return [`${prefixCls$4}`, `${prefixCls$4}` + '-' + this.type];
       }
 
     },
     methods: {
       handleClick(e) {
+        e.preventDefault();
         this.$emit('buttonClick', e);
       }
 
@@ -721,9 +722,11 @@
       "button",
       { class: _vm.wrapperClasses, on: { click: _vm.handleClick } },
       [
-        _c("icon", { attrs: { name: _vm.icon.name, size: "icon.size" } }),
+        _vm.icon.name
+          ? _c("icon", { attrs: { name: _vm.icon.name, size: "icon.size" } })
+          : _vm._e(),
         _vm._v(" "),
-        _c("span", { class: _vm.titleClasses }, [_vm._v(_vm._s(_vm.title))])
+        _vm.title ? _c("span", [_vm._v(_vm._s(_vm.title))]) : _vm._e()
       ],
       1
     )

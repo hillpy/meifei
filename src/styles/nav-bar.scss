@@ -1,14 +1,14 @@
 @import "./variables/common";
 
-$prefixCls: $navBarPrefixCls;
+$prefix-cls: $nav-bar-prefix-cls;
 
-.#{$prefixCls}-wrapper {
+.#{$prefix-cls}-wrapper {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    .#{$prefixCls} {
+    .#{$prefix-cls} {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -21,15 +21,14 @@ $prefixCls: $navBarPrefixCls;
         box-sizing: border-box;
         background: $color-theme;
         color: $color-light;
-        font-size: $font-size-root;
         text-align: center;
         overflow: hidden;
-        & .#{$prefixCls}-title {
+        & .#{$prefix-cls}-title {
             font-size: $font-size-medium;
             text-align: center;
             @include overflow-dot;
         }
-        & .#{$prefixCls}-icon-box {
+        & .#{$prefix-cls}-icon-box {
             display: flex;
             flex-flow: column nowrap;
             justify-content: center;

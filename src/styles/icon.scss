@@ -1,6 +1,6 @@
 @import "./variables/common";
 
-$prefixCls: $iconPrefixCls;
+$prefix-cls: $icon-prefix-cls;
 $font-path: './fonts';
 
 @font-face {
@@ -13,85 +13,84 @@ $font-path: './fonts';
     font-style: normal;
 }
 
-.#{$prefixCls} {
+.#{$prefix-cls} {
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     z-index: 1000;
     font-family: $font-family;
-    font-size: 20px;
     font-style: normal;
     display: inline-block;
 }
 
-.#{$prefixCls}-size-xxx-small {
+.#{$prefix-cls}-size-xxx-small {
     width: 5px;
     height: 5px;
 }
 
-.#{$prefixCls}-size-xx-small {
+.#{$prefix-cls}-size-xx-small {
     width: 10px;
     height: 10px;
 }
 
-.#{$prefixCls}-size-x-small {
+.#{$prefix-cls}-size-x-small {
     width: 15px;
     height: 15px;
 }
 
-.#{$prefixCls}-size-small {
+.#{$prefix-cls}-size-small {
     width: 20px;
     height: 20px;
 }
 
-.#{$prefixCls}-size-medium {
+.#{$prefix-cls}-size-medium {
     width: 25px;
     height: 25px;
 }
 
-.#{$prefixCls}-size-large {
+.#{$prefix-cls}-size-large {
     width: 30px;
     height: 30px;
 }
 
-.#{$prefixCls}-size-x-large {
+.#{$prefix-cls}-size-x-large {
     width: 35px;
     height: 35px;
 }
 
-.#{$prefixCls}-size-xx-large {
+.#{$prefix-cls}-size-xx-large {
     width: 40px;
     height: 40px;
 }
 
-.#{$prefixCls}-size-xxx-large {
+.#{$prefix-cls}-size-xxx-large {
     width: 45px;
     height: 45px;
 }
 
 
-.#{$prefixCls}-ios-home::before {
+.#{$prefix-cls}-ios-home::before {
     content: "\f448";
 }
 
-.#{$prefixCls}-md-home::before {
+.#{$prefix-cls}-md-home::before {
     content: "\f30c";
 }
 
-.#{$prefixCls}-ios-arrow-back::before {
+.#{$prefix-cls}-ios-arrow-back::before {
     content: "\f3cf";
 }
 
-.#{$prefixCls}-md-arrow-back::before {
+.#{$prefix-cls}-md-arrow-back::before {
     content: "\f27d";
 
 }
 
-.#{$prefixCls}-ios-menu::before {
+.#{$prefix-cls}-ios-menu::before {
     content: "\f1c3";
 }
 
-.#{$prefixCls}-md-menu::before {
+.#{$prefix-cls}-md-menu::before {
     content: "\f32a";
 }
