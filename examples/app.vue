@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <mf-tab-bar :maxWidth="tabBar.maxWidth"></mf-tab-bar>
+    <mf-tab-bar :maxWidth="tabBar.maxWidth" :datas="tabBar.datas"></mf-tab-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
   </div>
@@ -180,7 +180,41 @@
           },
         },
         tabBar: {
-          maxWidth: '750px'
+          maxWidth: '750px',
+          datas: [
+            {
+              title: '菜单一',
+              icon: {
+                unselected: 'ios-arrow-back',
+                selected: 'md-arrow-back'
+              },
+              selected: true
+            },
+            {
+              title: '菜单二',
+              icon: {
+                unselected: 'ios-arrow-back',
+                selected: 'md-arrow-back'
+              },
+              selected: false
+            },
+            {
+              title: '菜单三',
+              icon: {
+                unselected: 'ios-arrow-back',
+                selected: 'md-arrow-back'
+              },
+              selected: false
+            },
+            {
+              title: '菜单四',
+              icon: {
+                unselected: 'ios-arrow-back',
+                selected: 'md-arrow-back'
+              },
+              selected: false
+            }
+          ]
         }
       }
     },

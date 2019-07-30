@@ -11,18 +11,53 @@ $prefix-cls: $tab-bar-prefix-cls;
     .#{$prefix-cls} {
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         width: $width-default;
         height: $height-tab-bar;
-        line-height: $height-tab-bar;
         position: relative;
         margin: 0 auto;
         box-sizing: border-box;
-        background: $color-theme;
-        color: $color-light;
+        background: $color-tab-bar;
+        color: $color-text;
+        box-sizing: border-box;
         text-align: center;
         overflow: hidden;
+        font-size: $font-size-xx-small;
+        .#{$prefix-cls}-item {
+            width: $width-default;
+            height: $height-default;
+            cursor: pointer;
+            .#{$prefix-cls}-item-content {
+                width: $width-default;
+                height: $height-default;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .#{$prefix-cls}-selected {
+            animation: #{$prefix-cls}-selected-animation .3s ease-in 1 forwards;
+        }
+    }
+    .#{$prefix-cls}::after {
+        position: absolute;
+        content: '';
+        left: -50%;
+        top: 0;
+        width: $width-default * 2;
+        height: 1px;
+        background: $color-border;
+        transform: scale(.5);
+    }
+}
 
+@keyframes #{$prefix-cls}-selected-animation {
+    from {
+        color: $color-text;
+    }
+    to {
+        color: $color-theme;
     }
 }

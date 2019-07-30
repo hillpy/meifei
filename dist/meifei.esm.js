@@ -797,11 +797,19 @@ __vue_render__$4._withStripped = true;
 const prefixCls$5 = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase();
 var script$5 = {
   name: name.componentsName.tabBar,
-  components: {},
+  components: {
+    Icon
+  },
   props: {
     maxWidth: {
       type: String,
       default: '750px'
+    },
+    datas: {
+      type: Array,
+      default: () => {
+        return [];
+      }
     }
   },
 
@@ -827,10 +835,32 @@ var script$5 = {
       }
 
       return styles;
+    },
+
+    itemClasses() {
+      return data => {
+        let classes = [];
+        classes.push(`${prefixCls$5}` + '-item');
+
+        if (data.selected === true) {
+          classes.push(`${prefixCls$5}` + '-selected');
+        }
+
+        return classes;
+      };
+    },
+
+    itemConClasses() {
+      return `${prefixCls$5}` + '-item-content';
     }
 
   },
-  methods: {},
+  methods: {
+    handleClick(e) {
+      this.$emit('itemClick', e);
+    }
+
+  },
 
   created() {},
 
@@ -847,7 +877,40 @@ var __vue_render__$5 = function() {
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
   return _c("div", { class: _vm.wrapperClasses }, [
-    _c("div", { class: _vm.barClasses, style: _vm.barStyles })
+    _c(
+      "ul",
+      { class: _vm.barClasses, style: _vm.barStyles },
+      _vm._l(_vm.datas, function(data, key) {
+        return _c(
+          "li",
+          {
+            key: key,
+            class: _vm.itemClasses(data),
+            on: { click: _vm.handleClick }
+          },
+          [
+            _c(
+              "div",
+              { class: _vm.itemConClasses },
+              [
+                _c("icon", {
+                  attrs: {
+                    name:
+                      data.selected === true
+                        ? data.icon.selected
+                        : data.icon.unselected
+                  }
+                }),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(data.title))])
+              ],
+              1
+            )
+          ]
+        )
+      }),
+      0
+    )
   ])
 };
 var __vue_staticRenderFns__$5 = [];

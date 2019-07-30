@@ -527,22 +527,86 @@
   -webkit-flex-flow: row nowrap;
       -ms-flex-flow: row nowrap;
           flex-flow: row nowrap;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
   -webkit-box-align: center;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
   height: 49px;
-  line-height: 49px;
   position: relative;
   margin: 0 auto;
   box-sizing: border-box;
-  background: #f00;
-  color: #fff;
+  background: #fff;
+  color: #424242;
+  box-sizing: border-box;
   text-align: center;
   overflow: hidden;
+  font-size: 13px;
+}
+
+.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item .mf-tabbar-item-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-selected {
+  -webkit-animation: mf-tabbar-selected-animation 0.3s ease-in 1 forwards;
+          animation: mf-tabbar-selected-animation 0.3s ease-in 1 forwards;
+}
+
+.mf-tabbar-wrapper .mf-tabbar::after {
+  position: absolute;
+  content: '';
+  left: -50%;
+  top: 0;
+  width: 200%;
+  height: 1px;
+  background: #d6d6d6;
+  -webkit-transform: scale(0.5);
+      -ms-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+@-webkit-keyframes mf-tabbar-selected-animation {
+  from {
+    color: #424242;
+  }
+  to {
+    color: #f00;
+  }
+}
+
+@keyframes mf-tabbar-selected-animation {
+  from {
+    color: #424242;
+  }
+  to {
+    color: #f00;
+  }
 }
