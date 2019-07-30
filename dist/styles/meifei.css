@@ -5,6 +5,7 @@
  */
 .mf-button {
   display: inline-block;
+  vertical-align: middle;
   margin: 0;
   padding: 8px 12px;
   border-radius: 2px;
@@ -33,6 +34,44 @@
   opacity: 1;
 }
 
+.mf-button-xx-small {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.mf-button-x-small {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.mf-button-small {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.mf-button-large {
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.mf-button-x-large {
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+.mf-button-xx-large {
+  padding: 14px 18px;
+  font-size: 18px;
+}
+
+.mf-button-circle {
+  border-radius: 32px;
+}
+
+.mf-button-long {
+  width: 100%;
+}
+
 .mf-button-default {
   background-color: #fff;
   border: 1px solid #d6d6d6;
@@ -56,6 +95,60 @@
 
 .mf-button-primary:focus {
   box-shadow: 0 0 0 2px rgba(4, 116, 235, 0.2);
+}
+
+.mf-button-info {
+  background-color: #009edd;
+  border: 1px solid #009edd;
+  color: #fff;
+}
+
+.mf-button-info:focus {
+  box-shadow: 0 0 0 2px rgba(0, 158, 221, 0.2);
+}
+
+.mf-button-success {
+  background-color: #019641;
+  border: 1px solid #019641;
+  color: #fff;
+}
+
+.mf-button-success:focus {
+  box-shadow: 0 0 0 2px rgba(1, 150, 65, 0.2);
+}
+
+.mf-button-warning {
+  background-color: #f09c00;
+  border: 1px solid #f09c00;
+  color: #fff;
+}
+
+.mf-button-warning:focus {
+  box-shadow: 0 0 0 2px rgba(240, 156, 0, 0.2);
+}
+
+.mf-button-error {
+  background-color: #dd1d1d;
+  border: 1px solid #dd1d1d;
+  color: #fff;
+}
+
+.mf-button-error:focus {
+  box-shadow: 0 0 0 2px rgba(221, 29, 29, 0.2);
+}
+
+.mf-button-text {
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #424242;
+}
+
+.mf-button-text:hover {
+  color: #f00;
+}
+
+.mf-button-text:focus {
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.2);
 }
 
 @font-face {

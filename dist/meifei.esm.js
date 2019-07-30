@@ -676,6 +676,18 @@ var script$4 = {
     title: {
       type: String,
       default: ''
+    },
+    size: {
+      type: String,
+      default: ''
+    },
+    radius: {
+      type: String,
+      default: ''
+    },
+    long: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -686,7 +698,30 @@ var script$4 = {
   watch: {},
   computed: {
     wrapperClasses() {
-      return [`${prefixCls$4}`, `${prefixCls$4}` + '-' + this.type];
+      let wrapperClasses = [];
+      wrapperClasses.push(`${prefixCls$4}`);
+      this.type && wrapperClasses.push(`${prefixCls$4}` + '-' + this.type);
+      this.size && wrapperClasses.push(`${prefixCls$4}` + '-' + this.size);
+
+      if (this.radius === 'circle') {
+        wrapperClasses.push(`${prefixCls$4}` + '-' + this.radius);
+      }
+
+      if (this.long === true) {
+        wrapperClasses.push(`${prefixCls$4}` + '-long');
+      }
+
+      return wrapperClasses;
+    },
+
+    styles() {
+      let styles = '';
+
+      if (this.radius !== '' && this.radius !== 'circle') {
+        styles += 'border-radius: ' + this.radius + '; ';
+      }
+
+      return styles;
     }
 
   },
@@ -714,7 +749,11 @@ var __vue_render__$4 = function() {
   var _c = _vm._self._c || _h;
   return _c(
     "button",
-    { class: _vm.wrapperClasses, on: { click: _vm.handleClick } },
+    {
+      class: _vm.wrapperClasses,
+      style: _vm.styles,
+      on: { click: _vm.handleClick }
+    },
     [
       _vm.icon.name
         ? _c("icon", { attrs: { name: _vm.icon.name, size: "icon.size" } })

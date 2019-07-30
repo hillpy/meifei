@@ -5,6 +5,7 @@ $prefix-cls: $button-prefix-cls;
 // 基础按钮样式
 .#{$prefix-cls} {
     display: inline-block;
+    vertical-align: middle;
     margin: 0;
     padding: $distance-small $distance-large;
     border-radius: $radius-default;
@@ -26,9 +27,45 @@ $prefix-cls: $button-prefix-cls;
     opacity: 1;
 }
 
+// 按钮尺寸
+.#{$prefix-cls}-xx-small {
+    padding: $distance-xxx-small $distance-x-small;
+    font-size: $font-size-xxx-small;
+}
+.#{$prefix-cls}-x-small {
+    padding: $distance-xx-small $distance-small;
+    font-size: $font-size-xxx-small;
+}
+.#{$prefix-cls}-small {
+    padding: $distance-x-small $distance-medium;
+    font-size: $font-size-xxx-small;
+}
+.#{$prefix-cls}-large {
+    padding: $distance-medium $distance-x-large;
+    font-size: $font-size-x-small;
+}
+.#{$prefix-cls}-x-large {
+    padding: $distance-large $distance-xx-large;
+    font-size: $font-size-medium;
+}
+.#{$prefix-cls}-xx-large {
+    padding: $distance-x-large $distance-xxx-large;
+    font-size: $font-size-x-large;
+}
+
+// 按钮形状
+.#{$prefix-cls}-circle {
+    border-radius: $font-size-x-large + $distance-x-large;
+}
+
+// 长按钮
+.#{$prefix-cls}-long {
+    width: $width-default;
+}
+
 // default按钮
 .#{$prefix-cls}-default {
-    background-color: $color-light;
+    background-color: $color-btn-default;
     border: 1px solid $color-border;
     color: $color-text;
 }
@@ -50,3 +87,55 @@ $prefix-cls: $button-prefix-cls;
     box-shadow: 0 0 0 2px rgba($color-btn-primary, .2);
 }
 
+// info按钮
+.#{$prefix-cls}-info {
+    background-color: $color-btn-info;
+    border: 1px solid $color-btn-info;
+    color: $color-light;
+}
+.#{$prefix-cls}-info:focus {
+    box-shadow: 0 0 0 2px rgba($color-btn-info, .2);
+}
+
+// success按钮
+.#{$prefix-cls}-success {
+    background-color: $color-btn-success;
+    border: 1px solid $color-btn-success;
+    color: $color-light;
+}
+.#{$prefix-cls}-success:focus {
+    box-shadow: 0 0 0 2px rgba($color-btn-success, .2);
+}
+
+// warning按钮
+.#{$prefix-cls}-warning {
+    background-color: $color-btn-warning;
+    border: 1px solid $color-btn-warning;
+    color: $color-light;
+}
+.#{$prefix-cls}-warning:focus {
+    box-shadow: 0 0 0 2px rgba($color-btn-warning, .2);
+}
+
+// error按钮
+.#{$prefix-cls}-error {
+    background-color: $color-btn-error;
+    border: 1px solid $color-btn-error;
+    color: $color-light;
+}
+.#{$prefix-cls}-error:focus {
+    box-shadow: 0 0 0 2px rgba($color-btn-error, .2);
+}
+
+// text按钮
+.#{$prefix-cls}-text {
+    background-color: $color-btn-text;
+    border: 1px solid $color-btn-text;
+    color: $color-text;
+}
+.#{$prefix-cls}-text:hover {
+    color: $color-theme;
+}
+.#{$prefix-cls}-text:focus {
+    box-shadow: 0 0 0 2px rgba($color-theme, .2);
+}
