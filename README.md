@@ -20,7 +20,7 @@
 
 6. alert
 
-7. button
+~~7. button~~
 
 ### TODO
 

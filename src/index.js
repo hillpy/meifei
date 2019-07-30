@@ -4,13 +4,15 @@ import Loading from './components/loading'
 import ProgressBar from './components/progress-bar'
 import Icon from './components/icon'
 import Button from './components/button'
+import TabBar from './components/tab-bar'
 
 const components = {
   NavBar,
   Loading,
   ProgressBar,
   Icon,
-  Button
+  Button,
+  TabBar
 }
 
 let prefixComponent = ''

@@ -5,7 +5,8 @@ let name = {
     loading: 'Loading',
     progressBar: 'ProgressBar',
     icon: 'Icon',
-    button: 'Button'
+    button: 'Button',
+    tabBar: 'TabBar'
   }
 }
 

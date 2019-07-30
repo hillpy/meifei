@@ -5,8 +5,6 @@
         这是一个导航组件，目前固定于顶部。
       </template>
     </mf-nav-bar>
-    <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
-    <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
     <div class="container">
       <div class="segment">
         <div class="title">按钮类型</div>
@@ -55,6 +53,9 @@
         </div>
       </div>
     </div>
+    <mf-tab-bar :maxWidth="tabBar.maxWidth"></mf-tab-bar>
+    <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
+    <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
   </div>
 </template>
 
@@ -177,6 +178,9 @@
               console.log('text button clicked')
             }
           },
+        },
+        tabBar: {
+          maxWidth: '750px'
         }
       }
     },
@@ -211,11 +215,14 @@
     max-width: 750px;
     height: 100vh;
     margin: 0 auto;
-    padding: 45px 0;
+    padding: 44px 0 49px;
     box-sizing: border-box;
+    overflow: auto;
     .container {
       box-sizing: border-box;
       padding: 5px;
+      overflow: auto;
+      height: 100%;
       .segment {
         margin-bottom: 20px;
         .title {

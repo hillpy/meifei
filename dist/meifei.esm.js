@@ -11,7 +11,8 @@ let name = {
     loading: 'Loading',
     progressBar: 'ProgressBar',
     icon: 'Icon',
-    button: 'Button'
+    button: 'Button',
+    tabBar: 'TabBar'
   }
 };
 
@@ -792,12 +793,98 @@ __vue_render__$4._withStripped = true;
     undefined
   );
 
+//
+const prefixCls$5 = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase();
+var script$5 = {
+  name: name.componentsName.tabBar,
+  components: {},
+  props: {
+    maxWidth: {
+      type: String,
+      default: '750px'
+    }
+  },
+
+  data() {
+    return {};
+  },
+
+  watch: {},
+  computed: {
+    wrapperClasses() {
+      return `${prefixCls$5}` + '-wrapper';
+    },
+
+    barClasses() {
+      return `${prefixCls$5}`;
+    },
+
+    barStyles() {
+      let styles = '';
+
+      if (this.maxWidth) {
+        styles += 'maxWidth: ' + this.maxWidth + ';';
+      }
+
+      return styles;
+    }
+
+  },
+  methods: {},
+
+  created() {},
+
+  mounted() {}
+
+};
+
+/* script */
+const __vue_script__$5 = script$5;
+
+/* template */
+var __vue_render__$5 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("div", { class: _vm.wrapperClasses }, [
+    _c("div", { class: _vm.barClasses, style: _vm.barStyles })
+  ])
+};
+var __vue_staticRenderFns__$5 = [];
+__vue_render__$5._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$5 = undefined;
+  /* scoped */
+  const __vue_scope_id__$5 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$5 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$5 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var TabBar = normalizeComponent_1(
+    { render: __vue_render__$5, staticRenderFns: __vue_staticRenderFns__$5 },
+    __vue_inject_styles__$5,
+    __vue_script__$5,
+    __vue_scope_id__$5,
+    __vue_is_functional_template__$5,
+    __vue_module_identifier__$5,
+    undefined,
+    undefined
+  );
+
 const components = {
   NavBar,
   Loading,
   ProgressBar,
   Icon,
-  Button
+  Button,
+  TabBar
 };
 let prefixComponent = '';
 prefixComponent = name.libShortName;

@@ -6,7 +6,8 @@ $class-name-map: (
   loading: 'loading',
   progressBar: 'progressbar',
   icon: 'icon',
-  button: 'button'
+  button: 'button',
+  tabBar: 'tabbar'
 );
 
 $nav-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'navBar');
@@ -14,3 +15,4 @@ $loading-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'loading')
 $progress-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'progressBar');
 $icon-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'icon');
 $button-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'button');
+$tab-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'tabBar');

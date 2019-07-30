@@ -445,8 +445,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 45px;
-  line-height: 45px;
+  height: 44px;
+  line-height: 44px;
   position: relative;
   margin: 0 auto;
   box-sizing: border-box;
@@ -485,8 +485,8 @@
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0;
-  width: 45px;
-  height: 45px;
+  width: 44px;
+  height: 44px;
 }
 
 .mf-progressbar-wrapper {
@@ -507,4 +507,42 @@
   height: 2px;
   background-color: #f00;
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
+.mf-tabbar-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.mf-tabbar-wrapper .mf-tabbar {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 49px;
+  line-height: 49px;
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: #f00;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
 }
