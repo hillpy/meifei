@@ -8,7 +8,7 @@ $prefix-cls: $tab-bar-prefix-cls;
     left: 0;
     right: 0;
     z-index: 1000;
-    .#{$prefix-cls} {
+    .#{$prefix-cls}, .#{$prefix-cls}-no-line {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-around;
@@ -17,13 +17,14 @@ $prefix-cls: $tab-bar-prefix-cls;
         height: $height-tab-bar;
         position: relative;
         margin: 0 auto;
+        padding: 0;
         box-sizing: border-box;
         background: $color-tab-bar;
         color: $color-text;
         box-sizing: border-box;
         text-align: center;
         overflow: hidden;
-        font-size: $font-size-xx-small;
+        font-size: $font-size-xxx-small;
         .#{$prefix-cls}-item {
             width: $width-default;
             height: $height-default;
@@ -38,7 +39,7 @@ $prefix-cls: $tab-bar-prefix-cls;
             }
         }
         .#{$prefix-cls}-selected {
-            animation: #{$prefix-cls}-selected-animation .3s ease-in 1 forwards;
+            animation: #{$prefix-cls}-selected-animation .2s linear 1 forwards;
         }
     }
     .#{$prefix-cls}::after {

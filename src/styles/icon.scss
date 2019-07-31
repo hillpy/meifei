@@ -13,6 +13,7 @@ $font-path: './fonts';
     font-style: normal;
 }
 
+// 基础样式
 .#{$prefix-cls} {
     background-color: transparent;
     background-repeat: no-repeat;
@@ -24,73 +25,134 @@ $font-path: './fonts';
     display: inline-block;
 }
 
+// 尺寸
 .#{$prefix-cls}-size-xxx-small {
     width: 5px;
     height: 5px;
 }
-
 .#{$prefix-cls}-size-xx-small {
     width: 10px;
     height: 10px;
 }
-
 .#{$prefix-cls}-size-x-small {
     width: 15px;
     height: 15px;
 }
-
 .#{$prefix-cls}-size-small {
     width: 20px;
     height: 20px;
 }
-
 .#{$prefix-cls}-size-medium {
     width: 25px;
     height: 25px;
 }
-
 .#{$prefix-cls}-size-large {
     width: 30px;
     height: 30px;
 }
-
 .#{$prefix-cls}-size-x-large {
     width: 35px;
     height: 35px;
 }
-
 .#{$prefix-cls}-size-xx-large {
     width: 40px;
     height: 40px;
 }
-
 .#{$prefix-cls}-size-xxx-large {
     width: 45px;
     height: 45px;
 }
 
-
+// ios风格图标
 .#{$prefix-cls}-ios-home::before {
     content: "\f448";
 }
-
-.#{$prefix-cls}-md-home::before {
-    content: "\f30c";
-}
-
 .#{$prefix-cls}-ios-arrow-back::before {
     content: "\f3cf";
 }
-
-.#{$prefix-cls}-md-arrow-back::before {
-    content: "\f27d";
-
-}
-
 .#{$prefix-cls}-ios-menu::before {
     content: "\f1c3";
 }
+.#{$prefix-cls}-ios-person::before {
+    content: "\f47e";
+}
+.#{$prefix-cls}-ios-compass::before {
+    content: "\f15d";
+}
+.#{$prefix-cls}-ios-notifications::before {
+    content: "\f1d3";
+}
+.#{$prefix-cls}-ios-notifications-outline::before {
+    content: "\f133";
+}
+.#{$prefix-cls}-ios-add-circle::before {
+    content: "\f101";
+}
+.#{$prefix-cls}-ios-add-circle-outline::before {
+    content: "\f100";
+}
+.#{$prefix-cls}-ios-star::before {
+    content: "\f4b3";
+}
+.#{$prefix-cls}-ios-star-outline::before {
+    content: "\f4b2";
+}
+.#{$prefix-cls}-ios-cloud::before {
+    content: "\f40c";
+}
+.#{$prefix-cls}-ios-cloud-outline::before {
+    content: "\f409";
+}
+.#{$prefix-cls}-ios-infomation-circle::before {
+    content: "\f1a0";
+}
+.#{$prefix-cls}-ios-infomation-circle-outline::before {
+    content: "\f19f";
+}
 
+// md风格图标
+.#{$prefix-cls}-md-home::before {
+    content: "\f30c";
+}
+.#{$prefix-cls}-md-arrow-back::before {
+    content: "\f27d";
+}
 .#{$prefix-cls}-md-menu::before {
     content: "\f32a";
+}
+.#{$prefix-cls}-md-person::before {
+    content: "\f345";
+}
+.#{$prefix-cls}-md-compass::before {
+    content: "\f2d4";
+}
+.#{$prefix-cls}-md-notifications::before {
+    content: "\f338";
+}
+.#{$prefix-cls}-md-notifications-outline::before {
+    content: "\f337";
+}
+.#{$prefix-cls}-md-add-circle::before {
+    content: "\f272";
+}
+.#{$prefix-cls}-md-add-circle-outline::before {
+    content: "\f158";
+}
+.#{$prefix-cls}-md-star::before {
+    content: "\f384";
+}
+.#{$prefix-cls}-md-star-outline::before {
+    content: "\f383";
+}
+.#{$prefix-cls}-md-cloud::before {
+    content: "\f2c9";
+}
+.#{$prefix-cls}-md-cloud-outline::before {
+    content: "\f2c7";
+}
+.#{$prefix-cls}-md-infomation-circle::before {
+    content: "\f311";
+}
+.#{$prefix-cls}-md-infomation-circle-outline::before {
+    content: "\f16f";
 }

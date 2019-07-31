@@ -811,11 +811,27 @@
         type: String,
         default: '750px'
       },
+      height: {
+        type: String,
+        default: ''
+      },
+      iconSize: {
+        type: String,
+        default: '20px'
+      },
+      titleSize: {
+        type: String,
+        default: ''
+      },
       datas: {
         type: Array,
         default: () => {
           return [];
         }
+      },
+      hideLine: {
+        type: Boolean,
+        default: false
       }
     },
 
@@ -830,14 +846,26 @@
       },
 
       barClasses() {
-        return `${prefixCls$5}`;
+        let classes = [];
+
+        if (this.hideLine === false) {
+          classes.push(`${prefixCls$5}`);
+        } else {
+          classes.push(`${prefixCls$5}` + '-no-line');
+        }
+
+        return classes;
       },
 
       barStyles() {
         let styles = '';
 
         if (this.maxWidth) {
-          styles += 'maxWidth: ' + this.maxWidth + ';';
+          styles += 'maxWidth: ' + this.maxWidth + '; ';
+        }
+
+        if (this.height) {
+          styles += 'height: ' + this.height + '; ';
         }
 
         return styles;
@@ -858,12 +886,22 @@
 
       itemConClasses() {
         return `${prefixCls$5}` + '-item-content';
+      },
+
+      titleStyles() {
+        let styles = '';
+
+        if (this.titleSize) {
+          styles += 'font-size: ' + this.titleSize + ';';
+        }
+
+        return styles;
       }
 
     },
     methods: {
-      handleClick(e) {
-        this.$emit('itemClick', e);
+      handleClick(key) {
+        this.$emit('itemClick', key);
       }
 
     },
@@ -892,7 +930,11 @@
             {
               key: key,
               class: _vm.itemClasses(data),
-              on: { click: _vm.handleClick }
+              on: {
+                click: function($event) {
+                  return _vm.handleClick(key)
+                }
+              }
             },
             [
               _c(
@@ -904,11 +946,14 @@
                       name:
                         data.selected === true
                           ? data.icon.selected
-                          : data.icon.unselected
+                          : data.icon.unselected,
+                      size: _vm.iconSize
                     }
                   }),
                   _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(data.title))])
+                  _c("span", { style: _vm.titleStyles }, [
+                    _vm._v(_vm._s(data.title))
+                  ])
                 ],
                 1
               )

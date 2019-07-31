@@ -1,10 +1,10 @@
 <template>
   <div :class="wrapperClasses">
     <ul :class="barClasses" :style="barStyles">
-      <li :class="itemClasses(data)" v-for="(data, key) in datas" :key="key" @click="handleClick">
+      <li :class="itemClasses(data)" v-for="(data, key) in datas" :key="key" @click="handleClick(key)">
         <div :class="itemConClasses">
-          <icon :name="data.selected === true ? data.icon.selected : data.icon.unselected"></icon>
-          <span>{{ data.title }}</span>
+          <icon :name="data.selected === true ? data.icon.selected : data.icon.unselected" :size="iconSize"></icon>
+          <span :style="titleStyles">{{ data.title }}</span>
         </div>
       </li>
     </ul>
@@ -27,11 +27,27 @@
         type: String,
         default: '750px'
       },
+      height: {
+        type: String,
+        default: ''
+      },
+      iconSize: {
+        type: String,
+        default: '20px'
+      },
+      titleSize: {
+        type: String,
+        default: ''
+      },
       datas: {
         type: Array,
         default: () => {
             return []
         }
+      },
+      hideLine: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
@@ -44,12 +60,21 @@
         return `${prefixCls}` + '-wrapper'
       },
       barClasses () {
-        return `${prefixCls}`
+        let classes = []
+        if (this.hideLine === false) {
+          classes.push(`${prefixCls}`)
+        } else {
+          classes.push(`${prefixCls}` + '-no-line')
+        }
+        return classes;
       },
       barStyles () {
         let styles = ''
         if (this.maxWidth) {
-          styles += 'maxWidth: ' + this.maxWidth + ';'
+          styles += 'maxWidth: ' + this.maxWidth + '; '
+        }
+        if (this.height) {
+          styles += 'height: ' + this.height + '; '
         }
         return styles
       },
@@ -65,11 +90,18 @@
       },
       itemConClasses () {
         return `${prefixCls}` + '-item-content'
+      },
+      titleStyles () {
+        let styles = ''
+        if (this.titleSize) {
+          styles += 'font-size: ' + this.titleSize + ';'
+        }
+        return styles
       }
     },
     methods: {
-      handleClick (e) {
-        this.$emit('itemClick', e)
+      handleClick (key) {
+        this.$emit('itemClick', key)
       }
     },
     created () {},

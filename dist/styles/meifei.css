@@ -217,24 +217,120 @@
   content: "\f448";
 }
 
-.mf-icon-md-home::before {
-  content: "\f30c";
-}
-
 .mf-icon-ios-arrow-back::before {
   content: "\f3cf";
-}
-
-.mf-icon-md-arrow-back::before {
-  content: "\f27d";
 }
 
 .mf-icon-ios-menu::before {
   content: "\f1c3";
 }
 
+.mf-icon-ios-person::before {
+  content: "\f47e";
+}
+
+.mf-icon-ios-compass::before {
+  content: "\f15d";
+}
+
+.mf-icon-ios-notifications::before {
+  content: "\f1d3";
+}
+
+.mf-icon-ios-notifications-outline::before {
+  content: "\f133";
+}
+
+.mf-icon-ios-add-circle::before {
+  content: "\f101";
+}
+
+.mf-icon-ios-add-circle-outline::before {
+  content: "\f100";
+}
+
+.mf-icon-ios-star::before {
+  content: "\f4b3";
+}
+
+.mf-icon-ios-star-outline::before {
+  content: "\f4b2";
+}
+
+.mf-icon-ios-cloud::before {
+  content: "\f40c";
+}
+
+.mf-icon-ios-cloud-outline::before {
+  content: "\f409";
+}
+
+.mf-icon-ios-infomation-circle::before {
+  content: "\f1a0";
+}
+
+.mf-icon-ios-infomation-circle-outline::before {
+  content: "\f19f";
+}
+
+.mf-icon-md-home::before {
+  content: "\f30c";
+}
+
+.mf-icon-md-arrow-back::before {
+  content: "\f27d";
+}
+
 .mf-icon-md-menu::before {
   content: "\f32a";
+}
+
+.mf-icon-md-person::before {
+  content: "\f345";
+}
+
+.mf-icon-md-compass::before {
+  content: "\f2d4";
+}
+
+.mf-icon-md-notifications::before {
+  content: "\f338";
+}
+
+.mf-icon-md-notifications-outline::before {
+  content: "\f337";
+}
+
+.mf-icon-md-add-circle::before {
+  content: "\f272";
+}
+
+.mf-icon-md-add-circle-outline::before {
+  content: "\f158";
+}
+
+.mf-icon-md-star::before {
+  content: "\f384";
+}
+
+.mf-icon-md-star-outline::before {
+  content: "\f383";
+}
+
+.mf-icon-md-cloud::before {
+  content: "\f2c9";
+}
+
+.mf-icon-md-cloud-outline::before {
+  content: "\f2c7";
+}
+
+.mf-icon-md-infomation-circle::before {
+  content: "\f311";
+}
+
+.mf-icon-md-infomation-circle-outline::before {
+  content: "\f16f";
 }
 
 .mf-loading-wrapper {
@@ -517,7 +613,7 @@
   z-index: 1000;
 }
 
-.mf-tabbar-wrapper .mf-tabbar {
+.mf-tabbar-wrapper .mf-tabbar, .mf-tabbar-wrapper .mf-tabbar-no-line {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -538,22 +634,23 @@
   height: 49px;
   position: relative;
   margin: 0 auto;
+  padding: 0;
   box-sizing: border-box;
   background: #fff;
   color: #424242;
   box-sizing: border-box;
   text-align: center;
   overflow: hidden;
-  font-size: 13px;
+  font-size: 12px;
 }
 
-.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item {
+.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item, .mf-tabbar-wrapper .mf-tabbar-no-line .mf-tabbar-item {
   width: 100%;
   height: 100%;
   cursor: pointer;
 }
 
-.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item .mf-tabbar-item-content {
+.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item .mf-tabbar-item-content, .mf-tabbar-wrapper .mf-tabbar-no-line .mf-tabbar-item .mf-tabbar-item-content {
   width: 100%;
   height: 100%;
   display: -webkit-box;
@@ -575,9 +672,9 @@
           align-items: center;
 }
 
-.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-selected {
-  -webkit-animation: mf-tabbar-selected-animation 0.3s ease-in 1 forwards;
-          animation: mf-tabbar-selected-animation 0.3s ease-in 1 forwards;
+.mf-tabbar-wrapper .mf-tabbar .mf-tabbar-selected, .mf-tabbar-wrapper .mf-tabbar-no-line .mf-tabbar-selected {
+  -webkit-animation: mf-tabbar-selected-animation 0.2s linear 1 forwards;
+          animation: mf-tabbar-selected-animation 0.2s linear 1 forwards;
 }
 
 .mf-tabbar-wrapper .mf-tabbar::after {

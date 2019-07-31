@@ -14,7 +14,7 @@
 
 ~~3. progress-bar~~
 
-4. tab-bar
+~~4. tab-bar~~
 
 ~~5. icon~~
 

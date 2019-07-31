@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <mf-tab-bar :maxWidth="tabBar.maxWidth" :datas="tabBar.datas"></mf-tab-bar>
+    <mf-tab-bar :maxWidth="tabBar.maxWidth" :height="tabBar.height" :iconSize="tabBar.iconSize" :titleSize="tabBar.titleSize" :datas="tabBar.datas" :hideLine="tabBar.hideLine" @itemClick="tabBarClick"></mf-tab-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
   </div>
@@ -181,40 +181,44 @@
         },
         tabBar: {
           maxWidth: '750px',
+          height: '49px',
+          titleSize: '12px',
+          iconSize: '20px',
           datas: [
             {
-              title: '菜单一',
+              title: '信息',
               icon: {
-                unselected: 'ios-arrow-back',
-                selected: 'md-arrow-back'
+                unselected: 'ios-infomation-circle-outline',
+                selected: 'ios-infomation-circle'
               },
               selected: true
             },
             {
-              title: '菜单二',
+              title: '通知',
               icon: {
-                unselected: 'ios-arrow-back',
-                selected: 'md-arrow-back'
+                unselected: 'ios-notifications-outline',
+                selected: 'ios-notifications'
               },
               selected: false
             },
             {
-              title: '菜单三',
+              title: '收藏',
               icon: {
-                unselected: 'ios-arrow-back',
-                selected: 'md-arrow-back'
+                unselected: 'ios-star-outline',
+                selected: 'ios-star'
               },
               selected: false
             },
             {
-              title: '菜单四',
+              title: '云',
               icon: {
-                unselected: 'ios-arrow-back',
-                selected: 'md-arrow-back'
+                unselected: 'ios-cloud-outline',
+                selected: 'ios-cloud'
               },
               selected: false
             }
-          ]
+          ],
+          hideLine: false
         }
       }
     },
@@ -224,6 +228,16 @@
       },
       rightIconClick (e) {
         alert('rightIcon clicked')
+      },
+      tabBarClick (key) {
+        let datas = this.tabBar.datas
+        for (let i = 0, len = datas.length; i < len; i++) {
+          if (i === key) {
+            datas[i].selected = true
+          } else if (datas[i].selected === true) {
+            datas[i].selected = false
+          }
+        }
       }
     },
     mounted () {
