@@ -1,9 +1,9 @@
 <template>
   <div :class="wrapperClasses">
     <ul :class="barClasses" :style="barStyles">
-      <li :class="itemClasses(data)" v-for="(data, key) in datas" :key="key" @click="handleClick(key)">
+      <li :class="itemClasses(data)" v-for="(data, key) in itemDatas" :key="key" @click="handleClick(key)">
         <div :class="itemConClasses">
-          <icon :name="data.selected === true ? data.icon.selected : data.icon.unselected" :size="iconSize"></icon>
+          <icon :name="handleName(data)" :custom="handleCustom(data)" :size="handleSize(data)"></icon>
           <span :style="titleStyles">{{ data.title }}</span>
         </div>
       </li>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+  import utils from '../../utils/utils'
   import name from '../../common/name'
   import Icon from '../icon/icon'
 
@@ -33,7 +34,7 @@
       },
       iconSize: {
         type: String,
-        default: '20px'
+        default: ''
       },
       titleSize: {
         type: String,
@@ -42,19 +43,45 @@
       datas: {
         type: Array,
         default: () => {
-            return []
+          return []
         }
       },
       hideLine: {
         type: Boolean,
         default: false
+      },
+      autoUpdate: {
+        type: Boolean,
+        default: true
       }
     },
     data () {
       return {
+        defaultItemData: {
+          title: '',
+          titleSize: '',
+          icon: {
+            unselected: '',
+            selected: ''
+          },
+          custom: {
+            unselected: '',
+            selected: ''
+          },
+          iconSize: '20px',
+          selected: true
+        },
+        itemDatas: []
       }
     },
-    watch: {},
+    watch: {
+      datas: {
+        handler (val) {
+          this.itemDatas = this.handleDatas(this.datas)
+        },
+        deep: true
+      }
+    },
     computed: {
       wrapperClasses () {
         return `${prefixCls}` + '-wrapper'
@@ -100,11 +127,51 @@
       }
     },
     methods: {
+      handleDatas (datas) {
+        let newDatas = []
+        for (let i = 0, len = datas.length; i < len; i++) {
+          newDatas.push(utils.updateObj(utils.deepCopy(this.defaultItemData), datas[i]))
+        }
+        return newDatas
+      },
       handleClick (key) {
+        if (this.autoUpdate === true) {
+          for (let i = 0, len = this.itemDatas.length; i < len; i++) {
+            if (i === key) {
+              this.itemDatas[i].selected = true
+            } else if (this.itemDatas[i].selected === true) {
+              this.itemDatas[i].selected = false
+            }
+          }
+        }
         this.$emit('itemClick', key)
+      },
+      handleName (data) {
+        let name = ''
+        if ((data.custom.unselected == '' && data.custom.selected == '') && (data.icon.unselected != '' && data.icon.selected != '')) {
+          name = data.selected === true ? data.icon.selected : data.icon.unselected
+        }
+        return name
+      },
+      handleCustom (data) {
+        let custom = ''
+        if (data.custom.unselected != '' && data.custom.selected != '') {
+          custom = data.selected === true ? data.custom.selected : data.custom.unselected
+        }
+        return custom
+      },
+      handleSize (data) {
+        let size = ''
+        if (data.iconSize) {
+          size = data.iconSize
+        } else if (this.iconSize) {
+          size = this.iconSize
+        }
+        return size
       }
     },
-    created () {},
-    mounted () {}
+    created () {
+      this.itemDatas = this.handleDatas(this.datas)
+    }
   }
 </script>

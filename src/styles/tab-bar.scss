@@ -25,6 +25,7 @@ $prefix-cls: $tab-bar-prefix-cls;
         text-align: center;
         overflow: hidden;
         font-size: $font-size-xxx-small;
+        user-select: none;
         .#{$prefix-cls}-item {
             width: $width-default;
             height: $height-default;

@@ -391,7 +391,7 @@
 
       for (let key in obj) {
         if (obj.hasOwnProperty(key)) {
-          if (typeof obj[key] === "object") {
+          if (typeof obj[key] === 'object') {
             newObj[key] = this.deepCopy(obj[key]);
           } else {
             newObj[key] = obj[key];
@@ -400,6 +400,27 @@
       }
 
       return newObj;
+    }
+    /**
+     * 更新数据对象
+     *
+     * @param {*} obj
+     * @param {*} newObj
+     */
+
+
+    static updateObj(obj, newObj) {
+      for (let key in newObj) {
+        if (obj.hasOwnProperty(key)) {
+          if (typeof obj[key] === 'object') {
+            obj[key] = this.updateObj(obj[key], newObj[key]);
+          } else {
+            obj[key] = newObj[key];
+          }
+        }
+      }
+
+      return obj;
     }
 
   }
@@ -817,7 +838,7 @@
       },
       iconSize: {
         type: String,
-        default: '20px'
+        default: ''
       },
       titleSize: {
         type: String,
@@ -832,14 +853,42 @@
       hideLine: {
         type: Boolean,
         default: false
+      },
+      autoUpdate: {
+        type: Boolean,
+        default: true
       }
     },
 
     data() {
-      return {};
+      return {
+        defaultItemData: {
+          title: '',
+          titleSize: '',
+          icon: {
+            unselected: '',
+            selected: ''
+          },
+          custom: {
+            unselected: '',
+            selected: ''
+          },
+          iconSize: '20px',
+          selected: true
+        },
+        itemDatas: []
+      };
     },
 
-    watch: {},
+    watch: {
+      datas: {
+        handler(val) {
+          this.itemDatas = this.handleDatas(this.datas);
+        },
+
+        deep: true
+      }
+    },
     computed: {
       wrapperClasses() {
         return `${prefixCls$5}` + '-wrapper';
@@ -900,15 +949,67 @@
 
     },
     methods: {
+      handleDatas(datas) {
+        let newDatas = [];
+
+        for (let i = 0, len = datas.length; i < len; i++) {
+          newDatas.push(utils.updateObj(utils.deepCopy(this.defaultItemData), datas[i]));
+        }
+
+        return newDatas;
+      },
+
       handleClick(key) {
+        if (this.autoUpdate === true) {
+          for (let i = 0, len = this.itemDatas.length; i < len; i++) {
+            if (i === key) {
+              this.itemDatas[i].selected = true;
+            } else if (this.itemDatas[i].selected === true) {
+              this.itemDatas[i].selected = false;
+            }
+          }
+        }
+
         this.$emit('itemClick', key);
+      },
+
+      handleName(data) {
+        let name = '';
+
+        if (data.custom.unselected == '' && data.custom.selected == '' && data.icon.unselected != '' && data.icon.selected != '') {
+          name = data.selected === true ? data.icon.selected : data.icon.unselected;
+        }
+
+        return name;
+      },
+
+      handleCustom(data) {
+        let custom = '';
+
+        if (data.custom.unselected != '' && data.custom.selected != '') {
+          custom = data.selected === true ? data.custom.selected : data.custom.unselected;
+        }
+
+        return custom;
+      },
+
+      handleSize(data) {
+        let size = '';
+
+        if (data.iconSize) {
+          size = data.iconSize;
+        } else if (this.iconSize) {
+          size = this.iconSize;
+        }
+
+        return size;
       }
 
     },
 
-    created() {},
-
-    mounted() {}
+    created() {
+      this.itemDatas = this.handleDatas(this.datas);
+    }
 
   };
 
@@ -924,7 +1025,7 @@
       _c(
         "ul",
         { class: _vm.barClasses, style: _vm.barStyles },
-        _vm._l(_vm.datas, function(data, key) {
+        _vm._l(_vm.itemDatas, function(data, key) {
           return _c(
             "li",
             {
@@ -943,11 +1044,9 @@
                 [
                   _c("icon", {
                     attrs: {
-                      name:
-                        data.selected === true
-                          ? data.icon.selected
-                          : data.icon.unselected,
-                      size: _vm.iconSize
+                      name: _vm.handleName(data),
+                      custom: _vm.handleCustom(data),
+                      size: _vm.handleSize(data)
                     }
                   }),
                   _vm._v(" "),

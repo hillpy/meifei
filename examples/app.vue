@@ -53,7 +53,7 @@
         </div>
       </div>
     </div>
-    <mf-tab-bar :maxWidth="tabBar.maxWidth" :height="tabBar.height" :iconSize="tabBar.iconSize" :titleSize="tabBar.titleSize" :datas="tabBar.datas" :hideLine="tabBar.hideLine" @itemClick="tabBarClick"></mf-tab-bar>
+    <mf-tab-bar ref="tabBar" :maxWidth="tabBar.maxWidth" :height="tabBar.height" :iconSize="tabBar.iconSize" :titleSize="tabBar.titleSize" :datas="tabBar.datas" :hideLine="tabBar.hideLine" @itemClick="tabBarClick"></mf-tab-bar>
     <mf-loading :show="loading.show" :type="loading.type"></mf-loading>
     <mf-progress-bar :decimal="progress.decimal" :position="progress.position"></mf-progress-bar>
   </div>
@@ -182,15 +182,21 @@
         tabBar: {
           maxWidth: '750px',
           height: '49px',
-          titleSize: '12px',
           iconSize: '20px',
+          titleSize: '12px',
           datas: [
             {
               title: '信息',
+              titleSize: '12px',
               icon: {
                 unselected: 'ios-infomation-circle-outline',
                 selected: 'ios-infomation-circle'
               },
+              custom: {
+                unselected: 'http://resource.hillpy.com/image/wechat_new_qrcode.png',
+                selected: 'http://resource.hillpy.com/image/alipay_new_qrcode.png'
+              },
+              iconSize: 'medium',
               selected: true
             },
             {
@@ -199,6 +205,7 @@
                 unselected: 'ios-notifications-outline',
                 selected: 'ios-notifications'
               },
+              iconSize: '20px',
               selected: false
             },
             {
@@ -207,6 +214,7 @@
                 unselected: 'ios-star-outline',
                 selected: 'ios-star'
               },
+              iconSize: '20px',
               selected: false
             },
             {
@@ -215,10 +223,12 @@
                 unselected: 'ios-cloud-outline',
                 selected: 'ios-cloud'
               },
+              iconSize: '20px',
               selected: false
             }
           ],
-          hideLine: false
+          hideLine: false,
+          autoUpdate: true
         }
       }
     },
@@ -238,6 +248,7 @@
             datas[i].selected = false
           }
         }
+        this.tabBar.datas = datas
       }
     },
     mounted () {

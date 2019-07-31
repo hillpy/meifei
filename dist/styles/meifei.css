@@ -642,6 +642,10 @@
   text-align: center;
   overflow: hidden;
   font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .mf-tabbar-wrapper .mf-tabbar .mf-tabbar-item, .mf-tabbar-wrapper .mf-tabbar-no-line .mf-tabbar-item {
