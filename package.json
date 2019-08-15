@@ -1,6 +1,6 @@
 {
   "name": "meifei",
-  "version": "0.0.0",
+  "version": "0.0.1-alpha",
   "description": "A vue components library. 一个vue组件库。",
   "main": "dist/meifei.cjs.js",
   "module": "dist/meifei.esm.js",
@@ -17,6 +17,13 @@
   "keywords": [
     "meifei"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinn-lancelot/meifei.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shinn-lancelot/meifei/issues"
+  },
   "readme": "README.md",
   "author": "shinn_lancelot",
   "license": "MIT",
