@@ -1,7 +1,7 @@
 <template>
   <div :class="wrapperClasses" v-show="show">
     <template v-for="(data, index) in loadingData">
-      <div :class="data.class" :prop="data.prop" :key="index" v-if="data.type == type">
+      <div :class="data.class" :key="index" v-if="data.type == type">
         <div :class="item.class" v-for="(item, key) in data.items" :key="key"></div>
       </div>
     </template>

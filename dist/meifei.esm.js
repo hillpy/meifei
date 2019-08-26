@@ -493,7 +493,7 @@ var __vue_render__$2 = function() {
           data.type == _vm.type
             ? _c(
                 "div",
-                { key: index, class: data.class, attrs: { prop: data.prop } },
+                { key: index, class: data.class },
                 _vm._l(data.items, function(item, key) {
                   return _c("div", { key: key, class: item.class })
                 }),
