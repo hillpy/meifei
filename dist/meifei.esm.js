@@ -487,19 +487,23 @@ var __vue_render__$2 = function() {
       ],
       class: _vm.wrapperClasses
     },
-    _vm._l(_vm.loadingData, function(data, index) {
-      return data.type == _vm.type
-        ? _c(
-            "div",
-            { key: index, class: data.class },
-            _vm._l(data.items, function(item, key) {
-              return _c("div", { key: key, class: item.class })
-            }),
-            0
-          )
-        : _vm._e()
-    }),
-    0
+    [
+      _vm._l(_vm.loadingData, function(data, index) {
+        return [
+          data.type == _vm.type
+            ? _c(
+                "div",
+                { key: index, class: data.class, attrs: { prop: data.prop } },
+                _vm._l(data.items, function(item, key) {
+                  return _c("div", { key: key, class: item.class })
+                }),
+                0
+              )
+            : _vm._e()
+        ]
+      })
+    ],
+    2
   )
 };
 var __vue_staticRenderFns__$2 = [];
