@@ -12,7 +12,7 @@
     "dist:dev": "rollup -c build/rollup.config.js -w",
     "dist:prod": "rollup -c build/rollup.config.js",
     "dist:styles": "gulp --gulpfile build/gulp.styles.js",
-    "examples": "parcel examples/index.html -d examples_dist -p 1180"
+    "examples": "parcel examples/index.html -d examples_dist -p 1180 --no-cache"
   },
   "keywords": [
     "meifei"
