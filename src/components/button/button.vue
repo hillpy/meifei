@@ -84,3 +84,7 @@
     mounted () {}
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "../../styles/button.scss";
+</style>

@@ -175,3 +175,7 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "../../styles/tab-bar";
+</style>

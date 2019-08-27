@@ -78,3 +78,7 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  @import "../../styles/nav-bar";
+</style>

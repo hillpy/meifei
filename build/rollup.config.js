@@ -2,9 +2,13 @@ import vue from 'rollup-plugin-vue'
 import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import commonjs from 'rollup-plugin-commonjs'
+// import sourcemaps from 'rollup-plugin-sourcemaps'
 // import cssOnly from 'rollup-plugin-css-only'
 // import cleanCss from 'clean-css'
 // import { writeFileSync } from 'fs'
+import postcss from 'rollup-plugin-postcss'
+import autoprefixer from 'autoprefixer'
+// import cssnano from 'cssnano'
 import { terser } from 'rollup-plugin-terser'
 // import image from 'rollup-plugin-image'
 import img from 'rollup-plugin-img'
@@ -22,6 +26,7 @@ const banner =
     ` * Released under the ${pkg.license} License.\n` +
     ' */\n'
 const outPath = './dist/'
+const stylePath = 'styles/'
 const outFileInfo = {
   'dev': {
     'cjs': pkg.main,
@@ -35,8 +40,8 @@ const outFileInfo = {
   }
 }
 const outPutCss = {
-  'dev': outPath + libName.toLowerCase() + '.scoped.css',
-  'prod': outPath + libName.toLowerCase() + '.scoped.min.css'
+  'dev': outPath + stylePath + libName.toLowerCase() + '.scoped.css',
+  'prod': outPath + stylePath + libName.toLowerCase() + '.scoped.min.css'
 }
 
 export default {
@@ -81,9 +86,15 @@ export default {
       exclude: ['node_modules/**']
     }),
     commonjs(),
-    // 不打包css，交由gulp处理
+    postcss({
+      // sourceMap: true,
+      minimize: production && true,
+      plugins: [autoprefixer],
+      extract: production ? outPutCss.prod : outPutCss.dev
+    }),
+    // 暂无用，已交由postcss处理样式
     // cssOnly({
-    //   output(style) {
+    //   output (style) {
     //     production
     //     ?
     //     writeFileSync(
