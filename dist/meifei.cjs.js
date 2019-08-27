@@ -31,6 +31,7 @@ const positionObj = {
   leftBottom: ['left', 'bottom'],
   rightBottom: ['right', 'bottom']
 };
+const animationArr = ['scale', 'rotate-y', 'fade-in'];
 var script = {
   name: name.componentsName.icon,
   props: {
@@ -49,6 +50,14 @@ var script = {
     custom: {
       type: String,
       default: ''
+    },
+    animated: {
+      type: Boolean,
+      default: false
+    },
+    animation: {
+      type: String,
+      default: 'scale'
     }
   },
   computed: {
@@ -62,6 +71,12 @@ var script = {
 
         if (sizeArr.indexOf(this.size) !== -1) {
           classes.push(`${prefixCls}` + '-size-' + this.size);
+        }
+      }
+
+      if (this.animated) {
+        if (animationArr.indexOf(this.animation) !== -1) {
+          classes.push(`${prefixCls}` + '-' + this.animation);
         }
       }
 
@@ -211,7 +226,7 @@ __vue_render__._withStripped = true;
   /* style */
   const __vue_inject_styles__ = undefined;
   /* scoped */
-  const __vue_scope_id__ = "data-v-0aa61f2e";
+  const __vue_scope_id__ = "data-v-7cf9eb23";
   /* module identifier */
   const __vue_module_identifier__ = undefined;
   /* functional template */
@@ -869,7 +884,9 @@ var script$5 = {
           selected: ''
         },
         iconSize: '20px',
-        selected: true
+        selected: true,
+        animated: true,
+        animation: 'scale'
       },
       itemDatas: []
     };
@@ -998,6 +1015,26 @@ var script$5 = {
       }
 
       return size;
+    },
+
+    handleAnimated(data) {
+      let animated = false;
+
+      if (data.selected === true) {
+        animated = true;
+      }
+
+      return animated;
+    },
+
+    handleAnimation(data) {
+      let animation = 'scale';
+
+      if (data.animation) {
+        animation = data.animation;
+      }
+
+      return animation;
     }
 
   },
@@ -1040,7 +1077,9 @@ var __vue_render__$5 = function() {
                   attrs: {
                     name: _vm.handleName(data),
                     custom: _vm.handleCustom(data),
-                    size: _vm.handleSize(data)
+                    size: _vm.handleSize(data),
+                    animated: _vm.handleAnimated(data),
+                    animation: _vm.handleAnimation(data)
                   }
                 }),
                 _vm._v(" "),
@@ -1063,7 +1102,7 @@ __vue_render__$5._withStripped = true;
   /* style */
   const __vue_inject_styles__$5 = undefined;
   /* scoped */
-  const __vue_scope_id__$5 = "data-v-c913ea24";
+  const __vue_scope_id__$5 = "data-v-cfb716e4";
   /* module identifier */
   const __vue_module_identifier__$5 = undefined;
   /* functional template */

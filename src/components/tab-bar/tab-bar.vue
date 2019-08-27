@@ -3,7 +3,7 @@
     <ul :class="barClasses" :style="barStyles">
       <li :class="itemClasses(data)" v-for="(data, key) in itemDatas" :key="key" @click="handleClick(key)">
         <div :class="itemConClasses">
-          <icon :name="handleName(data)" :custom="handleCustom(data)" :size="handleSize(data)"></icon>
+          <icon :name="handleName(data)" :custom="handleCustom(data)" :size="handleSize(data)" :animated="handleAnimated(data)" :animation="handleAnimation(data)"></icon>
           <span :style="titleStyles">{{ data.title }}</span>
         </div>
       </li>
@@ -69,7 +69,9 @@
             selected: ''
           },
           iconSize: '20px',
-          selected: true
+          selected: true,
+          animated: true,
+          animation: 'scale'
         },
         itemDatas: []
       }
@@ -168,6 +170,20 @@
           size = this.iconSize
         }
         return size
+      },
+      handleAnimated (data) {
+        let animated = false
+        if (data.selected === true) {
+          animated = true
+        }
+        return animated
+      },
+      handleAnimation (data) {
+        let animation = 'scale'
+        if (data.animation) {
+          animation = data.animation
+        }
+        return animation
       }
     },
     created () {

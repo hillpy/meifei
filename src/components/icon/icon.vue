@@ -27,6 +27,11 @@
     leftBottom: ['left', 'bottom'],
     rightBottom: ['right', 'bottom']
   }
+  const animationArr = [
+    'scale',
+    'rotate-y',
+    'fade-in'
+  ]
 
   export default {
     name: name.componentsName.icon,
@@ -46,6 +51,14 @@
       custom: {
         type: String,
         default: ''
+      },
+      animated: {
+        type: Boolean,
+        default: false
+      },
+      animation: {
+        type: String,
+        default: 'scale'
       }
     },
     computed: {
@@ -61,6 +74,12 @@
             classes.push(`${prefixCls}` + '-size-' + this.size)
           }
         }
+        if (this.animated) {
+          if (animationArr.indexOf(this.animation) !== -1) {
+            classes.push(`${prefixCls}` + '-' + this.animation)
+          }
+        }
+
         return classes
       },
       styles () {

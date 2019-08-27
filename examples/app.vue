@@ -80,7 +80,7 @@
           }
         },
         loading: {
-          show: true,
+          show: false,
           type: 1
         },
         progress: {
@@ -193,11 +193,13 @@
                 selected: 'ios-infomation-circle'
               },
               custom: {
-                unselected: 'http://resource.hillpy.com/image/wechat_new_qrcode.png',
-                selected: 'http://resource.hillpy.com/image/alipay_new_qrcode.png'
+                unselected: 'http://resource.hillpy.com/image/avatar-1.jpg',
+                selected: 'http://resource.hillpy.com/image/avatar-2.png'
               },
               iconSize: 'medium',
-              selected: true
+              selected: true,
+              animated: true,
+              animation: 'scale'
             },
             {
               title: '通知',
@@ -206,7 +208,9 @@
                 selected: 'ios-notifications'
               },
               iconSize: '20px',
-              selected: false
+              selected: false,
+              animated: true,
+              animation: 'scale'
             },
             {
               title: '收藏',
@@ -215,7 +219,9 @@
                 selected: 'ios-star'
               },
               iconSize: '20px',
-              selected: false
+              selected: false,
+              animated: true,
+              animation: 'scale'
             },
             {
               title: '云',
@@ -224,7 +230,9 @@
                 selected: 'ios-cloud'
               },
               iconSize: '20px',
-              selected: false
+              selected: false,
+              animated: true,
+              animation: 'scale'
             }
           ],
           hideLine: false,
