@@ -22,6 +22,8 @@
 
 ~~7. button~~
 
+8. badge
+
 ### TODO
 
 1. 添加eslint校验代码
