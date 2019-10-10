@@ -80,7 +80,7 @@
           }
         },
         loading: {
-          show: false,
+          show: true,
           type: 1
         },
         progress: {

@@ -12,7 +12,7 @@
     "dist:dev": "rollup -c build/rollup.config.js -w",
     "dist:prod": "rollup -c build/rollup.config.js",
     "dist:styles": "gulp --gulpfile build/gulp.styles.js",
-    "examples": "parcel examples/index.html -d examples_dist -p 1180 --no-cache"
+    "examples": "parcel serve examples/index.html -d examples_dist --no-cache --port 1180 --open"
   },
   "keywords": [
     "meifei"
@@ -43,6 +43,7 @@
     "gulp-sass": "^4.0.2",
     "node-sass": "^4.12.0",
     "parcel-bundler": "^1.12.3",
+    "parcel-plugin-clean-easy": "^1.0.2",
     "rollup": "^1.16.7",
     "rollup-plugin-alias": "^1.5.2",
     "rollup-plugin-babel": "^4.3.3",
@@ -59,5 +60,8 @@
     "vue": "^2.6.10",
     "vue-hot-reload-api": "^2.3.3",
     "vue-template-compiler": "^2.6.10"
-  }
+  },
+  "parcelCleanPaths": [
+    "examples_dist"
+  ]
 }

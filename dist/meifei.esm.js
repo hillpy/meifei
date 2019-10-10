@@ -12,7 +12,8 @@ let name = {
     progressBar: 'ProgressBar',
     icon: 'Icon',
     button: 'Button',
-    tabBar: 'TabBar'
+    tabBar: 'TabBar',
+    badge: 'Badge'
   }
 };
 

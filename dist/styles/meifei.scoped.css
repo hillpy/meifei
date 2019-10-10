@@ -140,26 +140,6 @@
 .mf-icon-md-infomation-circle-outline[data-v-7cf9eb23]::before {
   content: "";
 }
-.mf-icon-fade-in[data-v-7cf9eb23] {
-  -webkit-animation: mf-icon-animation-fade-in-data-v-7cf9eb23 0.2s linear 1 forwards;
-          animation: mf-icon-animation-fade-in-data-v-7cf9eb23 0.2s linear 1 forwards;
-}
-@-webkit-keyframes mf-icon-animation-fade-in-data-v-7cf9eb23 {
-from {
-    opacity: 0;
-}
-to {
-    opacity: 1;
-}
-}
-@keyframes mf-icon-animation-fade-in-data-v-7cf9eb23 {
-from {
-    opacity: 0;
-}
-to {
-    opacity: 1;
-}
-}
 .mf-icon-scale[data-v-7cf9eb23] {
   -webkit-animation: mf-icon-animation-scale-data-v-7cf9eb23 0.2s linear 1 forwards;
           animation: mf-icon-animation-scale-data-v-7cf9eb23 0.2s linear 1 forwards;
@@ -184,28 +164,48 @@ to {
             transform: scale(1);
 }
 }
+.mf-icon-fade-in[data-v-7cf9eb23] {
+  -webkit-animation: mf-icon-animation-fade-in-data-v-7cf9eb23 0.2s linear 1 forwards;
+          animation: mf-icon-animation-fade-in-data-v-7cf9eb23 0.2s linear 1 forwards;
+}
+@-webkit-keyframes mf-icon-animation-fade-in-data-v-7cf9eb23 {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
+@keyframes mf-icon-animation-fade-in-data-v-7cf9eb23 {
+from {
+    opacity: 0;
+}
+to {
+    opacity: 1;
+}
+}
 .mf-icon-rotate-y[data-v-7cf9eb23] {
   -webkit-animation: mf-icon-animation-rotate-y-data-v-7cf9eb23 0.2s linear 1 forwards;
           animation: mf-icon-animation-rotate-y-data-v-7cf9eb23 0.2s linear 1 forwards;
 }
 @-webkit-keyframes mf-icon-animation-rotate-y-data-v-7cf9eb23 {
 from {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
 to {
-    -webkit-transform: rotateY(360);
-            transform: rotateY(360);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
 }
 }
 @keyframes mf-icon-animation-rotate-y-data-v-7cf9eb23 {
 from {
-    -webkit-transform: rotateY(0);
-            transform: rotateY(0);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
 to {
-    -webkit-transform: rotateY(360);
-            transform: rotateY(360);
+    -webkit-transform: rotateY(360deg);
+            transform: rotateY(360deg);
 }
 }
 .mf-navbar-wrapper[data-v-09f7f79e] {
