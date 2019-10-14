@@ -10,19 +10,22 @@ $prefix-cls: $button-prefix-cls;
     padding: $distance-small $distance-large;
     border-radius: $radius-default;
     font-size: $font-size-xxx-small;
+    white-space: nowrap;
+    line-height: 1.5;
     text-align: center;
     user-select: none;
-    transition: opacity $transition-time linear, box-shadow $transition-time linear, color $transition-time linear, background-color $transition-time linear, border $transition-time linear;
+    transition: opacity $transition-time-fast linear, box-shadow $transition-time-fast linear, color $transition-time-fast linear, background-color $transition-time-fast linear, border $transition-time-fast linear;
     border: 1px solid $color-border;
     cursor: pointer;
-    opacity: .9;
+    opacity: .85;
+    transform: translateZ(0);
     & > i + span {
         margin-left: $distance-x-small;
     }
 }
-.#{$prefix-cls}:hover {
-    opacity: .8;
-}
+// .#{$prefix-cls}:hover {
+//     opacity: .8;
+// }
 .#{$prefix-cls}:active {
     opacity: 1;
 }

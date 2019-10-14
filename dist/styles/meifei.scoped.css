@@ -461,22 +461,23 @@ to {
   padding: 8px 12px;
   border-radius: 2px;
   font-size: 12px;
+  white-space: nowrap;
+  line-height: 1.5;
   text-align: center;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: opacity 0.2s linear, box-shadow 0.2s linear, color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
-  transition: opacity 0.2s linear, box-shadow 0.2s linear, color 0.2s linear, background-color 0.2s linear, border 0.2s linear;
+  -webkit-transition: opacity 0.1s linear, box-shadow 0.1s linear, color 0.1s linear, background-color 0.1s linear, border 0.1s linear;
+  transition: opacity 0.1s linear, box-shadow 0.1s linear, color 0.1s linear, background-color 0.1s linear, border 0.1s linear;
   border: 1px solid #d6d6d6;
   cursor: pointer;
-  opacity: 0.9;
+  opacity: 0.85;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 .mf-button > i + span[data-v-8e2e56fe] {
   margin-left: 6px;
-}
-.mf-button[data-v-8e2e56fe]:hover {
-  opacity: 0.8;
 }
 .mf-button[data-v-8e2e56fe]:active {
   opacity: 1;

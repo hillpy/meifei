@@ -39,7 +39,7 @@ $prefix-cls: $tab-bar-prefix-cls;
             }
         }
         .#{$prefix-cls}-selected {
-            animation: #{$prefix-cls}-selected-animation .2s linear 1 forwards;
+            animation: #{$prefix-cls}-selected-animation $transition-time linear 1 forwards;
         }
     }
     .#{$prefix-cls}::after {

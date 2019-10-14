@@ -159,7 +159,7 @@ $font-path: './fonts';
 
 // 动画
 .#{$prefix-cls}-scale {
-    animation: #{$prefix-cls}-animation-scale .2s linear 1 forwards;
+    animation: #{$prefix-cls}-animation-scale $transition-time linear 1 forwards;
 }
 
 @keyframes #{$prefix-cls}-animation-scale {
@@ -172,7 +172,7 @@ $font-path: './fonts';
 }
 
 .#{$prefix-cls}-fade-in {
-    animation: #{$prefix-cls}-animation-fade-in .2s linear 1 forwards;
+    animation: #{$prefix-cls}-animation-fade-in $transition-time linear 1 forwards;
 }
 
 @keyframes #{$prefix-cls}-animation-fade-in {
@@ -185,7 +185,7 @@ $font-path: './fonts';
 }
 
 .#{$prefix-cls}-rotate-y {
-    animation: #{$prefix-cls}-animation-rotate-y .2s linear 1 forwards;
+    animation: #{$prefix-cls}-animation-rotate-y $transition-time linear 1 forwards;
 }
 
 @keyframes #{$prefix-cls}-animation-rotate-y {

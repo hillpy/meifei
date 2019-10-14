@@ -18,7 +18,7 @@
 
 ~~5. icon~~
 
-6. alert
+6. toast
 
 ~~7. button~~
 
