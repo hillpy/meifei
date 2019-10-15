@@ -5,7 +5,7 @@
 <script>
   import name from '../../common/name'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
 
   export default {
     name: name.componentsName.badge,
@@ -22,7 +22,7 @@
     computed: {
       wrapperClasses () {
         let wrapperClasses = []
-        wrapperClasses.push(`${prefixCls}`)
+        wrapperClasses.push(`${PREFIX_CLS}`)
         return wrapperClasses
       }
     }

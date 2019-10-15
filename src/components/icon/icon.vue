@@ -5,7 +5,7 @@
 <script>
   import name from '../../common/name'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase()
   const sizeArr = [
     'xxx-small',
     'xx-small',
@@ -64,19 +64,19 @@
     computed: {
       classes () {
         let classes = [
-          `${prefixCls}`
+          `${PREFIX_CLS}`
         ]
         if (this.name) {
-          classes.push(`${prefixCls}` + '-' + this.name)
+          classes.push(`${PREFIX_CLS}` + '-' + this.name)
         } else if (this.custom) {
           this.size || (this.size = 'small')
           if (sizeArr.indexOf(this.size) !== -1) {
-            classes.push(`${prefixCls}` + '-size-' + this.size)
+            classes.push(`${PREFIX_CLS}` + '-size-' + this.size)
           }
         }
         if (this.animated) {
           if (animationArr.indexOf(this.animation) !== -1) {
-            classes.push(`${prefixCls}` + '-' + this.animation)
+            classes.push(`${PREFIX_CLS}` + '-' + this.animation)
           }
         }
 

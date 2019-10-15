@@ -19,12 +19,13 @@
       icon: 'Icon',
       button: 'Button',
       tabBar: 'TabBar',
-      badge: 'Badge'
+      badge: 'Badge',
+      music: 'Music'
     }
   };
 
   //
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase();
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase();
   const sizeArr = ['xxx-small', 'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large', 'xx-large', 'xxx-large'];
   const positionObj = {
     top: 'top',
@@ -67,21 +68,21 @@
     },
     computed: {
       classes() {
-        let classes = [`${prefixCls}`];
+        let classes = [`${PREFIX_CLS}`];
 
         if (this.name) {
-          classes.push(`${prefixCls}` + '-' + this.name);
+          classes.push(`${PREFIX_CLS}` + '-' + this.name);
         } else if (this.custom) {
           this.size || (this.size = 'small');
 
           if (sizeArr.indexOf(this.size) !== -1) {
-            classes.push(`${prefixCls}` + '-size-' + this.size);
+            classes.push(`${PREFIX_CLS}` + '-size-' + this.size);
           }
         }
 
         if (this.animated) {
           if (animationArr.indexOf(this.animation) !== -1) {
-            classes.push(`${prefixCls}` + '-' + this.animation);
+            classes.push(`${PREFIX_CLS}` + '-' + this.animation);
           }
         }
 
@@ -231,7 +232,7 @@
     /* style */
     const __vue_inject_styles__ = undefined;
     /* scoped */
-    const __vue_scope_id__ = "data-v-7cf9eb23";
+    const __vue_scope_id__ = "data-v-11424e90";
     /* module identifier */
     const __vue_module_identifier__ = undefined;
     /* functional template */
@@ -254,7 +255,7 @@
     );
 
   //
-  const prefixCls$1 = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase();
+  const PREFIX_CLS$1 = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase();
   var script$1 = {
     name: name.componentsName.navBar,
     components: {
@@ -290,19 +291,19 @@
     },
     computed: {
       wrapperClasses() {
-        return `${prefixCls$1}` + '-wrapper';
+        return `${PREFIX_CLS$1}` + '-wrapper';
       },
 
       barClasses() {
-        return `${prefixCls$1}`;
+        return `${PREFIX_CLS$1}`;
       },
 
       titleClasses() {
-        return `${prefixCls$1}` + '-title';
+        return `${PREFIX_CLS$1}` + '-title';
       },
 
       iconBoxClasses() {
-        return `${prefixCls$1}` + '-icon-box';
+        return `${PREFIX_CLS$1}` + '-icon-box';
       },
 
       barStyles() {
@@ -369,7 +370,7 @@
     /* style */
     const __vue_inject_styles__$1 = undefined;
     /* scoped */
-    const __vue_scope_id__$1 = "data-v-09f7f79e";
+    const __vue_scope_id__$1 = "data-v-37a93bac";
     /* module identifier */
     const __vue_module_identifier__$1 = undefined;
     /* functional template */
@@ -440,7 +441,7 @@
   }
 
   //
-  const prefixCls$2 = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase();
+  const PREFIX_CLS$2 = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase();
   var script$2 = {
     name: name.componentsName.loading,
     props: {
@@ -462,7 +463,7 @@
 
     computed: {
       wrapperClasses() {
-        return `${prefixCls$2}` + '-wrapper';
+        return `${PREFIX_CLS$2}` + '-wrapper';
       }
 
     },
@@ -473,12 +474,12 @@
 
         for (let i = 1; i <= maxType; i++) {
           dataObj.type = i;
-          dataObj.class = `${prefixCls$2}` + '-' + i;
+          dataObj.class = `${PREFIX_CLS$2}` + '-' + i;
           dataObj.items = [];
           let item = {};
 
           for (let j = 1; j <= maxLoadingBar; j++) {
-            item.class = [`${prefixCls$2}` + '-bar-' + i, `${prefixCls$2}` + '-bar-' + i + '-' + j];
+            item.class = [`${PREFIX_CLS$2}` + '-bar-' + i, `${PREFIX_CLS$2}` + '-bar-' + i + '-' + j];
             dataObj.items.push(utils.deepCopy(item));
           }
 
@@ -531,7 +532,7 @@
     /* style */
     const __vue_inject_styles__$2 = undefined;
     /* scoped */
-    const __vue_scope_id__$2 = "data-v-4ae52ad4";
+    const __vue_scope_id__$2 = "data-v-e0ac11e6";
     /* module identifier */
     const __vue_module_identifier__$2 = undefined;
     /* functional template */
@@ -554,7 +555,7 @@
     );
 
   //
-  const prefixCls$3 = name.libShortName.toLowerCase() + '-' + name.componentsName.progressBar.toLowerCase();
+  const PREFIX_CLS$3 = name.libShortName.toLowerCase() + '-' + name.componentsName.progressBar.toLowerCase();
   var script$3 = {
     name: name.componentsName.progressBar,
     props: {
@@ -592,15 +593,15 @@
     },
     computed: {
       wrapperClasses() {
-        return `${prefixCls$3}` + '-wrapper';
+        return `${PREFIX_CLS$3}` + '-wrapper';
       },
 
       barBoxClasses() {
-        return `${prefixCls$3}` + '-box';
+        return `${PREFIX_CLS$3}` + '-box';
       },
 
       barClasses() {
-        return `${prefixCls$3}`;
+        return `${PREFIX_CLS$3}`;
       },
 
       wrapperStyles() {
@@ -674,7 +675,7 @@
     /* style */
     const __vue_inject_styles__$3 = undefined;
     /* scoped */
-    const __vue_scope_id__$3 = "data-v-6777a8de";
+    const __vue_scope_id__$3 = "data-v-4ed9bf31";
     /* module identifier */
     const __vue_module_identifier__$3 = undefined;
     /* functional template */
@@ -697,7 +698,7 @@
     );
 
   //
-  const prefixCls$4 = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase();
+  const PREFIX_CLS$4 = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase();
   var script$4 = {
     name: name.componentsName.button,
     components: {
@@ -743,16 +744,16 @@
     computed: {
       wrapperClasses() {
         let wrapperClasses = [];
-        wrapperClasses.push(`${prefixCls$4}`);
-        this.type && wrapperClasses.push(`${prefixCls$4}` + '-' + this.type);
-        this.size && wrapperClasses.push(`${prefixCls$4}` + '-' + this.size);
+        wrapperClasses.push(`${PREFIX_CLS$4}`);
+        this.type && wrapperClasses.push(`${PREFIX_CLS$4}` + '-' + this.type);
+        this.size && wrapperClasses.push(`${PREFIX_CLS$4}` + '-' + this.size);
 
         if (this.radius === 'circle') {
-          wrapperClasses.push(`${prefixCls$4}` + '-' + this.radius);
+          wrapperClasses.push(`${PREFIX_CLS$4}` + '-' + this.radius);
         }
 
         if (this.long === true) {
-          wrapperClasses.push(`${prefixCls$4}` + '-long');
+          wrapperClasses.push(`${PREFIX_CLS$4}` + '-long');
         }
 
         return wrapperClasses;
@@ -775,12 +776,7 @@
         this.$emit('buttonClick', e);
       }
 
-    },
-
-    created() {},
-
-    mounted() {}
-
+    }
   };
 
   /* script */
@@ -813,7 +809,7 @@
     /* style */
     const __vue_inject_styles__$4 = undefined;
     /* scoped */
-    const __vue_scope_id__$4 = "data-v-8e2e56fe";
+    const __vue_scope_id__$4 = "data-v-3f8442d1";
     /* module identifier */
     const __vue_module_identifier__$4 = undefined;
     /* functional template */
@@ -836,7 +832,7 @@
     );
 
   //
-  const prefixCls$5 = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase();
+  const PREFIX_CLS$5 = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase();
   var script$5 = {
     name: name.componentsName.tabBar,
     components: {
@@ -908,16 +904,16 @@
     },
     computed: {
       wrapperClasses() {
-        return `${prefixCls$5}` + '-wrapper';
+        return `${PREFIX_CLS$5}` + '-wrapper';
       },
 
       barClasses() {
         let classes = [];
 
         if (this.hideLine === false) {
-          classes.push(`${prefixCls$5}`);
+          classes.push(`${PREFIX_CLS$5}`);
         } else {
-          classes.push(`${prefixCls$5}` + '-no-line');
+          classes.push(`${PREFIX_CLS$5}` + '-no-line');
         }
 
         return classes;
@@ -940,10 +936,10 @@
       itemClasses() {
         return data => {
           let classes = [];
-          classes.push(`${prefixCls$5}` + '-item');
+          classes.push(`${PREFIX_CLS$5}` + '-item');
 
           if (data.selected === true) {
-            classes.push(`${prefixCls$5}` + '-selected');
+            classes.push(`${PREFIX_CLS$5}` + '-selected');
           }
 
           return classes;
@@ -951,7 +947,7 @@
       },
 
       itemConClasses() {
-        return `${prefixCls$5}` + '-item-content';
+        return `${PREFIX_CLS$5}` + '-item-content';
       },
 
       titleStyles() {
@@ -965,6 +961,11 @@
       }
 
     },
+
+    created() {
+      this.itemDatas = this.handleDatas(this.datas);
+    },
+
     methods: {
       handleDatas(datas) {
         let newDatas = [];
@@ -1042,12 +1043,7 @@
         return animation;
       }
 
-    },
-
-    created() {
-      this.itemDatas = this.handleDatas(this.datas);
     }
-
   };
 
   /* script */
@@ -1107,7 +1103,7 @@
     /* style */
     const __vue_inject_styles__$5 = undefined;
     /* scoped */
-    const __vue_scope_id__$5 = "data-v-cfb716e4";
+    const __vue_scope_id__$5 = "data-v-b9abd82a";
     /* module identifier */
     const __vue_module_identifier__$5 = undefined;
     /* functional template */
@@ -1129,13 +1125,247 @@
       undefined
     );
 
+  //
+  const PREFIX_CLS$6 = name.libShortName.toLowerCase() + '-' + name.componentsName.music.toLowerCase();
+  const ANIMATION_ARR = ['rotate', 'scale'];
+  const SIZE_ARR = ['small', 'medium', 'large'];
+  var script$6 = {
+    name: name.componentsName.music,
+    props: {
+      src: {
+        type: String,
+        default: '',
+        required: true
+      },
+      playClass: {
+        type: String,
+        default: `${PREFIX_CLS$6}` + '-play'
+      },
+      pauseClass: {
+        type: String,
+        default: `${PREFIX_CLS$6}` + '-pause'
+      },
+      maxVolume: {
+        type: Number,
+        default: 1
+      },
+      volStepSize: {
+        type: Number,
+        default: 0.05
+      },
+      animated: {
+        type: Boolean,
+        default: true
+      },
+      animation: {
+        type: String,
+        default: 'rotate'
+      },
+      size: {
+        type: String,
+        default: 'medium'
+      },
+      show: {
+        type: Boolean,
+        default: true
+      }
+    },
+
+    data() {
+      return {
+        audio: {},
+        clickState: true,
+        paused: true,
+        volume: 0,
+        pausedClass: `${PREFIX_CLS$6}` + '-animation-paused',
+        wrapperClasses: []
+      };
+    },
+
+    watch: {
+      volume(val, oldVal) {
+        if (val < 0) {
+          val = 0;
+        } else if (val > this.maxVolume) {
+          val = this.maxVolume;
+        }
+
+        this.audio.volume = val; // 音量小于等于0，则播放状态改成暂停，允许点击播放器
+
+        if (val <= 0) {
+          this.paused = true;
+          this.clickState = true; // 音量刚从0变大，则播放状态改成播放
+        } else if (val > 0 && oldVal <= 0) {
+          this.paused = false;
+        } // 音量达到最大，则允许点击播放器
+
+
+        if (val >= this.maxVolume) {
+          this.clickState = true;
+        }
+      },
+
+      paused(val) {
+        // 监听播放状态变量，调整播放状态与样式
+        if (val === true) {
+          this.updateWrapperClasses([this.pauseClass, this.pausedClass]);
+          this.audio.pause();
+        } else {
+          this.updateWrapperClasses([this.playClass]);
+          this.audio.play();
+        }
+      }
+
+    },
+
+    created() {
+      // 校验并修正最大音量
+      if (this.maxVolume > 1 || this.maxVolume <= 0) {
+        this.maxVolume = 1;
+      } // 更新样式
+
+
+      this.updateWrapperClasses([this.pauseClass, this.pausedClass]); // 创建audio对象
+
+      this.audio = new Audio();
+      this.audio.src = this.src;
+      this.audio.preload = true;
+      this.audio.loop = true;
+    },
+
+    methods: {
+      handleClick(e) {
+        if (!this.clickState) {
+          return;
+        }
+
+        this.clickState = false;
+
+        if (this.audio.paused === true) {
+          this.play();
+        } else {
+          this.pause();
+        }
+
+        this.$emit('musicClick', e);
+      },
+
+      // 播放
+      play() {
+        this.increaseVolume();
+      },
+
+      // 暂停
+      pause() {
+        this.decreaseVolume();
+      },
+
+      // 增大音量
+      increaseVolume() {
+        if (this.volume < this.maxVolume) {
+          let index = setInterval(() => {
+            if (this.volume >= this.maxVolume) {
+              clearInterval(index);
+            }
+
+            this.volume += this.volStepSize < this.maxVolume && this.volStepSize > 0 ? this.volStepSize : this.maxVolume;
+
+            if (this.volume >= this.maxVolume) {
+              this.volume = this.maxVolume;
+            }
+          }, 50);
+        }
+      },
+
+      // 减小音量
+      decreaseVolume() {
+        if (this.volume > 0) {
+          let index = setInterval(() => {
+            if (this.volume <= 0) {
+              clearInterval(index);
+            }
+
+            this.volume -= this.volStepSize < this.maxVolume && this.volStepSize > 0 ? this.volStepSize : this.maxVolume;
+
+            if (this.volume <= 0) {
+              this.volume = 0;
+            }
+          }, 50);
+        }
+      },
+
+      // 更新容器样式
+      updateWrapperClasses(arr) {
+        let classes = [`${PREFIX_CLS$6}`];
+
+        if (SIZE_ARR.indexOf(this.size) !== -1) {
+          classes.push(`${PREFIX_CLS$6}` + '-size-' + this.size);
+        }
+
+        if (this.animated === true) {
+          if (ANIMATION_ARR.indexOf(this.animation) !== -1) {
+            classes.push(`${PREFIX_CLS$6}` + '-animation-' + this.animation);
+          }
+        }
+
+        classes = classes.concat(arr);
+        this.wrapperClasses = classes;
+      }
+
+    }
+  };
+
+  /* script */
+  const __vue_script__$6 = script$6;
+  /* template */
+  var __vue_render__$6 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c("div", {
+      directives: [
+        { name: "show", rawName: "v-show", value: _vm.show, expression: "show" }
+      ],
+      class: _vm.wrapperClasses,
+      on: { click: _vm.handleClick }
+    })
+  };
+  var __vue_staticRenderFns__$6 = [];
+  __vue_render__$6._withStripped = true;
+
+    /* style */
+    const __vue_inject_styles__$6 = undefined;
+    /* scoped */
+    const __vue_scope_id__$6 = "data-v-5d5a967e";
+    /* module identifier */
+    const __vue_module_identifier__$6 = undefined;
+    /* functional template */
+    const __vue_is_functional_template__$6 = false;
+    /* style inject */
+    
+    /* style inject SSR */
+    
+
+    
+    var Music = normalizeComponent_1(
+      { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
+      __vue_inject_styles__$6,
+      __vue_script__$6,
+      __vue_scope_id__$6,
+      __vue_is_functional_template__$6,
+      __vue_module_identifier__$6,
+      undefined,
+      undefined
+    );
+
   const components = {
     NavBar,
     Loading,
     ProgressBar,
     Icon,
     Button,
-    TabBar
+    TabBar,
+    Music
   };
   let prefixComponent = '';
   prefixComponent = name.libShortName;

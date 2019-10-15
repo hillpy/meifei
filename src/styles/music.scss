@@ -1,0 +1,66 @@
+@import "./variables/common";
+
+$prefix-cls: $music-prefix-cls;
+
+.#{$prefix-cls} {
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.#{$prefix-cls}-size-small {
+    width: 25px;
+    height: 25px;
+}
+
+.#{$prefix-cls}-size-medium {
+    width: 30px;
+    height: 30px;
+}
+
+.#{$prefix-cls}-size-large {
+    width: 35px;
+    height: 35px;
+}
+
+.#{$prefix-cls}-play {
+    background-image: url("./images/music.svg");
+}
+
+.#{$prefix-cls}-pause {
+    background-image: url("./images/music_off.svg");
+}
+
+.#{$prefix-cls}-animation-paused {
+    animation-play-state: paused !important;
+}
+
+.#{$prefix-cls}-animation-rotate {
+    animation: #{$prefix-cls}-animation-rotate 3s linear infinite;
+}
+@keyframes #{$prefix-cls}-animation-rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.#{$prefix-cls}-animation-scale {
+    animation: #{$prefix-cls}-animation-scale 1.5s linear infinite;
+}
+@keyframes #{$prefix-cls}-animation-scale {
+    0% {
+        transform: scale(0.9);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}

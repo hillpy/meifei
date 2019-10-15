@@ -9,7 +9,7 @@
   import name from '../../common/name'
   import Icon from '../icon/icon'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
 
   export default {
     name: name.componentsName.button,
@@ -55,14 +55,14 @@
     computed: {
       wrapperClasses () {
         let wrapperClasses = []
-        wrapperClasses.push(`${prefixCls}`)
-        this.type && wrapperClasses.push(`${prefixCls}` + '-' + this.type)
-        this.size && wrapperClasses.push(`${prefixCls}` + '-' + this.size)
+        wrapperClasses.push(`${PREFIX_CLS}`)
+        this.type && wrapperClasses.push(`${PREFIX_CLS}` + '-' + this.type)
+        this.size && wrapperClasses.push(`${PREFIX_CLS}` + '-' + this.size)
         if (this.radius === 'circle') {
-          wrapperClasses.push(`${prefixCls}` + '-' + this.radius)
+          wrapperClasses.push(`${PREFIX_CLS}` + '-' + this.radius)
         }
         if (this.long === true) {
-          wrapperClasses.push(`${prefixCls}` + '-long')
+          wrapperClasses.push(`${PREFIX_CLS}` + '-long')
         }
         return wrapperClasses
       },
@@ -79,9 +79,7 @@
         e.preventDefault()
         this.$emit('buttonClick', e)
       }
-    },
-    created () {},
-    mounted () {}
+    }
   }
 </script>
 

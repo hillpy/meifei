@@ -7,7 +7,8 @@ let name = {
     icon: 'Icon',
     button: 'Button',
     tabBar: 'TabBar',
-    badge: 'Badge'
+    badge: 'Badge',
+    music: 'Music'
   }
 }
 

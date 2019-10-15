@@ -16,7 +16,7 @@
   import name from '../../common/name'
   import Icon from '../icon/icon'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase()
 
   export default {
     name: name.componentsName.navBar,
@@ -57,16 +57,16 @@
     },
     computed: {
       wrapperClasses () {
-        return `${prefixCls}` + '-wrapper'
+        return `${PREFIX_CLS}` + '-wrapper'
       },
       barClasses () {
-        return `${prefixCls}`
+        return `${PREFIX_CLS}`
       },
       titleClasses () {
-        return `${prefixCls}` + '-title'
+        return `${PREFIX_CLS}` + '-title'
       },
       iconBoxClasses () {
-        return `${prefixCls}` + '-icon-box'
+        return `${PREFIX_CLS}` + '-icon-box'
       },
       barStyles () {
         let styles = ''

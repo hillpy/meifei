@@ -5,6 +5,7 @@ import ProgressBar from './components/progress-bar'
 import Icon from './components/icon'
 import Button from './components/button'
 import TabBar from './components/tab-bar'
+import Music from './components/music'
 
 const components = {
   NavBar,
@@ -12,7 +13,8 @@ const components = {
   ProgressBar,
   Icon,
   Button,
-  TabBar
+  TabBar,
+  Music
 }
 
 let prefixComponent = ''

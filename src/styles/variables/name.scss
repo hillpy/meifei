@@ -8,7 +8,8 @@ $class-name-map: (
   icon: 'icon',
   button: 'button',
   tabBar: 'tabbar',
-  badge: 'badge'
+  badge: 'badge',
+  music: 'music'
 );
 
 $nav-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'navBar');
@@ -18,3 +19,4 @@ $icon-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'icon');
 $button-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'button');
 $tab-bar-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'tabBar');
 $badge-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'badge');
+$music-prefix-cls: $lib-short-name + '-' + map-get($class-name-map, 'music');

@@ -47,6 +47,11 @@ gulp.task('font', () => {
   .pipe(gulp.dest('../dist/styles/fonts'))
 })
 
+gulp.task('image', () => {
+  return gulp.src('../src/styles/images/*.*')
+  .pipe(gulp.dest('../dist/styles/images'))
+})
+
 gulp.task('scss', () => {
   if (production) {
     return gulp.src('../src/styles/*.scss')
@@ -66,11 +71,12 @@ gulp.task('scss', () => {
 
 gulp.task('watch', () => {
   gulp.watch('../src/styles/fonts/*.*', gulp.series('font'))
+  gulp.watch('../src/styles/images/*.*', gulp.series('image'))
   gulp.watch('../src/styles/*.scss', gulp.series('scss', 'banner'))
 })
 
 if (production) {
-  gulp.task('default', gulp.series('scss', 'banner', gulp.parallel('font')))
+  gulp.task('default', gulp.series('scss', 'banner', gulp.parallel('font', 'image')))
 } else {
-  gulp.task('default', gulp.series('scss', 'banner', gulp.parallel('font', 'watch')))
+  gulp.task('default', gulp.series('scss', 'banner', gulp.parallel('font', 'image', 'watch')))
 }

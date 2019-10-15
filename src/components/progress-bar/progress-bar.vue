@@ -9,7 +9,7 @@
 <script>
   import name from '../../common/name'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.progressBar.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.progressBar.toLowerCase()
 
   export default {
     name: name.componentsName.progressBar,
@@ -45,13 +45,13 @@
     },
     computed: {
       wrapperClasses () {
-        return `${prefixCls}` + '-wrapper'
+        return `${PREFIX_CLS}` + '-wrapper'
       },
       barBoxClasses () {
-        return `${prefixCls}` + '-box'
+        return `${PREFIX_CLS}` + '-box'
       },
       barClasses () {
-        return `${prefixCls}`
+        return `${PREFIX_CLS}`
       },
       wrapperStyles () {
         let position = ''

@@ -16,7 +16,7 @@
   import name from '../../common/name'
   import Icon from '../icon/icon'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase()
 
   export default {
     name: name.componentsName.tabBar,
@@ -86,14 +86,14 @@
     },
     computed: {
       wrapperClasses () {
-        return `${prefixCls}` + '-wrapper'
+        return `${PREFIX_CLS}` + '-wrapper'
       },
       barClasses () {
         let classes = []
         if (this.hideLine === false) {
-          classes.push(`${prefixCls}`)
+          classes.push(`${PREFIX_CLS}`)
         } else {
-          classes.push(`${prefixCls}` + '-no-line')
+          classes.push(`${PREFIX_CLS}` + '-no-line')
         }
         return classes;
       },
@@ -110,15 +110,15 @@
       itemClasses () {
         return (data) => {
           let classes = []
-          classes.push(`${prefixCls}` + '-item')
+          classes.push(`${PREFIX_CLS}` + '-item')
           if (data.selected === true) {
-            classes.push(`${prefixCls}` + '-selected')
+            classes.push(`${PREFIX_CLS}` + '-selected')
           }
           return classes
         }
       },
       itemConClasses () {
-        return `${prefixCls}` + '-item-content'
+        return `${PREFIX_CLS}` + '-item-content'
       },
       titleStyles () {
         let styles = ''
@@ -127,6 +127,9 @@
         }
         return styles
       }
+    },
+    created () {
+      this.itemDatas = this.handleDatas(this.datas)
     },
     methods: {
       handleDatas (datas) {
@@ -185,9 +188,6 @@
         }
         return animation
       }
-    },
-    created () {
-      this.itemDatas = this.handleDatas(this.datas)
     }
   }
 </script>

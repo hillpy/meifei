@@ -592,6 +592,105 @@
   }
 }
 
+.mf-music {
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.mf-music-size-small {
+  width: 25px;
+  height: 25px;
+}
+
+.mf-music-size-medium {
+  width: 30px;
+  height: 30px;
+}
+
+.mf-music-size-large {
+  width: 35px;
+  height: 35px;
+}
+
+.mf-music-play {
+  background-image: url("./images/music.svg");
+}
+
+.mf-music-pause {
+  background-image: url("./images/music_off.svg");
+}
+
+.mf-music-animation-paused {
+  -webkit-animation-play-state: paused !important;
+          animation-play-state: paused !important;
+}
+
+.mf-music-animation-rotate {
+  -webkit-animation: mf-music-animation-rotate 3s linear infinite;
+          animation: mf-music-animation-rotate 3s linear infinite;
+}
+
+@-webkit-keyframes mf-music-animation-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes mf-music-animation-rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.mf-music-animation-scale {
+  -webkit-animation: mf-music-animation-scale 1.5s linear infinite;
+          animation: mf-music-animation-scale 1.5s linear infinite;
+}
+
+@-webkit-keyframes mf-music-animation-scale {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+@keyframes mf-music-animation-scale {
+  0% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
 .mf-navbar-wrapper {
   position: fixed;
   top: 0;

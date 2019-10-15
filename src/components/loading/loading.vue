@@ -12,7 +12,7 @@
   import utils from '../../utils/utils'
   import name from '../../common/name'
 
-  const prefixCls = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase()
+  const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase()
 
   export default {
     name: name.componentsName.loading,
@@ -33,7 +33,7 @@
     },
     computed: {
       wrapperClasses () {
-        return `${prefixCls}` + '-wrapper'
+        return `${PREFIX_CLS}` + '-wrapper'
       }
     },
     methods: {
@@ -43,13 +43,13 @@
 
         for (let i = 1; i <= maxType; i++) {
           dataObj.type = i
-          dataObj.class = `${prefixCls}` + '-' + i
+          dataObj.class = `${PREFIX_CLS}` + '-' + i
           dataObj.items = []
           let item = {}
           for (let j = 1; j <= maxLoadingBar; j++) {
             item.class = [
-              `${prefixCls}` + '-bar-' + i,
-              `${prefixCls}` + '-bar-' + i + '-' + j
+              `${PREFIX_CLS}` + '-bar-' + i,
+              `${PREFIX_CLS}` + '-bar-' + i + '-' + j
             ]
 
             dataObj.items.push(utils.deepCopy(item))
