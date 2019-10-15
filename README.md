@@ -24,6 +24,8 @@
 
 8. badge
 
+~~9. music~~
+
 ### TODO
 
 1. 添加eslint校验代码
@@ -42,4 +44,6 @@
 
 8. 使用netlify部署example，doc
 
-9. 添加.npmignore，用户发布npm时，忽略部分文件目录
+9. 添加.npmignore，当发布npm时，忽略部分文件目录
+
+10. 简化预发布、发布版本的流程，整合终端操作命令
