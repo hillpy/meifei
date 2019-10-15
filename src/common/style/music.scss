@@ -3,6 +3,7 @@
 $prefix-cls: $music-prefix-cls;
 
 .#{$prefix-cls} {
+    display: inline-block;
     border-radius: 50%;
     cursor: pointer;
     background-color: transparent;

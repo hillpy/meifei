@@ -694,6 +694,7 @@ to {
   border-radius: 50%;
 }
 .mf-music[data-v-0c0e4a32] {
+  display: inline-block;
   border-radius: 50%;
   cursor: pointer;
   background-color: transparent;
