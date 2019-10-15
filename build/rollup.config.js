@@ -26,7 +26,7 @@ const banner =
     ` * Released under the ${pkg.license} License.\n` +
     ' */\n'
 const outPath = './dist/'
-const stylePath = 'styles/'
+const stylePath = 'style/'
 const outFileInfo = {
   'dev': {
     'cjs': pkg.main,

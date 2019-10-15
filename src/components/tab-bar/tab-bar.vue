@@ -12,8 +12,8 @@
 </template>
 
 <script>
-  import utils from '../../utils/utils'
-  import name from '../../common/name'
+  import utils from '../../common/js/utils'
+  import name from '../../common/js/name'
   import Icon from '../icon/icon'
 
   const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.tabBar.toLowerCase()
@@ -193,5 +193,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/tab-bar";
+  @import "../../common/style/tab-bar";
 </style>

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import name from '../../common/name'
+  import name from '../../common/js/name'
   import Icon from '../icon/icon'
 
   const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.navBar.toLowerCase()
@@ -80,5 +80,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/nav-bar";
+  @import "../../common/style/nav-bar";
 </style>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import name from '../../common/name'
+  import name from '../../common/js/name'
   import Icon from '../icon/icon'
 
   const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
@@ -84,5 +84,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/button.scss";
+  @import "../../common/style/button";
 </style>

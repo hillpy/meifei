@@ -9,8 +9,8 @@
 </template>
 
 <script>
-  import utils from '../../utils/utils'
-  import name from '../../common/name'
+  import name from '../../common/js/name'
+  import utils from '../../common/js/utils'
 
   const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.loading.toLowerCase()
 
@@ -65,5 +65,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/loading";
+  @import "../../common/style/loading";
 </style>

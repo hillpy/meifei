@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import name from '../../common/name'
+  import name from '../../common/js/name'
 
   const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.button.toLowerCase()
 

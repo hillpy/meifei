@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import name from '../../common/name'
+  import name from '../../common/js/name'
 
   const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.icon.toLowerCase()
   const sizeArr = [
@@ -116,5 +116,5 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../styles/icon";
+  @import "../../common/style/icon";
 </style>

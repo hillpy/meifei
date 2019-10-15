@@ -1,4 +1,4 @@
-import name from './common/name'
+import name from './common/js/name'
 import NavBar from './components/nav-bar'
 import Loading from './components/loading'
 import ProgressBar from './components/progress-bar'

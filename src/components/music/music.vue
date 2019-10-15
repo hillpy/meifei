@@ -3,7 +3,7 @@
 </template>
 
 <script>
-	import name from '../../common/name'
+	import name from '../../common/js/name'
 
 	const PREFIX_CLS =
 		name.libShortName.toLowerCase() +
@@ -187,5 +187,5 @@
 </script>
 
 <style lang="scss" scoped>
-	@import '../../styles/music';
+	@import '../../common/style/music';
 </style>
