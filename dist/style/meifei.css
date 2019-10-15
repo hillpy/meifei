@@ -3,6 +3,27 @@
  * (c) 2019-2019 shinn_lancelot
  * Released under the MIT License.
  */
+.mf-badge {
+  display: inline-block;
+  text-align: center;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: #fff;
+  line-height: calc(2px + 12px);
+  border-radius: calc(2px + 12px);
+  background-color: #f00;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: middle;
+  box-sizing: border-box;
+}
+
+.mf-badge-dot {
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  border-radius: 50%;
+}
 
 .mf-button {
   display: inline-block;

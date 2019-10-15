@@ -5,6 +5,7 @@ import ProgressBar from './components/progress-bar'
 import Icon from './components/icon'
 import Button from './components/button'
 import TabBar from './components/tab-bar'
+import Badge from './components/badge'
 import Music from './components/music'
 
 const components = {
@@ -14,6 +15,7 @@ const components = {
   Icon,
   Button,
   TabBar,
+  Badge,
   Music
 }
 

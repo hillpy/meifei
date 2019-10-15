@@ -1122,10 +1122,107 @@ __vue_render__$5._withStripped = true;
   );
 
 //
-const PREFIX_CLS$6 = name.libShortName.toLowerCase() + '-' + name.componentsName.music.toLowerCase();
+const PREFIX_CLS$6 = name.libShortName.toLowerCase() + '-' + name.componentsName.badge.toLowerCase();
+var script$6 = {
+  name: name.componentsName.badge,
+  props: {
+    text: {
+      type: String,
+      default: ''
+    },
+    dot: {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  data() {
+    return {
+      useSlot: false
+    };
+  },
+
+  created() {
+    if (this.dot === false && this.$slots.content) {
+      this.useSlot = true;
+    }
+  },
+
+  computed: {
+    wrapperClasses() {
+      let wrapperClasses = [];
+      wrapperClasses.push(`${PREFIX_CLS$6}`);
+
+      if (this.dot === true) {
+        wrapperClasses.push(`${PREFIX_CLS$6}` + '-dot');
+      }
+
+      return wrapperClasses;
+    }
+
+  },
+  methods: {
+    handleText() {
+      if (this.dot === false && this.useSlot === false) {
+        return this.text;
+      }
+
+      return '';
+    }
+
+  }
+};
+
+/* script */
+const __vue_script__$6 = script$6;
+/* template */
+var __vue_render__$6 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c(
+    "sup",
+    { class: _vm.wrapperClasses },
+    [
+      _vm.useSlot ? _vm._t("content") : _vm._e(),
+      _vm._v("\n  " + _vm._s(_vm.handleText()) + "\n")
+    ],
+    2
+  )
+};
+var __vue_staticRenderFns__$6 = [];
+__vue_render__$6._withStripped = true;
+
+  /* style */
+  const __vue_inject_styles__$6 = undefined;
+  /* scoped */
+  const __vue_scope_id__$6 = undefined;
+  /* module identifier */
+  const __vue_module_identifier__$6 = undefined;
+  /* functional template */
+  const __vue_is_functional_template__$6 = false;
+  /* style inject */
+  
+  /* style inject SSR */
+  
+
+  
+  var Badge = normalizeComponent_1(
+    { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
+    __vue_inject_styles__$6,
+    __vue_script__$6,
+    __vue_scope_id__$6,
+    __vue_is_functional_template__$6,
+    __vue_module_identifier__$6,
+    undefined,
+    undefined
+  );
+
+//
+const PREFIX_CLS$7 = name.libShortName.toLowerCase() + '-' + name.componentsName.music.toLowerCase();
 const ANIMATION_ARR = ['rotate', 'scale'];
 const SIZE_ARR = ['small', 'medium', 'large'];
-var script$6 = {
+var script$7 = {
   name: name.componentsName.music,
   props: {
     src: {
@@ -1135,11 +1232,11 @@ var script$6 = {
     },
     playClass: {
       type: String,
-      default: `${PREFIX_CLS$6}` + '-play'
+      default: `${PREFIX_CLS$7}` + '-play'
     },
     pauseClass: {
       type: String,
-      default: `${PREFIX_CLS$6}` + '-pause'
+      default: `${PREFIX_CLS$7}` + '-pause'
     },
     maxVolume: {
       type: Number,
@@ -1173,7 +1270,7 @@ var script$6 = {
       clickState: true,
       paused: true,
       volume: 0,
-      pausedClass: `${PREFIX_CLS$6}` + '-animation-paused',
+      pausedClass: `${PREFIX_CLS$7}` + '-animation-paused',
       wrapperClasses: []
     };
   },
@@ -1292,15 +1389,15 @@ var script$6 = {
 
     // 更新容器样式
     updateWrapperClasses(arr) {
-      let classes = [`${PREFIX_CLS$6}`];
+      let classes = [`${PREFIX_CLS$7}`];
 
       if (SIZE_ARR.indexOf(this.size) !== -1) {
-        classes.push(`${PREFIX_CLS$6}` + '-size-' + this.size);
+        classes.push(`${PREFIX_CLS$7}` + '-size-' + this.size);
       }
 
       if (this.animated === true) {
         if (ANIMATION_ARR.indexOf(this.animation) !== -1) {
-          classes.push(`${PREFIX_CLS$6}` + '-animation-' + this.animation);
+          classes.push(`${PREFIX_CLS$7}` + '-animation-' + this.animation);
         }
       }
 
@@ -1312,9 +1409,9 @@ var script$6 = {
 };
 
 /* script */
-const __vue_script__$6 = script$6;
+const __vue_script__$7 = script$7;
 /* template */
-var __vue_render__$6 = function() {
+var __vue_render__$7 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -1326,17 +1423,17 @@ var __vue_render__$6 = function() {
     on: { click: _vm.handleClick }
   })
 };
-var __vue_staticRenderFns__$6 = [];
-__vue_render__$6._withStripped = true;
+var __vue_staticRenderFns__$7 = [];
+__vue_render__$7._withStripped = true;
 
   /* style */
-  const __vue_inject_styles__$6 = undefined;
+  const __vue_inject_styles__$7 = undefined;
   /* scoped */
-  const __vue_scope_id__$6 = "data-v-0c0e4a32";
+  const __vue_scope_id__$7 = "data-v-0c0e4a32";
   /* module identifier */
-  const __vue_module_identifier__$6 = undefined;
+  const __vue_module_identifier__$7 = undefined;
   /* functional template */
-  const __vue_is_functional_template__$6 = false;
+  const __vue_is_functional_template__$7 = false;
   /* style inject */
   
   /* style inject SSR */
@@ -1344,12 +1441,12 @@ __vue_render__$6._withStripped = true;
 
   
   var Music = normalizeComponent_1(
-    { render: __vue_render__$6, staticRenderFns: __vue_staticRenderFns__$6 },
-    __vue_inject_styles__$6,
-    __vue_script__$6,
-    __vue_scope_id__$6,
-    __vue_is_functional_template__$6,
-    __vue_module_identifier__$6,
+    { render: __vue_render__$7, staticRenderFns: __vue_staticRenderFns__$7 },
+    __vue_inject_styles__$7,
+    __vue_script__$7,
+    __vue_scope_id__$7,
+    __vue_is_functional_template__$7,
+    __vue_module_identifier__$7,
     undefined,
     undefined
   );
@@ -1361,6 +1458,7 @@ const components = {
   Icon,
   Button,
   TabBar,
+  Badge,
   Music
 };
 let prefixComponent = '';

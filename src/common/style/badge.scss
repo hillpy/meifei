@@ -1,7 +1,25 @@
 @import "./variables/common";
 
-$prefix-cls: $button-prefix-cls;
+$prefix-cls: $badge-prefix-cls;
 
 .#{$prefix-cls} {
-    
+    display: inline-block;
+    text-align: center;
+    padding: $distance-xxx-small $distance-x-small;
+    font-size: $font-size-xxx-small;
+    color: $color-light;
+    line-height: calc(#{$distance-xxx-small} + #{$font-size-xxx-small});
+    border-radius: calc(#{$distance-xxx-small} + #{$font-size-xxx-small});
+    background-color: $color-theme;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.#{$prefix-cls}-dot {
+  width: 5px;
+  height: 5px;
+  padding: 0;
+  border-radius: 50%;
 }

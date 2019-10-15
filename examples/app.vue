@@ -163,6 +163,19 @@
           ></mf-music>
         </div>
       </div>
+      <div class="segment">
+        <div class="title">徽章</div>
+        <div class="content">
+          <mf-badge
+            :dot="badge.dot"
+          >
+          </mf-badge>
+          <mf-badge
+            :text="badge.text"
+          >
+          </mf-badge>
+        </div>
+      </div>
     </div>
     <mf-tab-bar
       ref="tabBar"
@@ -363,6 +376,10 @@
           ],
           hideLine: false,
           autoUpdate: true
+        },
+        badge: {
+          text: '666',
+          dot: true
         },
         music: {
           src: 'http://resource.hillpy.com/audio/hanabi.mp3'
