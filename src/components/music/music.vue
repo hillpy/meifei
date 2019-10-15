@@ -54,7 +54,7 @@
 				default: true
 			}
 		},
-		data() {
+		data () {
 			return {
 				audio: {},
 				clickState: true,
@@ -65,7 +65,7 @@
 			}
 		},
 		watch: {
-			volume(val, oldVal) {
+			volume (val, oldVal) {
 				if (val < 0) {
 					val = 0
 				} else if (val > this.maxVolume) {
@@ -87,7 +87,7 @@
 					this.clickState = true
 				}
 			},
-			paused(val) {
+			paused (val) {
 				// 监听播放状态变量，调整播放状态与样式
 				if (val === true) {
 					this.updateWrapperClasses([this.pauseClass, this.pausedClass])
@@ -98,7 +98,7 @@
 				}
 			}
 		},
-		created() {
+		created () {
 			// 校验并修正最大音量
 			if (this.maxVolume > 1 || this.maxVolume <= 0) {
 				this.maxVolume = 1
@@ -114,7 +114,7 @@
 			this.audio.loop = true
 		},
 		methods: {
-			handleClick(e) {
+			handleClick (e) {
 				if (!this.clickState) {
 					return
 				}
@@ -127,15 +127,15 @@
 				this.$emit('musicClick', e)
 			},
 			// 播放
-			play() {
+			play () {
 				this.increaseVolume()
 			},
 			// 暂停
-			pause() {
+			pause () {
 				this.decreaseVolume()
 			},
 			// 增大音量
-			increaseVolume() {
+			increaseVolume () {
 				if (this.volume < this.maxVolume) {
 					let index = setInterval(() => {
 						if (this.volume >= this.maxVolume) {
@@ -152,7 +152,7 @@
 				}
 			},
 			// 减小音量
-			decreaseVolume() {
+			decreaseVolume () {
 				if (this.volume > 0) {
 					let index = setInterval(() => {
 						if (this.volume <= 0) {
@@ -169,7 +169,7 @@
 				}
 			},
 			// 更新容器样式
-			updateWrapperClasses(arr) {
+			updateWrapperClasses (arr) {
 				let classes = [`${PREFIX_CLS}`]
 				if (SIZE_ARR.indexOf(this.size) !== -1) {
 					classes.push(`${PREFIX_CLS}` + '-size-' + this.size)

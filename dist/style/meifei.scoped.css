@@ -673,7 +673,7 @@ to {
     color: #f00;
 }
 }
-.mf-music[data-v-76fe027b] {
+.mf-music[data-v-0c0e4a32] {
   border-radius: 50%;
   cursor: pointer;
   background-color: transparent;
@@ -681,33 +681,33 @@ to {
   background-position: center;
   background-size: contain;
 }
-.mf-music-size-small[data-v-76fe027b] {
+.mf-music-size-small[data-v-0c0e4a32] {
   width: 25px;
   height: 25px;
 }
-.mf-music-size-medium[data-v-76fe027b] {
+.mf-music-size-medium[data-v-0c0e4a32] {
   width: 30px;
   height: 30px;
 }
-.mf-music-size-large[data-v-76fe027b] {
+.mf-music-size-large[data-v-0c0e4a32] {
   width: 35px;
   height: 35px;
 }
-.mf-music-play[data-v-76fe027b] {
+.mf-music-play[data-v-0c0e4a32] {
   background-image: url("./images/music.svg");
 }
-.mf-music-pause[data-v-76fe027b] {
+.mf-music-pause[data-v-0c0e4a32] {
   background-image: url("./images/music_off.svg");
 }
-.mf-music-animation-paused[data-v-76fe027b] {
+.mf-music-animation-paused[data-v-0c0e4a32] {
   -webkit-animation-play-state: paused !important;
           animation-play-state: paused !important;
 }
-.mf-music-animation-rotate[data-v-76fe027b] {
-  -webkit-animation: mf-music-animation-rotate-data-v-76fe027b 3s linear infinite;
-          animation: mf-music-animation-rotate-data-v-76fe027b 3s linear infinite;
+.mf-music-animation-rotate[data-v-0c0e4a32] {
+  -webkit-animation: mf-music-animation-rotate-data-v-0c0e4a32 3s linear infinite;
+          animation: mf-music-animation-rotate-data-v-0c0e4a32 3s linear infinite;
 }
-@-webkit-keyframes mf-music-animation-rotate-data-v-76fe027b {
+@-webkit-keyframes mf-music-animation-rotate-data-v-0c0e4a32 {
 from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -717,7 +717,7 @@ to {
             transform: rotate(360deg);
 }
 }
-@keyframes mf-music-animation-rotate-data-v-76fe027b {
+@keyframes mf-music-animation-rotate-data-v-0c0e4a32 {
 from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -727,11 +727,11 @@ to {
             transform: rotate(360deg);
 }
 }
-.mf-music-animation-scale[data-v-76fe027b] {
-  -webkit-animation: mf-music-animation-scale-data-v-76fe027b 1.5s linear infinite;
-          animation: mf-music-animation-scale-data-v-76fe027b 1.5s linear infinite;
+.mf-music-animation-scale[data-v-0c0e4a32] {
+  -webkit-animation: mf-music-animation-scale-data-v-0c0e4a32 1.5s linear infinite;
+          animation: mf-music-animation-scale-data-v-0c0e4a32 1.5s linear infinite;
 }
-@-webkit-keyframes mf-music-animation-scale-data-v-76fe027b {
+@-webkit-keyframes mf-music-animation-scale-data-v-0c0e4a32 {
 0% {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
@@ -745,7 +745,7 @@ to {
             transform: scale(0.9);
 }
 }
-@keyframes mf-music-animation-scale-data-v-76fe027b {
+@keyframes mf-music-animation-scale-data-v-0c0e4a32 {
 0% {
     -webkit-transform: scale(0.9);
             transform: scale(0.9);
