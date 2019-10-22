@@ -1,6 +1,6 @@
 {
   "name": "meifei",
-  "version": "0.0.2-beta",
+  "version": "0.0.3-pre-beta",
   "description": "A vue components library. 一个vue组件库。",
   "main": "dist/meifei.cjs.js",
   "module": "dist/meifei.esm.js",
