@@ -83,7 +83,8 @@ export default {
       extensions: ['.js', '.vue', '.json']
     }),
     babel({
-      exclude: ['node_modules/**']
+      exclude: ['node_modules/**'],
+      runtimeHelpers: true
     }),
     commonjs(),
     postcss({
