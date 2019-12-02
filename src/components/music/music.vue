@@ -90,7 +90,7 @@
 			paused (val) {
 				// 监听播放状态变量，调整播放状态与样式
 				if (val === true) {
-					this.updateWrapperClasses([this.pauseClass, this.pausedClass])
+					this.updateWrapperClasses([this.pauseClass])
 					this.audio.pause()
 				} else {
 					this.updateWrapperClasses([this.playClass])
@@ -105,7 +105,7 @@
 			}
 
 			// 更新样式
-			this.updateWrapperClasses([this.pauseClass, this.pausedClass])
+			this.updateWrapperClasses([this.pauseClass])
 
 			// 创建audio对象
 			this.audio = new Audio()
@@ -171,13 +171,25 @@
 			// 更新容器样式
 			updateWrapperClasses (arr) {
 				let classes = [`${PREFIX_CLS}`]
-				if (SIZE_ARR.indexOf(this.size) !== -1) {
+				if (
+					SIZE_ARR.indexOf(this.size) !== -1 &&
+					arr.indexOf(`${PREFIX_CLS}` + '-size-' + this.size) === -1
+					) {
 					classes.push(`${PREFIX_CLS}` + '-size-' + this.size)
 				}
 				if (this.animated === true) {
-					if (ANIMATION_ARR.indexOf(this.animation) !== -1) {
+					if (
+						ANIMATION_ARR.indexOf(this.animation) !== -1 &&
+						arr.indexOf(`${PREFIX_CLS}` + '-animation-' + this.animation) === -1
+						) {
 						classes.push(`${PREFIX_CLS}` + '-animation-' + this.animation)
 					}
+				}
+				if (
+					this.paused === true &&
+					arr.indexOf(this.pausedClass) === -1
+				) {
+					classes.push(this.pausedClass)
 				}
 				classes = classes.concat(arr)
 				this.wrapperClasses = classes

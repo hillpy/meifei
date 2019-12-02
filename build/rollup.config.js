@@ -111,7 +111,19 @@ export default {
     // }),
     production && terser({
       output: {
-        comments: 'all'
+        comments: function (node, comment) {
+          let text = comment.value
+          let type = comment.type
+          if (type == "comment2") {
+            // multiline comment
+
+            return /Released under the|License/.test(text)
+            
+            // // 由于rollup-plugin-terser传入函数时，函数内无法使用当前外部参数，暂注释
+            // let pattern = new RegExp(banner, 'g')
+            // return pattern.test(text)
+          }
+        }
       }
     }),
     // image(),

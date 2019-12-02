@@ -3320,7 +3320,7 @@
 	    paused: function paused(val) {
 	      // 监听播放状态变量，调整播放状态与样式
 	      if (val === true) {
-	        this.updateWrapperClasses([this.pauseClass, this.pausedClass]);
+	        this.updateWrapperClasses([this.pauseClass]);
 	        this.audio.pause();
 	      } else {
 	        this.updateWrapperClasses([this.playClass]);
@@ -3335,7 +3335,7 @@
 	    } // 更新样式
 
 
-	    this.updateWrapperClasses([this.pauseClass, this.pausedClass]); // 创建audio对象
+	    this.updateWrapperClasses([this.pauseClass]); // 创建audio对象
 
 	    this.audio = new Audio();
 	    this.audio.src = this.src;
@@ -3406,14 +3406,18 @@
 	    updateWrapperClasses: function updateWrapperClasses(arr) {
 	      var classes = ["".concat(PREFIX_CLS$7)];
 
-	      if (SIZE_ARR.indexOf(this.size) !== -1) {
+	      if (SIZE_ARR.indexOf(this.size) !== -1 && arr.indexOf("".concat(PREFIX_CLS$7) + '-size-' + this.size) === -1) {
 	        classes.push("".concat(PREFIX_CLS$7) + '-size-' + this.size);
 	      }
 
 	      if (this.animated === true) {
-	        if (ANIMATION_ARR.indexOf(this.animation) !== -1) {
+	        if (ANIMATION_ARR.indexOf(this.animation) !== -1 && arr.indexOf("".concat(PREFIX_CLS$7) + '-animation-' + this.animation) === -1) {
 	          classes.push("".concat(PREFIX_CLS$7) + '-animation-' + this.animation);
 	        }
+	      }
+
+	      if (this.paused === true && arr.indexOf(this.pausedClass) === -1) {
+	        classes.push(this.pausedClass);
 	      }
 
 	      classes = classes.concat(arr);
@@ -3443,7 +3447,7 @@
 	  /* style */
 	  const __vue_inject_styles__$7 = undefined;
 	  /* scoped */
-	  const __vue_scope_id__$7 = "data-v-0c0e4a32";
+	  const __vue_scope_id__$7 = "data-v-1d1acb5f";
 	  /* module identifier */
 	  const __vue_module_identifier__$7 = undefined;
 	  /* functional template */
