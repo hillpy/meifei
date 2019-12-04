@@ -25,6 +25,8 @@ const banner =
     ` * (c) ${birthYear}-${new Date().getFullYear()} ${pkg.author}\n` +
     ` * Released under the ${pkg.license} License.\n` +
     ' */\n'
+// 在banner基础上移除/ * 等符号，暂无用
+// const postcssBannerStr = banner.replace(/(\/\*\n+)|(\*\/\n+)|([ ]\*[ ]+)|.(?=[^.]*$)(\n)/g, '')
 const outPath = './dist/'
 const stylePath = 'style/'
 const outFileInfo = {
