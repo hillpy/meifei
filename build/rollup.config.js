@@ -13,65 +13,35 @@ import { terser } from 'rollup-plugin-terser'
 // import image from 'rollup-plugin-image'
 import img from 'rollup-plugin-img'
 // import alias from 'rollup-plugin-alias'
-import pkg from '../package.json'
 
-const production = !process.env.ROLLUP_WATCH
-const version = process.env.VERSION || pkg.version
-const libName = pkg.name
-const birthYear = 2019
-const banner =
-    '/*\n' +
-    ` * ${libName} v${version}\n` +
-    ` * (c) ${birthYear}-${new Date().getFullYear()} ${pkg.author}\n` +
-    ` * Released under the ${pkg.license} License.\n` +
-    ' */\n'
-// 在banner基础上移除/ * 等符号，暂无用
-// const postcssBannerStr = banner.replace(/(\/\*\n+)|(\*\/\n+)|([ ]\*[ ]+)|.(?=[^.]*$)(\n)/g, '')
-const outPath = './dist/'
-const stylePath = 'style/'
-const outFileInfo = {
-  'dev': {
-    'cjs': pkg.main,
-    'esm': pkg.module,
-    'umd': pkg.browser
-  },
-  'prod': {
-    'cjs': outPath + libName.toLowerCase() + '.cjs.min.js',
-    'esm': outPath + libName.toLowerCase() + '.esm.min.js',
-    'umd': outPath + libName.toLowerCase() + '.min.js'
-  }
-}
-const outPutCss = {
-  'dev': outPath + stylePath + libName.toLowerCase() + '.scoped.css',
-  'prod': outPath + stylePath + libName.toLowerCase() + '.scoped.min.css'
-}
+const config = require('./config')
 
 export default {
   input: 'src/index.js',
   output: [
     {
-      file: production ? outFileInfo.prod.cjs : outFileInfo.dev.cjs,
+      file: config.production ? config.outputJSObj.prod.cjs : config.outputJSObj.dev.cjs,
       format: 'cjs',
-      banner: banner,
-      name: libName,
+      banner: config.banner,
+      name: config.libName,
       globals: {
         vue: 'Vue'
       }
     },
     {
-      file: production ? outFileInfo.prod.esm : outFileInfo.dev.esm,
+      file: config.production ? config.outputJSObj.prod.esm : config.outputJSObj.dev.esm,
       format: 'es',
-      banner: banner,
-      name: libName,
+      banner: config.banner,
+      name: config.libName,
       globals: {
         vue: 'Vue'
       }
     },
     {
-      file: production ? outFileInfo.prod.umd : outFileInfo.dev.umd,
+      file: config.production ? config.outputJSObj.prod.umd : config.outputJSObj.dev.umd,
       format: 'umd',
-      banner: banner,
-      name: libName,
+      banner: config.banner,
+      name: config.libName,
       globals: {
         vue: 'Vue'
       }
@@ -91,27 +61,27 @@ export default {
     commonjs(),
     postcss({
       // sourceMap: true,
-      minimize: production && true,
+      minimize: config.production,
       plugins: [autoprefixer],
-      extract: production ? outPutCss.prod : outPutCss.dev
+      extract: config.production ? config.outputCSSObj.prod : config.outputCSSObj.dev
     }),
     // 暂无用，已交由postcss处理样式
     // cssOnly({
     //   output (style) {
-    //     production
+    //     config.production
     //     ?
     //     writeFileSync(
-    //       outPutCss.prod,
+    //       config.outputCSSObj.prod,
     //       new cleanCss().minify(style).styles
     //     )
     //     :
     //     writeFileSync(
-    //       outPutCss.dev,
+    //       config.outputCSSObj.dev,
     //       style
     //     )
     //   }
     // }),
-    production && terser({
+    config.production && terser({
       output: {
         comments: function (node, comment) {
           let text = comment.value
@@ -122,7 +92,7 @@ export default {
             return /Released under the|License/.test(text)
             
             // // 由于rollup-plugin-terser传入函数时，函数内无法使用当前外部参数，暂注释
-            // let pattern = new RegExp(banner, 'g')
+            // let pattern = new RegExp(config.banner, 'g')
             // return pattern.test(text)
           }
         }

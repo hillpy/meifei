@@ -7,8 +7,8 @@
   "browser": "dist/meifei.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run dist:dev & cross-env NODE_ENV=development npm run dist:styles",
-    "prod": "npm run dist:prod && cross-env NODE_ENV=production npm run dist:styles",
+    "dev": "cross-env NODE_ENV=development npm run dist:dev & npm run dist:styles",
+    "prod": "cross-env NODE_ENV=production npm run dist:prod && npm run dist:styles",
     "dist:dev": "rollup -c build/rollup.config.js -w",
     "dist:prod": "rollup -c build/rollup.config.js",
     "dist:styles": "gulp --gulpfile build/gulp.style.js",

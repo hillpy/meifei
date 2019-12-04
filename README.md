@@ -32,7 +32,7 @@
 
 2. 添加test目录，使用jest测试代码
 
-3. 完善拆分rollup.config.js
+~~3. 完善拆分rollup.config.js~~
 
 4. 重写、设计example页面
 
