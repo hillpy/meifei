@@ -418,7 +418,7 @@
         }
         this.tabBar.datas = datas
       },
-      handleMusicClick (e) {
+      handleMusicClick (e, paused) {
         console.log('music clicked')
       }
     },

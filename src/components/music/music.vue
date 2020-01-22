@@ -5,10 +5,7 @@
 <script>
 	import name from '../../common/js/name'
 
-	const PREFIX_CLS =
-		name.libShortName.toLowerCase() +
-		'-' +
-		name.componentsName.music.toLowerCase()
+	const PREFIX_CLS = name.libShortName.toLowerCase() + '-' + name.componentsName.music.toLowerCase()
 
 	const ANIMATION_ARR = ['rotate', 'scale']
 	const SIZE_ARR = ['small', 'medium', 'large']
@@ -48,6 +45,10 @@
 			size: {
 				type: String,
 				default: 'medium'
+			},
+			autoAudio: {
+				type: Boolean,
+				default: true
 			},
 			show: {
 				type: Boolean,
@@ -119,23 +120,29 @@
 					return
 				}
 				this.clickState = false
-				if (this.audio.paused === true) {
-					this.play()
-				} else {
-					this.pause()
+				
+				if (this.autoAudio === true) {
+					if (this.audio.paused === true) {
+						this.fadeIn()
+					} else {
+						this.fadeOut()
+					}
 				}
-				this.$emit('musicClick', e)
+				
+				this.$emit('musicClick', e, this.paused)
 			},
 			// 播放
 			play () {
-				this.increaseVolume()
+				this.paused = false
+				this.clickState = true
 			},
 			// 暂停
 			pause () {
-				this.decreaseVolume()
+				this.paused = true
+				this.clickState = true
 			},
-			// 增大音量
-			increaseVolume () {
+			// 淡入（增大音量）
+			fadeIn () {
 				if (this.volume < this.maxVolume) {
 					let index = setInterval(() => {
 						if (this.volume >= this.maxVolume) {
@@ -151,8 +158,8 @@
 					}, 50)
 				}
 			},
-			// 减小音量
-			decreaseVolume () {
+			// 淡出（减小音量）
+			fadeOut () {
 				if (this.volume > 0) {
 					let index = setInterval(() => {
 						if (this.volume <= 0) {

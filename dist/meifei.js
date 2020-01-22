@@ -1,6 +1,6 @@
 /*
  * meifei v0.0.3-pre-beta
- * (c) 2019-2019 shinn_lancelot
+ * (c) 2019-2020 shinn_lancelot
  * Released under the MIT License.
  */
 
@@ -3280,6 +3280,10 @@
 	      type: String,
 	      default: 'medium'
 	    },
+	    autoAudio: {
+	      type: Boolean,
+	      default: true
+	    },
 	    show: {
 	      type: Boolean,
 	      default: true
@@ -3350,24 +3354,28 @@
 
 	      this.clickState = false;
 
-	      if (this.audio.paused === true) {
-	        this.play();
-	      } else {
-	        this.pause();
+	      if (this.autoAudio === true) {
+	        if (this.audio.paused === true) {
+	          this.fadeIn();
+	        } else {
+	          this.fadeOut();
+	        }
 	      }
 
-	      this.$emit('musicClick', e);
+	      this.$emit('musicClick', e, this.paused);
 	    },
 	    // 播放
 	    play: function play() {
-	      this.increaseVolume();
+	      this.paused = false;
+	      this.clickState = true;
 	    },
 	    // 暂停
 	    pause: function pause() {
-	      this.decreaseVolume();
+	      this.paused = true;
+	      this.clickState = true;
 	    },
-	    // 增大音量
-	    increaseVolume: function increaseVolume() {
+	    // 淡入（增大音量）
+	    fadeIn: function fadeIn() {
 	      var _this = this;
 
 	      if (this.volume < this.maxVolume) {
@@ -3384,8 +3392,8 @@
 	        }, 50);
 	      }
 	    },
-	    // 减小音量
-	    decreaseVolume: function decreaseVolume() {
+	    // 淡出（减小音量）
+	    fadeOut: function fadeOut() {
 	      var _this2 = this;
 
 	      if (this.volume > 0) {
@@ -3447,7 +3455,7 @@
 	  /* style */
 	  const __vue_inject_styles__$7 = undefined;
 	  /* scoped */
-	  const __vue_scope_id__$7 = "data-v-1d1acb5f";
+	  const __vue_scope_id__$7 = "data-v-f96946a4";
 	  /* module identifier */
 	  const __vue_module_identifier__$7 = undefined;
 	  /* functional template */
